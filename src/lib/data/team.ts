@@ -39,6 +39,9 @@ export type NamedDeal = {
   role: string;
 };
 
+/** Editorial cover tone for the broker's monogram tile. */
+export type CoverTone = "ink" | "navy" | "graphite" | "paper";
+
 export type TeamMember = {
   slug: string;
   name: string;
@@ -48,7 +51,18 @@ export type TeamMember = {
   phone: string;
   email: string;
   linkedin?: string;
-  /** Tailwind gradient class fragment, e.g. "from-[#0a1226] to-[#1a3a6b]" */
+  /**
+   * Editorial monogram-cover spec for this broker. Replaces the legacy
+   * gradient placeholder. Distribute tones across the roster so the grid
+   * doesn't read monotonous.
+   */
+  cover: { tone: CoverTone };
+  /**
+   * @deprecated Tailwind gradient class fragment from the old "initials on
+   * gradient" placeholder. Kept as a derived alias for any consumer that
+   * still reads it; new surfaces should use `cover.tone` with
+   * `<MonogramCover>`.
+   */
   photoTone: string;
   /** 2–3 paragraph narrative bio. */
   bio: string;
@@ -64,14 +78,16 @@ export type TeamMember = {
 };
 
 /* --------------------------------------------------------------------------
- * Photo tones — four gradients distributed across the eight brokers so the
- * /team grid reads as varied without commissioning real photography yet.
+ * Legacy photoTone gradients — retained as a deprecated alias derived from
+ * the new `cover.tone`. New surfaces should consume `cover.tone` directly.
  * ------------------------------------------------------------------------ */
 
-const TONE_NAVY_DEEP = "from-[#0a1226] to-[#1a3a6b]";
-const TONE_BLUE_BRIGHT = "from-[#0066cc] to-[#1a56db]";
-const TONE_NAVY_REVERSE = "from-[#1a3a6b] to-[#0a1226]";
-const TONE_GRAPHITE = "from-[#1d1d1f] to-[#2c2c2e]";
+const LEGACY_PHOTO_TONE: Record<CoverTone, string> = {
+  ink: "from-[#0a0a0a] to-[#1d1d1f]",
+  navy: "from-[#0a1226] to-[#1a3a6b]",
+  graphite: "from-[#1d1d1f] to-[#2c2c2e]",
+  paper: "from-[#fafafa] to-[#e5e5e7]",
+};
 
 /* --------------------------------------------------------------------------
  * Roster — 8 brokers
@@ -87,7 +103,8 @@ export const team: TeamMember[] = [
     phone: "(512) 771-1860",
     email: "luke.thompson@matthews.com",
     linkedin: "https://www.linkedin.com/in/luke-thompson",
-    photoTone: TONE_NAVY_DEEP,
+    cover: { tone: "ink" },
+    photoTone: LEGACY_PHOTO_TONE.ink,
     bio: `Luke leads Matthews' Texas hospitality capital markets practice, advising owners, developers, and institutional sponsors on full-service and lifestyle hotel transactions across the Sun Belt. Over fifteen years he has closed more than $2.4 billion in hospitality investment sales, with a sweet spot in branded full-service assets between $20M and $150M.
 
 Before joining Matthews, Luke spent eight years on the hospitality investment sales desk of a national platform, where he led the firm's Texas resort and lifestyle practice. His current pipeline includes call-for-offers assignments in Austin, San Antonio, and the Hill Country, as well as recapitalization mandates for repeat institutional sponsors.
@@ -182,7 +199,8 @@ Luke is active in HAMA, AHLA, and the Urban Land Institute hotel council. He sou
     phone: "(737) 296-3875",
     email: "nate.solomon@matthews.com",
     linkedin: "https://www.linkedin.com/in/natesolomon",
-    photoTone: TONE_BLUE_BRIGHT,
+    cover: { tone: "navy" },
+    photoTone: LEGACY_PHOTO_TONE.navy,
     bio: `Nate underwrites and executes select-service and boutique hotel transactions for the Matthews Texas team, working closely with developer-sponsors and family-office capital across Central Texas.
 
 In four years on the desk he has supported the closing of $180M in transactions, including a recent rollup of three Hill Country boutique assets and several premium-branded select-service deals along the I-35 corridor. He drives much of the team's market intelligence — comp database, ADR/RevPAR tracking, and broker-of-record submarket reports.
@@ -250,7 +268,8 @@ Nate's research-first style produces underwriting that lenders and equity review
     phone: "(512) 338-7800",
     email: "sarah.chen@matthews.com",
     linkedin: "https://www.linkedin.com/in/sarah-chen",
-    photoTone: TONE_NAVY_REVERSE,
+    cover: { tone: "paper" },
+    photoTone: LEGACY_PHOTO_TONE.paper,
     bio: `Sarah is one of the most active select-service brokers in Texas, with a particular focus on multi-asset portfolio dispositions for institutional sponsors. Over twelve years she has closed more than $1.6 billion in select-service and extended-stay transactions across the Sun Belt.
 
 Her client roster spans private-equity hospitality funds, REITs, and developer-sponsors, and her referral network into the franchise community routinely surfaces off-market portfolios before they reach the broader investor pool.
@@ -339,7 +358,8 @@ Sarah is a frequent panelist at the AHLA Hospitality Investment Forum and an act
     phone: "(512) 338-7801",
     email: "marcus.reyes@matthews.com",
     linkedin: "https://www.linkedin.com/in/marcus-reyes",
-    photoTone: TONE_GRAPHITE,
+    cover: { tone: "graphite" },
+    photoTone: LEGACY_PHOTO_TONE.graphite,
     bio: `Marcus is the Texas hospitality team's lead resort and lifestyle specialist, advising on independent and soft-branded full-service assets, destination resorts, and emerging boutique product. Eighteen years of hospitality brokerage experience and roughly $2.9 billion in closed transactions.
 
 His practice covers Hill Country resort assemblages, Gulf Coast beach assets, and the West Texas glamping and outdoor-hospitality category that has accelerated since 2022. Marcus underwrites alongside the operations team — most of his closed transactions transition with management plans for the buyer in the deal book.
@@ -437,7 +457,8 @@ Marcus serves on the board of the Texas Travel Alliance and is a regular contrib
     phone: "(713) 452-4200",
     email: "elena.park@matthews.com",
     linkedin: "https://www.linkedin.com/in/elena-park",
-    photoTone: TONE_NAVY_DEEP,
+    cover: { tone: "ink" },
+    photoTone: LEGACY_PHOTO_TONE.ink,
     bio: `Elena anchors Matthews' Houston hospitality desk and leads the team's distressed and special-situations practice. Nine years of hospitality and CRE capital markets experience, including loan-sale and note-purchase advisory through the post-COVID workout cycle.
 
 She has closed approximately $1.1 billion of investment sales and debt placements, with a recent surge of activity in CMBS-distressed select-service assets across Texas and Louisiana. Elena's relationships with special-servicer asset managers and bridge-debt funds give the platform unusual access to deals that are not yet on the open market.
@@ -518,7 +539,8 @@ Outside the desk, Elena chairs the Houston chapter of CREW Network's hospitality
     phone: "(972) 755-5200",
     email: "david.okafor@matthews.com",
     linkedin: "https://www.linkedin.com/in/davidokafor",
-    photoTone: TONE_BLUE_BRIGHT,
+    cover: { tone: "navy" },
+    photoTone: LEGACY_PHOTO_TONE.navy,
     bio: `David covers select-service hotel transactions across the DFW Metroplex and surrounding North Texas markets. Six years of brokerage experience and approximately $340 million in closed volume.
 
 Before joining Matthews, David was a senior underwriter at a regional hospitality bridge lender, where he reviewed roughly 200 hotel financings annually. That credit lens shapes his current practice — every assignment ships with a financing memo built for the lender intake desk, not just the equity reviewer.
@@ -586,7 +608,8 @@ David serves on the AAHOA Texas region young-professionals council.`,
     phone: "(512) 338-7802",
     email: "maya.patel@matthews.com",
     linkedin: "https://www.linkedin.com/in/maya-patel",
-    photoTone: TONE_NAVY_REVERSE,
+    cover: { tone: "paper" },
+    photoTone: LEGACY_PHOTO_TONE.paper,
     bio: `Maya supports the Texas hospitality team across underwriting, market intelligence, and broker-opinion-of-value production. Two years on the desk, with a research focus on Sun Belt secondary-market ADR and RevPAR recovery.
 
 She owns the team's comp database and is the lead analyst on the quarterly Hotel Investment Outlook. Senior brokers across the team route their early-stage underwriting through Maya before client delivery.
@@ -611,7 +634,8 @@ Maya is a CCIM candidate and an active participant in the AHLA's Under 30 Gatewa
     phone: "(972) 755-5200",
     email: "patrick.graham@matthews.com",
     linkedin: "https://www.linkedin.com/in/patrickgraham",
-    photoTone: TONE_GRAPHITE,
+    cover: { tone: "graphite" },
+    photoTone: LEGACY_PHOTO_TONE.graphite,
     bio: `Patrick serves as Matthews' Texas Broker of Record, overseeing licensing, regulatory compliance, and the legal infrastructure of the hospitality team's transactions. Twenty-five years of brokerage experience and approximately $5.8 billion in closed hospitality transactions across his career.
 
 In his prior principal role he led the Texas hospitality desk of a national investment-sales platform and personally closed transactions across the full chain-scale spectrum, from luxury full-service trophies to extended-stay portfolios. Today his role is structural — he reviews every Matthews hospitality engagement letter and represented-party disclosure, and serves as the team's senior advisor on complex deal structures.

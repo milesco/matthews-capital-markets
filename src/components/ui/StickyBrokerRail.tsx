@@ -6,14 +6,25 @@ import { Phone, Mail } from "lucide-react";
 import { Pill } from "./Pill";
 import { cn } from "@/lib/utils";
 
+/** Editorial monogram tone, mirrors `MonogramCover` and `team.ts`. */
+export type BrokerRailTone = "ink" | "navy" | "graphite" | "paper";
+
 export interface BrokerRailContact {
   name: string;
   title: string;
   phone: string;
   email: string;
-  /** Optional real photo URL. If absent, `photoTone` is used as a gradient placeholder. */
+  /** Optional real photo URL. If absent, the monogram fallback is used. */
   photo?: string;
-  /** Tailwind gradient class fragment, e.g. "from-[#0a1226] to-[#1a3a6b]". */
+  /**
+   * Editorial monogram tone for the avatar fallback when `photo` is absent.
+   * Falls back to "navy" if neither this nor `photoTone` is provided.
+   */
+  tone?: BrokerRailTone;
+  /**
+   * @deprecated Legacy gradient class fragment retained for backward
+   * compatibility. Prefer `tone`.
+   */
   photoTone?: string;
 }
 
@@ -23,14 +34,21 @@ export interface StickyBrokerRailProps {
   className?: string;
 }
 
+const TONE_AVATAR: Record<BrokerRailTone, { bg: string; fg: string }> = {
+  ink: { bg: "#0a0a0a", fg: "#ffffff" },
+  navy: { bg: "#0e1a34", fg: "#fafafa" },
+  graphite: { bg: "#1d1d1f", fg: "#f5f5f7" },
+  paper: { bg: "#fafafa", fg: "#0a0a0a" },
+};
+
 function BrokerAvatar({
   photo,
-  photoTone,
+  tone,
   name,
   size,
 }: {
   photo?: string;
-  photoTone?: string;
+  tone?: BrokerRailTone;
   name: string;
   size: number;
 }) {
@@ -54,16 +72,25 @@ function BrokerAvatar({
     );
   }
 
+  const spec = TONE_AVATAR[tone ?? "navy"];
+
   return (
     <div
-      className={cn(
-        "absolute inset-0 bg-gradient-to-br flex items-center justify-center text-white font-semibold tracking-[-0.014em]",
-        photoTone ?? "from-[#1a3a6b] to-[#0a1226]",
-      )}
-      style={{ fontSize: Math.round(size * 0.36) }}
+      className="absolute inset-0 flex items-center justify-center"
+      style={{ backgroundColor: spec.bg }}
       aria-label={name}
     >
-      {initials}
+      <span
+        className="font-[family-name:var(--font-fraunces)] leading-none"
+        style={{
+          color: spec.fg,
+          fontSize: Math.round(size * 0.4),
+          fontWeight: 500,
+          letterSpacing: "-0.02em",
+        }}
+      >
+        {initials}
+      </span>
     </div>
   );
 }
@@ -90,7 +117,7 @@ export function StickyBrokerRail({
           <div className="relative h-12 w-12 overflow-hidden rounded-full bg-[color:var(--surface-elevated)]">
             <BrokerAvatar
               photo={broker.photo}
-              photoTone={broker.photoTone}
+              tone={broker.tone}
               name={broker.name}
               size={48}
             />
@@ -138,7 +165,7 @@ export function StickyBrokerRail({
           <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full bg-[color:var(--surface-elevated)]">
             <BrokerAvatar
               photo={broker.photo}
-              photoTone={broker.photoTone}
+              tone={broker.tone}
               name={broker.name}
               size={40}
             />

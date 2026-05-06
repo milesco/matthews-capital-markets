@@ -10,29 +10,34 @@ type Benefit = {
     strokeWidth?: number;
     "aria-hidden"?: boolean;
   }>;
-  title: string;
+  titleLead: string;
+  titleFollow: string;
   body: string;
 };
 
 const benefits: Benefit[] = [
   {
     icon: TrendingUp,
-    title: "Market intelligence.",
+    titleLead: "Market intelligence.",
+    titleFollow: "Sharp.",
     body: "Proprietary research on supply, demand, ADR, and cap rates across 30+ markets. Sellers price with confidence. Buyers underwrite with conviction.",
   },
   {
     icon: Users,
-    title: "Investor reach.",
-    body: "Over one million direct relationships. Family offices, REITs, PE, and institutional capital. The right buyer for every brand and class.",
+    titleLead: "Investor reach.",
+    titleFollow: "Deep.",
+    body: "Over one million direct relationships. Family offices, REITs, PE, and institutional capital — the right buyer for every brand and class.",
   },
   {
     icon: Network,
-    title: "National platform.",
-    body: "30+ offices coast to coast. Local intelligence with national reach. Off-market deals surface first when every sub-market has someone listening.",
+    titleLead: "National platform.",
+    titleFollow: "Local listening.",
+    body: "30+ offices coast to coast. Off-market deals surface first when every sub-market has someone on the ground.",
   },
   {
     icon: Award,
-    title: "$84.3 billion closed.",
+    titleLead: "$84.3 billion closed.",
+    titleFollow: "Across every class.",
     body: "Matthews has executed 33,500+ transactions across every CRE asset class. Hospitality clients tap a platform proven at every scale.",
   },
 ];
@@ -52,19 +57,20 @@ export function HomeWhy() {
           />
         </Reveal>
 
-        <div className="mt-16 grid grid-cols-1 gap-5 md:grid-cols-2">
+        <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2">
           {benefits.map((benefit, i) => {
             const Icon = benefit.icon;
             return (
-              <Reveal key={benefit.title} delay={i * 0.05}>
+              <Reveal key={benefit.titleLead} delay={i * 0.05}>
                 <article className="rounded-[22px] bg-[#f5f5f7] p-8 h-full">
                   <Icon
-                    className="mb-4 h-7 w-7 text-[#0071e3]"
+                    className="mb-5 h-10 w-10 text-[#0071e3]"
                     strokeWidth={1.75}
                     aria-hidden={true}
                   />
-                  <h3 className="text-[24px] font-semibold tracking-[0.009em] leading-[1.1667] text-[#1d1d1f]">
-                    {benefit.title}
+                  <h3 className="text-[28px] font-semibold tracking-[0.007em] leading-[1.15]">
+                    <span className="text-[#1d1d1f]">{benefit.titleLead}</span>{" "}
+                    <span className="text-[#86868b]">{benefit.titleFollow}</span>
                   </h3>
                   <p className="mt-3 text-[17px] leading-[1.47] tracking-[-0.022em] text-[#86868b]">
                     {benefit.body}

@@ -2,6 +2,7 @@ import * as React from "react";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { TwoToneHeadline } from "@/components/ui/TwoToneHeadline";
 import { Reveal } from "@/components/ui/Reveal";
+import { MonogramCover } from "@/components/ui/MonogramCover";
 import type { TeamMember } from "@/lib/data/team";
 
 function initials(name: string): string {
@@ -24,15 +25,14 @@ export function TeamDetailHero({ member }: TeamDetailHeroProps) {
     <section className="bg-[#f5f5f7] pt-28 pb-20 lg:pt-32 lg:pb-24">
       <div className="mx-auto max-w-[1024px] px-6">
         <div className="grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-10 lg:gap-14">
-          {/* Headshot placeholder */}
+          {/* Editorial monogram cover */}
           <Reveal>
-            <div
-              className={`relative aspect-[3/4] w-full rounded-[28px] bg-gradient-to-br ${member.photoTone} flex items-center justify-center overflow-hidden`}
-              aria-hidden="true"
-            >
-              <span className="font-semibold text-white tracking-[-0.015em] text-[clamp(40px,5.5vw,80px)] leading-none">
-                {initials(member.name)}
-              </span>
+            <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[28px]">
+              <MonogramCover
+                initials={initials(member.name)}
+                tone={member.cover.tone}
+                size="hero"
+              />
             </div>
           </Reveal>
 

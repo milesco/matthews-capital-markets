@@ -3,43 +3,46 @@ import { TwoToneHeadline } from "@/components/ui/TwoToneHeadline";
 import { Reveal } from "@/components/ui/Reveal";
 import { Counter } from "@/components/ui/Counter";
 
-const stats: { value: string; label: string }[] = [
-  { value: "$3.5B", label: "Sales volume in 2024" },
-  { value: "72", label: "Transactions in 2024" },
-  { value: "59K+", label: "Rooms sold" },
-  { value: "670+", label: "Total transactions" },
+const supportingStats: { value: string; label: string }[] = [
+  { value: "59,000+", label: "Rooms sold" },
+  { value: "30+", label: "Markets" },
+  { value: "1M+", label: "Investor relationships" },
 ];
 
 export function HomeStats() {
   return (
-    <section className="bg-white py-24 lg:py-32">
+    <section className="bg-white py-32 lg:py-40">
       <div className="mx-auto max-w-[1024px] px-6">
+        {/* One reveal wraps the entire block — Apple product-page restraint */}
         <Reveal>
-          <Eyebrow>Built on track record</Eyebrow>
-        </Reveal>
-        <Reveal delay={0.05}>
-          <TwoToneHeadline
-            size="section"
-            lead="The numbers."
-            follow="Year by year."
-          />
-        </Reveal>
+          <div>
+            <Eyebrow>Matthews Hospitality · 2024</Eyebrow>
 
-        <div className="mt-16 grid grid-cols-2 gap-8 md:grid-cols-4">
-          {stats.map((stat, i) => (
-            <Reveal key={stat.label} delay={i * 0.05}>
-              <div>
-                <Counter
-                  value={stat.value}
-                  className="block text-[#1d1d1f] font-semibold tabular-nums text-[clamp(40px,5vw,72px)] leading-none tracking-[-0.04em]"
-                />
-                <p className="mt-3 text-[13px] tracking-[-0.014em] text-[#86868b]">
-                  {stat.label}
-                </p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
+            <TwoToneHeadline
+              size="section"
+              lead="$3.5B closed across 72 transactions."
+              follow="Texas, the Sun Belt, and beyond."
+            />
+
+            <div className="mt-20 grid grid-cols-1 gap-12 border-t border-[color:var(--divider)] pt-12 sm:grid-cols-3 sm:gap-8">
+              {supportingStats.map((stat) => (
+                <div key={stat.label}>
+                  <Counter
+                    value={stat.value}
+                    className="block text-[#1d1d1f] font-semibold tabular-nums text-[clamp(32px,4vw,56px)] leading-none tracking-[-0.03em]"
+                  />
+                  <p className="mt-3 text-[13px] tracking-[-0.014em] text-[#86868b]">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-16 text-[11px] font-medium uppercase tracking-[0.22em] text-[color:var(--text-tertiary)]">
+              As of Q4 2024
+            </p>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

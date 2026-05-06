@@ -1,5 +1,6 @@
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { StatusBadge } from "@/components/ui/StatusBadge";
 import { GhostLink } from "@/components/ui/GhostLink";
 import { cn } from "@/lib/utils";
@@ -20,19 +21,32 @@ export function ListingCard({ listing, className }: ListingCardProps) {
         className,
       )}
     >
-      {/* Cover — gradient placeholder until photography lands */}
+      {/* Cover — real photo when available, gradient fallback otherwise */}
       <Link
         href={`/listings/${listing.slug}`}
         className="block relative aspect-[16/10] w-full overflow-hidden"
         aria-label={`${listing.name}, ${listing.city}, ${listing.state}`}
       >
-        <div
-          className={cn(
-            "absolute inset-0 bg-gradient-to-br transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.04]",
-            listing.toneClass,
-          )}
-          aria-hidden="true"
-        />
+        {listing.photo ? (
+          <div className="absolute inset-0 transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.04]">
+            <Image
+              src={listing.photo}
+              alt={listing.name}
+              fill
+              quality={88}
+              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+              className="object-cover"
+            />
+          </div>
+        ) : (
+          <div
+            className={cn(
+              "absolute inset-0 bg-gradient-to-br transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.04]",
+              listing.toneClass,
+            )}
+            aria-hidden="true"
+          />
+        )}
         <div className="absolute top-3 left-3">
           <StatusBadge status={listing.status} size="sm" />
         </div>

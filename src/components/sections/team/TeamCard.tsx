@@ -1,6 +1,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { Pill } from "@/components/ui/Pill";
+import { MonogramCover } from "@/components/ui/MonogramCover";
 import type { TeamMember } from "@/lib/data/team";
 
 function initials(name: string): string {
@@ -25,14 +26,11 @@ export function TeamCard({ member }: TeamCardProps) {
         className="block focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0071e3] rounded-[18px]"
         aria-label={`View bio for ${member.name}`}
       >
-        <div
-          className={`relative aspect-[3/4] w-full bg-gradient-to-br ${member.photoTone} flex items-center justify-center`}
-          aria-hidden="true"
-        >
-          <span className="font-semibold text-white tracking-[-0.012em] text-[clamp(32px,4vw,64px)] leading-none">
-            {initials(member.name)}
-          </span>
-        </div>
+        <MonogramCover
+          initials={initials(member.name)}
+          tone={member.cover.tone}
+          size="card"
+        />
       </Link>
 
       <div className="p-5">

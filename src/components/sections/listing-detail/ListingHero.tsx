@@ -1,5 +1,6 @@
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { TwoToneHeadline } from "@/components/ui/TwoToneHeadline";
 import { Pill } from "@/components/ui/Pill";
 import { StatusBadge } from "@/components/ui/StatusBadge";
@@ -11,23 +12,48 @@ export interface ListingHeroProps {
 }
 
 export function ListingHero({ listing }: ListingHeroProps) {
+  const hasPhoto = Boolean(listing.photo);
+
   return (
     <section
       className={cn(
         "dark-section relative overflow-hidden text-white pt-32 pb-20 lg:pt-40 lg:pb-24 min-h-[60vh]",
-        "bg-gradient-to-br",
-        listing.toneClass,
+        !hasPhoto && "bg-gradient-to-br",
+        !hasPhoto && listing.toneClass,
       )}
     >
-      {/* Apple-style ambient gradient overlay for depth */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-60"
-        style={{
-          background:
-            "radial-gradient(1200px 600px at 30% 30%, rgba(255,255,255,0.10), transparent 60%), radial-gradient(900px 600px at 70% 80%, rgba(0,0,0,0.30), transparent 60%)",
-        }}
-      />
+      {/* Photo backdrop with bottom-anchored gradient for headline legibility */}
+      {hasPhoto ? (
+        <>
+          <Image
+            src={listing.photo}
+            alt={listing.name}
+            fill
+            quality={92}
+            sizes="100vw"
+            priority
+            className="object-cover"
+          />
+          {/* Bottom-anchored darkening gradient so white text reads cleanly */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.45) 40%, rgba(0,0,0,0.7) 100%)",
+            }}
+          />
+        </>
+      ) : (
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 opacity-60"
+          style={{
+            background:
+              "radial-gradient(1200px 600px at 30% 30%, rgba(255,255,255,0.10), transparent 60%), radial-gradient(900px 600px at 70% 80%, rgba(0,0,0,0.30), transparent 60%)",
+          }}
+        />
+      )}
 
       <div className="relative mx-auto max-w-[1024px] px-6">
         {/* Breadcrumb */}

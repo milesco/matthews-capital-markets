@@ -34,10 +34,26 @@ interface BrokerRailProps {
   broker: TeamMember;
 }
 
+const TONE_AVATAR: Record<
+  TeamMember["cover"]["tone"],
+  { bg: string; fg: string }
+> = {
+  ink: { bg: "#0a0a0a", fg: "#ffffff" },
+  navy: { bg: "#0e1a34", fg: "#fafafa" },
+  graphite: { bg: "#1d1d1f", fg: "#f5f5f7" },
+  paper: { bg: "#fafafa", fg: "#0a0a0a" },
+};
+
 function BrokerContactRail({ broker }: BrokerRailProps) {
   const subject = encodeURIComponent(`Inquiry — ${broker.name}`);
   const mailtoHref = `mailto:${broker.email}?subject=${subject}`;
   const telHref = `tel:${broker.phone.replace(/[^0-9+]/g, "")}`;
+  const avatar = TONE_AVATAR[broker.cover.tone];
+  const brokerInitials = broker.name
+    .split(/\s+/)
+    .slice(0, 2)
+    .map((p) => p[0]?.toUpperCase() ?? "")
+    .join("");
 
   return (
     <aside className="lg:sticky lg:top-24 rounded-[18px] bg-white shadow-[0_1px_3px_rgba(0,0,0,0.04),0_4px_16px_-8px_rgba(0,0,0,0.08)] p-6">
@@ -47,15 +63,19 @@ function BrokerContactRail({ broker }: BrokerRailProps) {
 
       <div className="mt-4 flex items-center gap-3">
         <div
-          className={`relative h-12 w-12 shrink-0 overflow-hidden rounded-full bg-gradient-to-br ${broker.photoTone} flex items-center justify-center`}
+          className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full flex items-center justify-center"
+          style={{ backgroundColor: avatar.bg }}
           aria-hidden="true"
         >
-          <span className="text-white font-semibold text-[15px] tracking-[-0.012em]">
-            {broker.name
-              .split(/\s+/)
-              .slice(0, 2)
-              .map((p) => p[0]?.toUpperCase() ?? "")
-              .join("")}
+          <span
+            className="font-[family-name:var(--font-fraunces)] text-[18px] leading-none"
+            style={{
+              color: avatar.fg,
+              fontWeight: 500,
+              letterSpacing: "-0.02em",
+            }}
+          >
+            {brokerInitials}
           </span>
         </div>
         <div className="min-w-0">

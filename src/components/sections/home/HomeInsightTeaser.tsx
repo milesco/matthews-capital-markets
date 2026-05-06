@@ -47,68 +47,48 @@ export function HomeInsightTeaser() {
               className="relative aspect-[4/5] w-full overflow-hidden rounded-[28px] bg-gradient-to-br from-[#0a1226] to-[#1a3a6b] p-8 text-white"
               aria-label="Q1 2026 Hotel Investment Outlook cover"
             >
-              {/* Sketchy CSS chart illustration */}
+              {/* Editorial chart-pattern background — three diagonal arcs */}
               <svg
                 aria-hidden="true"
-                className="absolute inset-0 h-full w-full opacity-50"
+                className="absolute inset-0 h-full w-full"
                 viewBox="0 0 400 500"
                 preserveAspectRatio="none"
               >
                 <defs>
                   <linearGradient id="chartFade" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#2997ff" stopOpacity="0.6" />
-                    <stop offset="100%" stopColor="#2997ff" stopOpacity="0" />
+                    <stop offset="0%" stopColor="#ffffff" stopOpacity="0.10" />
+                    <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
                   </linearGradient>
                 </defs>
-                {/* Horizontal grid lines */}
-                {[0.3, 0.45, 0.6, 0.75, 0.9].map((p) => (
-                  <line
-                    key={p}
-                    x1="40"
-                    x2="380"
-                    y1={500 * p}
-                    y2={500 * p}
-                    stroke="rgba(255,255,255,0.08)"
-                    strokeWidth="1"
-                  />
-                ))}
-                {/* Filled trend area */}
+
+                {/* Three thin arcing diagonals — apple.com/iphone-17-pro chart-y feel */}
                 <path
-                  d="M40,420 L100,400 L160,360 L220,330 L280,260 L340,210 L380,180 L380,470 L40,470 Z"
+                  d="M-20,470 Q120,360 220,300 T420,140"
+                  fill="none"
+                  stroke="rgba(255,255,255,0.10)"
+                  strokeWidth="1.25"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M-20,500 Q140,420 260,340 T420,200"
+                  fill="none"
+                  stroke="rgba(255,255,255,0.08)"
+                  strokeWidth="1.25"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M-20,440 Q100,300 200,250 T420,80"
+                  fill="none"
+                  stroke="rgba(255,255,255,0.07)"
+                  strokeWidth="1.25"
+                  strokeLinecap="round"
+                />
+
+                {/* Soft area wash beneath the strongest arc */}
+                <path
+                  d="M-20,470 Q120,360 220,300 T420,140 L420,500 L-20,500 Z"
                   fill="url(#chartFade)"
                 />
-                {/* Trend line */}
-                <path
-                  d="M40,420 L100,400 L160,360 L220,330 L280,260 L340,210 L380,180"
-                  fill="none"
-                  stroke="#2997ff"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                {/* Secondary dashed line */}
-                <path
-                  d="M40,440 L120,420 L200,400 L280,360 L360,320"
-                  fill="none"
-                  stroke="rgba(255,255,255,0.5)"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeDasharray="4 6"
-                />
-                {/* Data dots on the trend line */}
-                {[
-                  [100, 400],
-                  [220, 330],
-                  [340, 210],
-                ].map(([cx, cy]) => (
-                  <circle
-                    key={`${cx}-${cy}`}
-                    cx={cx}
-                    cy={cy}
-                    r="4"
-                    fill="#2997ff"
-                  />
-                ))}
               </svg>
 
               <div className="relative flex h-full flex-col justify-between">
@@ -118,13 +98,19 @@ export function HomeInsightTeaser() {
 
                 <div>
                   <p
-                    className="text-[clamp(48px,7vw,80px)] font-normal leading-[1.05] tracking-[-0.02em] text-white"
-                    style={{ fontFamily: "var(--font-serif)" }}
+                    className="font-normal leading-[0.92] tracking-[-0.04em] text-white text-[clamp(80px,14vw,200px)]"
+                    style={{
+                      fontFamily: "var(--font-serif)",
+                      fontVariationSettings: "'opsz' 144",
+                    }}
                   >
                     Q1 2026
                   </p>
                   <p className="mt-3 text-[15px] tracking-[-0.014em] text-white/80">
                     Hotel Investment Outlook
+                  </p>
+                  <p className="mt-6 text-[11px] font-medium uppercase tracking-[0.22em] text-white/50">
+                    March 2026 · Luke Thompson &amp; Sarah Chen
                   </p>
                 </div>
               </div>

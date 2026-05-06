@@ -73,7 +73,7 @@ export const listings: Listing[] = [
     callForOffersDate: "March 14, 2026",
     encumbrance: "Unencumbered",
     brokerSlugs: ["luke-thompson", "nate-solomon"],
-    photo: "/listings/walden-retreats/cover.jpg",
+    photo: "/listings/walden-retreats-hill-country.jpg",
     photoCount: 28,
     toneClass: TONE.navy,
     summary:
@@ -106,7 +106,7 @@ export const listings: Listing[] = [
     callForOffersDate: "February 28, 2026",
     encumbrance: "Encumbered (IHG franchise through 2035)",
     brokerSlugs: ["luke-thompson", "sarah-chen"],
-    photo: "/listings/holiday-inn-austin/cover.jpg",
+    photo: "/listings/holiday-inn-express-austin-north-central.jpg",
     photoCount: 24,
     toneClass: TONE.blue,
     summary:
@@ -138,7 +138,7 @@ export const listings: Listing[] = [
     callForOffersDate: "March 21, 2026",
     encumbrance: "Encumbered (Hilton franchise through 2033)",
     brokerSlugs: ["sarah-chen", "david-okafor"],
-    photo: "/listings/hampton-round-rock/cover.jpg",
+    photo: "/listings/hampton-inn-suites-round-rock.jpg",
     photoCount: 22,
     toneClass: TONE.midnight,
     summary:
@@ -171,7 +171,7 @@ export const listings: Listing[] = [
     callForOffersDate: "Open ended",
     encumbrance: "Encumbered (Marriott franchise through 2031)",
     brokerSlugs: ["luke-thompson", "elena-park"],
-    photo: "/listings/courtyard-riverwalk/cover.jpg",
+    photo: "/listings/courtyard-san-antonio-riverwalk.jpg",
     photoCount: 31,
     toneClass: TONE.graphite,
     summary:
@@ -204,7 +204,7 @@ export const listings: Listing[] = [
     callForOffersDate: "Open ended — qualified parties only",
     encumbrance: "Long-term ground lease (term and rent disclosed under NDA)",
     brokerSlugs: ["luke-thompson", "marcus-reyes"],
-    photo: "/listings/driskill/cover.jpg",
+    photo: "/listings/the-driskill-trophy-lease-option.jpg",
     photoCount: 32,
     toneClass: TONE.graphite,
     summary:
@@ -236,7 +236,7 @@ export const listings: Listing[] = [
     callForOffersDate: "April 4, 2026",
     encumbrance: "Encumbered (Marriott franchise through 2034)",
     brokerSlugs: ["david-okafor", "maya-patel"],
-    photo: "/listings/fairfield-waco/cover.jpg",
+    photo: "/listings/fairfield-inn-suites-waco.jpg",
     photoCount: 18,
     toneClass: TONE.midnight,
     summary:

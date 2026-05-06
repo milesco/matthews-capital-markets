@@ -10,7 +10,7 @@ export function HomeClosedTeaser() {
   return (
     <section className="bg-[color:var(--surface-elevated)] py-24 lg:py-32">
       <div className="mx-auto max-w-[1024px] px-6">
-        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-14">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1fr_1.35fr] lg:gap-14">
           <Reveal>
             <div>
               <Eyebrow>Track record</Eyebrow>
@@ -26,6 +26,12 @@ export function HomeClosedTeaser() {
                 market intelligence and closed with the conviction sellers and
                 buyers expect from a platform proven at every scale.
               </p>
+              <p className="mt-5 text-[12px] uppercase tracking-[0.18em] text-[color:var(--text-tertiary)]">
+                Recent ·{" "}
+                <span className="text-[color:var(--text-secondary)] normal-case tracking-[-0.014em]">
+                  The Westin Austin Downtown · $98.5M · Sale
+                </span>
+              </p>
               <div className="mt-8">
                 <GhostLink href="/closed">Explore closed deals</GhostLink>
               </div>
@@ -37,10 +43,10 @@ export function HomeClosedTeaser() {
               variant="light"
               radius="xl"
               padding={5}
-              className="overflow-hidden p-0"
+              className="overflow-hidden p-0 shadow-[0_2px_6px_rgba(0,0,0,0.06),0_24px_48px_-16px_rgba(0,0,0,0.18)] ring-1 ring-black/5"
             >
               <div
-                className="aspect-[4/3] w-full bg-gradient-to-br from-[#1d1d1f] to-[#3a3a3c]"
+                className="aspect-[5/4] w-full bg-gradient-to-br from-[#1d1d1f] to-[#3a3a3c]"
                 aria-hidden="true"
               />
               <div className="p-7">

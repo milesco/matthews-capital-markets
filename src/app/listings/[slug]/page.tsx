@@ -72,7 +72,7 @@ export default async function ListingDetailPage(
                     title: primaryBroker.title,
                     phone: primaryBroker.phone,
                     email: primaryBroker.email,
-                    photoTone: primaryBroker.photoTone,
+                    tone: primaryBroker.cover.tone,
                   }}
                   listingName={listing.name}
                 />
