@@ -1,26 +1,278 @@
 @import "tailwindcss";
 
+/* =============================================================================
+   Matthews Hotel Team — design tokens
+   See /design-system/SPEC.md for the full spec. Every value here traces back.
+   ========================================================================== */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Color */
+  --text-primary: #1d1d1f;
+  --text-secondary: #86868b;
+  --text-tertiary: #6e6e73;
+  --text-on-dark: #f5f5f7;
+  --text-on-dark-secondary: #a1a1a6;
+  --surface: #ffffff;
+  --surface-elevated: #f5f5f7;
+  --surface-inverse: #000000;
+  --accent: #0071e3;
+  --accent-hover: #0077ed;
+  --accent-active: #006edb;
+  --accent-on-dark: #2997ff;
+  --divider: #d2d2d7;
+  --divider-on-dark: #424245;
+  --success: #30d158;
+  --warning: #ff9f0a;
+  --danger: #ff3b30;
+
+  /* Easing */
+  --ease-standard: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Shadows */
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 16px -8px rgba(0, 0, 0, 0.08);
+  --shadow-card-hover: 0 2px 6px rgba(0, 0, 0, 0.06), 0 12px 32px -10px rgba(0, 0, 0, 0.14);
+  --shadow-popover: 0 8px 24px rgba(0, 0, 0, 0.08), 0 24px 48px -16px rgba(0, 0, 0, 0.16);
+  --shadow-floating-product: 0 60px 80px -40px rgba(0, 0, 0, 0.30);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Color tokens (mapped to Tailwind utilities) */
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-text-on-dark: var(--text-on-dark);
+  --color-text-on-dark-secondary: var(--text-on-dark-secondary);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-surface-inverse: var(--surface-inverse);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-active: var(--accent-active);
+  --color-accent-on-dark: var(--accent-on-dark);
+  --color-divider: var(--divider);
+  --color-divider-on-dark: var(--divider-on-dark);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+
+  /* Font families (next/font wires --font-inter and --font-fraunces in layout.tsx) */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: var(--font-fraunces), ui-serif, Georgia, "Times New Roman", serif;
+
+  /* Container max-widths — usable as max-w-container, max-w-container-lg, etc. */
+  --container-sm: 692px;
+  --container: 980px;
+  --container-lg: 1024px;
+  --container-xl: 1440px;
+
+  /* Shadows */
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 16px -8px rgba(0, 0, 0, 0.08);
+  --shadow-card-hover: 0 2px 6px rgba(0, 0, 0, 0.06), 0 12px 32px -10px rgba(0, 0, 0, 0.14);
+
+  /* Easing tokens (for Tailwind transition-* if needed; canonical is in :root) */
+  --ease-standard: cubic-bezier(0.32, 0.72, 0, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* =============================================================================
+   Base
+   ========================================================================== */
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--surface);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  /* Apple body baseline — non-negotiable */
+  font-size: 17px;
+  line-height: 1.47;
+  letter-spacing: -0.022em;
+  font-weight: 400;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "ss01" 1, "cv11" 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+section[id] {
+  scroll-margin-top: 64px;
+}
+
+::selection {
+  background-color: rgba(0, 113, 227, 0.18);
+  color: var(--text-primary);
+}
+
+:focus {
+  outline: none;
+}
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* =============================================================================
+   Utilities
+   ========================================================================== */
+
+/* Two-tone headline — Apple's "Bold lead. Lighter continuation." */
+.headline-two-tone span:first-child {
+  color: var(--text-primary);
+}
+.headline-two-tone span:last-child {
+  color: var(--text-secondary);
+}
+.dark-section .headline-two-tone span:first-child {
+  color: #ffffff;
+}
+.dark-section .headline-two-tone span:last-child {
+  color: var(--text-on-dark-secondary);
+}
+
+/* Hover lift for cards (CSS-only, used when motion isn't applied) */
+.card-lift {
+  transition:
+    transform 500ms var(--ease-standard),
+    box-shadow 500ms var(--ease-standard);
+  will-change: transform;
+}
+.card-lift:hover {
+  transform: translateY(-2px) scale(1.012);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Image-frame micro-zoom — image scales inside an overflow-hidden frame */
+.image-frame {
+  overflow: hidden;
+}
+.image-frame > img,
+.image-frame > [data-image] {
+  transition: transform 700ms var(--ease-standard);
+  will-change: transform;
+}
+.image-frame:hover > img,
+.image-frame:hover > [data-image] {
+  transform: scale(1.04);
+}
+
+/* Apple primary pill button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 17px;
+  line-height: 1;
+  letter-spacing: -0.022em;
+  padding: 12px 22px;
+  border-radius: 9999px;
+  transition: background-color 200ms var(--ease-in-out);
+}
+.btn-primary:hover {
+  background: var(--accent-hover);
+}
+.btn-primary:active {
+  background: var(--accent-active);
+}
+
+/* Apple secondary outlined pill */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-size: 17px;
+  line-height: 1;
+  letter-spacing: -0.022em;
+  padding: 11px 22px;
+  border-radius: 9999px;
+  transition: background-color 200ms var(--ease-in-out), color 200ms var(--ease-in-out);
+}
+.btn-secondary:hover {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+/* Ghost link with chevron baseline */
+.link-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--accent);
+  font-size: 17px;
+  letter-spacing: -0.022em;
+  transition: color 150ms var(--ease-in-out);
+}
+.link-ghost:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.dark-section .link-ghost {
+  color: var(--accent-on-dark);
+}
+
+/* Apple-style form input */
+.form-input {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--divider);
+  color: var(--text-primary);
+  font-size: 17px;
+  line-height: 1.47;
+  letter-spacing: -0.022em;
+  padding: 12px 16px;
+  border-radius: 16px;
+  transition:
+    border-color 200ms var(--ease-in-out),
+    box-shadow 200ms var(--ease-in-out);
+}
+.form-input::placeholder {
+  color: var(--text-secondary);
+}
+.form-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.20);
+}
+
+/* Hairline divider */
+.hairline {
+  border-top: 1px solid var(--divider);
+}
+.dark-section .hairline {
+  border-top-color: var(--divider-on-dark);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
