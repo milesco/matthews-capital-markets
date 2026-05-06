@@ -81,7 +81,7 @@ export function HomeFeatured() {
                 href={`/listings/${listing.slug}`}
                 className="group block overflow-hidden rounded-[18px] bg-white card-lift"
               >
-                <div className="relative aspect-[4/5] w-full overflow-hidden">
+                <div className="relative aspect-[16/10] w-full overflow-hidden">
                   {listing.photo ? (
                     <div className="absolute inset-0 transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.04]">
                       <Image

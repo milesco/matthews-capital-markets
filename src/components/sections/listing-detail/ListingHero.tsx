@@ -34,13 +34,14 @@ export function ListingHero({ listing }: ListingHeroProps) {
             priority
             className="object-cover"
           />
-          {/* Bottom-anchored darkening gradient so white text reads cleanly */}
+          {/* Bottom-anchored gradient — let the photo breathe up top, darken
+              only where text sits at the bottom */}
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-0"
             style={{
               background:
-                "linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.45) 40%, rgba(0,0,0,0.7) 100%)",
+                "linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.15) 35%, rgba(0,0,0,0.55) 75%, rgba(0,0,0,0.78) 100%)",
             }}
           />
         </>

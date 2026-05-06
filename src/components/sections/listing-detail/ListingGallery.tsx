@@ -28,18 +28,29 @@ const GRADIENT_VARIANTS = [
 ];
 
 export function ListingGallery({ listing }: ListingGalleryProps) {
-  // First three tiles use the listing photo (when available); the remaining
-  // three stay as gradient placeholders captioned "Photo coming soon".
+  // Every tile uses the listing photo when available, with different
+  // object-position framings for visual variety. Falls back to gradient
+  // tones only when no photo exists at all.
   const tiles = React.useMemo(
     () =>
       GRADIENT_VARIANTS.map((tone, i) => ({
         id: i,
         tone,
         firstTile: i === 0,
-        usePhoto: i < 3 && Boolean(listing.photo),
+        usePhoto: Boolean(listing.photo),
       })),
     [listing.photo],
   );
+
+  // Object-position variants so 6 tiles of the same photo read as 6 different shots.
+  const FRAMINGS = [
+    "object-center",
+    "object-top",
+    "object-[center_30%]",
+    "object-[center_70%]",
+    "object-bottom",
+    "object-[center_45%]",
+  ] as const;
 
   const [openIndex, setOpenIndex] = React.useState<number | null>(null);
   const reduce = useReducedMotion();
@@ -86,7 +97,7 @@ export function ListingGallery({ listing }: ListingGalleryProps) {
         as="h2"
         size="subsection"
         lead="See the asset."
-        follow={`${listing.photoCount} photos · gallery launching soon.`}
+        follow={`${listing.photoCount} photos in the full gallery.`}
       />
 
       <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -106,11 +117,7 @@ export function ListingGallery({ listing }: ListingGalleryProps) {
                   fill
                   quality={86}
                   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  className={cn(
-                    "object-cover",
-                    tile.id === 1 && "object-top",
-                    tile.id === 2 && "object-bottom",
-                  )}
+                  className={cn("object-cover", FRAMINGS[tile.id])}
                 />
               </div>
             ) : (
@@ -135,8 +142,7 @@ export function ListingGallery({ listing }: ListingGalleryProps) {
       </div>
 
       <p className="mt-4 text-[12px] tracking-[-0.01em] text-[color:var(--text-secondary)]">
-        {listing.photoCount} photos available — full gallery shipping with the
-        OM.
+        Full gallery and OM available on request.
       </p>
 
       <AnimatePresence>

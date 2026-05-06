@@ -1,4 +1,5 @@
 import * as React from "react";
+import Image from "next/image";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { TwoToneHeadline } from "@/components/ui/TwoToneHeadline";
 import { GhostLink } from "@/components/ui/GhostLink";
@@ -45,10 +46,16 @@ export function HomeClosedTeaser() {
               padding={5}
               className="overflow-hidden p-0 shadow-[0_2px_6px_rgba(0,0,0,0.06),0_24px_48px_-16px_rgba(0,0,0,0.18)] ring-1 ring-black/5"
             >
-              <div
-                className="aspect-[5/4] w-full bg-gradient-to-br from-[#1d1d1f] to-[#3a3a3c]"
-                aria-hidden="true"
-              />
+              <div className="relative aspect-[5/4] w-full overflow-hidden bg-[#1d1d1f]">
+                <Image
+                  src="/listings/the-driskill-trophy-lease-option.jpg"
+                  alt="The Driskill — historic trophy hotel facade"
+                  fill
+                  quality={88}
+                  sizes="(min-width: 1024px) 600px, 100vw"
+                  className="object-cover"
+                />
+              </div>
               <div className="p-7">
                 <StatusBadge status="closed" size="sm" />
                 <h3 className="mt-4 text-[24px] font-semibold tracking-[0.009em] leading-[1.1667] text-[#1d1d1f]">
