@@ -9,12 +9,13 @@ import { Reveal } from "@/components/ui/Reveal";
 // (Server route should validate, send transactional email, and write to CRM.)
 
 type Topic =
+  | ""
   | "Selling a hotel"
   | "Acquiring a hotel"
   | "Market intelligence / research"
   | "Other";
 
-const TOPICS: Topic[] = [
+const TOPICS: Exclude<Topic, "">[] = [
   "Selling a hotel",
   "Acquiring a hotel",
   "Market intelligence / research",
@@ -29,7 +30,7 @@ export function ContactForm() {
   const [lastName, setLastName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [phone, setPhone] = React.useState("");
-  const [topic, setTopic] = React.useState<Topic>("Selling a hotel");
+  const [topic, setTopic] = React.useState<Topic>("");
   const [message, setMessage] = React.useState("");
   const [submitted, setSubmitted] = React.useState(false);
 
@@ -137,12 +138,16 @@ export function ContactForm() {
             name="topic"
             value={topic}
             onChange={(e) => setTopic(e.target.value as Topic)}
+            required
             className="form-input appearance-none bg-[length:16px_16px] bg-no-repeat bg-[right_16px_center] pr-12"
             style={{
               backgroundImage:
                 "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2386868b' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>\")",
             }}
           >
+            <option value="" disabled>
+              Select a topic…
+            </option>
             {TOPICS.map((t) => (
               <option key={t} value={t}>
                 {t}

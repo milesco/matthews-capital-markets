@@ -17,11 +17,11 @@ export interface PillProps {
 }
 
 const base =
-  "inline-flex items-center justify-center rounded-full leading-none font-normal whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0071e3] transition-colors duration-200";
+  "inline-flex items-center justify-center rounded-full leading-none font-normal whitespace-nowrap min-h-[44px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0071e3] transition-colors duration-200";
 
 const sizeClass: Record<Size, string> = {
   default: "px-[22px] py-[12px] text-[17px]",
-  sm: "px-[18px] py-[10px] text-[15px]",
+  sm: "px-[18px] py-[11px] text-[15px]",
 };
 
 const variantClass: Record<Variant, string> = {
