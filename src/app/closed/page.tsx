@@ -9,7 +9,7 @@ import {
   EMPTY_FILTERS,
   type ClosedFilterValues,
 } from "@/components/sections/closed/ClosedFilters";
-import { ClosedTable } from "@/components/sections/closed/ClosedTable";
+import { ClosedGrid } from "@/components/sections/closed/ClosedGrid";
 import { closed } from "@/lib/data/closed";
 
 export default function ClosedPage() {
@@ -38,7 +38,9 @@ export default function ClosedPage() {
             />
           </div>
         </section>
-        <ClosedTable filters={filters} />
+        <section className="bg-[color:var(--surface-elevated)] py-16 lg:py-24">
+          <ClosedGrid filters={filters} />
+        </section>
       </main>
       <SiteFooter />
     </>

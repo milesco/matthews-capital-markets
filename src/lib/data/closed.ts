@@ -322,6 +322,43 @@ export const closed: ClosedDeal[] = [
   },
 ];
 
+/* --------------------------------------------------------------------------
+ * Photo mapping — closed-deal cards use stock-archetype photos by segment.
+ * Photos live in /public/closed/ (sourced from Unsplash). Each segment
+ * cycles through its available photos in deal-list order so adjacent cards
+ * in the grid don't repeat.
+ * ------------------------------------------------------------------------ */
+
+const SEGMENT_PHOTOS: Record<Segment, string[]> = {
+  "Select Service": [
+    "/closed/select-service-1.jpg",
+    "/closed/select-service-2.jpg",
+    "/closed/select-service-3.jpg",
+  ],
+  "Full Service": [
+    "/closed/full-service-1.jpg",
+    "/closed/full-service-2.jpg",
+  ],
+  Resort: ["/closed/resort-1.jpg", "/closed/resort-2.jpg"],
+  Lifestyle: ["/closed/lifestyle-1.jpg"],
+  Boutique: ["/closed/boutique-historic-1.jpg"],
+  "Extended Stay": ["/closed/extended-stay-1.jpg"],
+};
+
+/**
+ * Returns a stable photo for a closed deal: cycles through the available
+ * archetype photos for that segment based on the deal's index in the
+ * filtered segment list. Same deal → same photo, every render.
+ */
+export function getDealPhoto(deal: ClosedDeal): string {
+  const photos = SEGMENT_PHOTOS[deal.segment];
+  if (!photos || photos.length === 0) return "/closed/select-service-1.jpg";
+  // Index within same-segment deals, in canonical `closed` array order.
+  const sameSegment = closed.filter((d) => d.segment === deal.segment);
+  const idx = sameSegment.findIndex((d) => d.slug === deal.slug);
+  return photos[idx % photos.length];
+}
+
 /**
  * Parse a deal-size string like "$19,400,000" into a number.
  * Returns NaN for "Confidential" so it can be sorted last.
