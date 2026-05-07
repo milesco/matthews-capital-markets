@@ -38,6 +38,12 @@ function DealCard({ deal }: { deal: NamedDeal }) {
 
 export function TeamTopDeals({ member }: TeamTopDealsProps) {
   const deals = member.topDeals;
+  // Hide the whole section when there's no real named track record yet.
+  // The closed deals on /closed already speak for the team's execution; an
+  // empty "Top deals" section with one-size-fits-all placeholder copy
+  // implies the broker hasn't closed anything, which misreads especially
+  // for senior brokers whose advisory deals live on /closed.
+  if (deals.length === 0) return null;
 
   return (
     <section>
@@ -50,28 +56,13 @@ export function TeamTopDeals({ member }: TeamTopDealsProps) {
         </h2>
       </Reveal>
 
-      {deals.length === 0 ? (
-        <Reveal delay={0.1}>
-          <div className="mt-10 rounded-[18px] bg-[#f5f5f7] p-10">
-            <p className="text-[17px] leading-[1.47] tracking-[-0.022em] text-[#1d1d1f]">
-              Underwriting and market intelligence — focused on supporting the
-              team&rsquo;s transactions.
-            </p>
-            <p className="mt-3 text-[15px] leading-[1.47] tracking-[-0.014em] text-[#86868b]">
-              Named deals will appear here as engagements close in a lead-broker
-              capacity.
-            </p>
-          </div>
-        </Reveal>
-      ) : (
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
-          {deals.map((deal, i) => (
-            <Reveal key={`${deal.name}-${deal.year}`} delay={i * 0.04}>
-              <DealCard deal={deal} />
-            </Reveal>
-          ))}
-        </div>
-      )}
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
+        {deals.map((deal, i) => (
+          <Reveal key={`${deal.name}-${deal.year}`} delay={i * 0.04}>
+            <DealCard deal={deal} />
+          </Reveal>
+        ))}
+      </div>
     </section>
   );
 }
