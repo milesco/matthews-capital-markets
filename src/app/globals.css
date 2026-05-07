@@ -236,7 +236,10 @@ section[id] {
 /* Apple-style form input */
 .form-input {
   width: 100%;
-  background: var(--surface);
+  /* Longhand so consumers can layer a background-image (e.g. the topic
+     select's chevron) without the shorthand resetting background-repeat /
+     position / size to defaults and tiling the icon across the field. */
+  background-color: var(--surface);
   border: 1px solid var(--divider);
   color: var(--text-primary);
   font-size: 17px;
