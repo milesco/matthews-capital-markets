@@ -84,7 +84,7 @@ export function ClosedGrid({ filters }: ClosedGridProps) {
                   {deal.name}
                 </h3>
                 <p className="mt-3 text-[14px] tracking-[-0.014em] text-[color:var(--text-secondary)]">
-                  {deal.transactionType}
+                  {deal.transactionTypeLabel ?? deal.transactionType}
                 </p>
                 <p className="text-[14px] tracking-[-0.014em] text-[color:var(--text-secondary)]">
                   {location}
