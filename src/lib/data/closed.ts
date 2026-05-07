@@ -42,6 +42,9 @@ export type ClosedDeal = {
   // the card displays this instead of the normalized enum. Filters still use
   // `transactionType` so the dropdown stays at the four canonical buckets.
   transactionTypeLabel?: string;
+  // Per-deal hero photo, served from /public/closed/. When omitted, the card
+  // renders text-only.
+  photo?: string;
   sponsorProfile: SponsorProfile;
   brokerSlugs: string[];
   toneClass: string;
@@ -151,6 +154,7 @@ export const closed: ClosedDeal[] = [
     dealSize: "$12,350,000",
     transactionType: "Debt Placement",
     transactionTypeLabel: "Construction Financing",
+    photo: "/closed/residence-inn-san-marcos.jpg",
     sponsorProfile: "Developer",
     brokerSlugs: ["luke-thompson", "miles-cortez"],
     toneClass: "from-[#1a3a6b] to-[#0066cc]",

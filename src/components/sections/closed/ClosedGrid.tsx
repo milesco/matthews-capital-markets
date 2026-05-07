@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { closed as allClosed, type ClosedDeal } from "@/lib/data/closed";
 import type { ClosedFilterValues } from "./ClosedFilters";
 
@@ -50,12 +51,33 @@ export function ClosedGrid({ filters }: ClosedGridProps) {
       <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {filtered.map((deal) => {
           const location = `${deal.city}, ${deal.state}`;
+          const hasPhoto = Boolean(deal.photo);
           return (
             <li
               key={deal.slug}
-              className="group rounded-[18px] bg-white shadow-[0_1px_3px_rgba(0,0,0,0.04),0_4px_16px_-8px_rgba(0,0,0,0.08)] transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-0.5 hover:shadow-[0_2px_6px_rgba(0,0,0,0.06),0_12px_32px_-10px_rgba(0,0,0,0.14)]"
+              className="group overflow-hidden rounded-[18px] bg-white shadow-[0_1px_3px_rgba(0,0,0,0.04),0_4px_16px_-8px_rgba(0,0,0,0.08)] transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-0.5 hover:shadow-[0_2px_6px_rgba(0,0,0,0.06),0_12px_32px_-10px_rgba(0,0,0,0.14)]"
             >
-              <div className="px-6 pt-9 pb-9 text-center">
+              {hasPhoto ? (
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#f5f5f7]">
+                  <div className="absolute inset-0 transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.04]">
+                    <Image
+                      src={deal.photo as string}
+                      alt={`${deal.name} — ${location}`}
+                      fill
+                      quality={86}
+                      sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+              ) : null}
+              <div
+                className={
+                  hasPhoto
+                    ? "px-5 pt-6 pb-7 text-center"
+                    : "px-6 pt-9 pb-9 text-center"
+                }
+              >
                 <h3
                   className="font-semibold text-[#1d1d1f] tracking-[-0.014em] inline-block underline decoration-[#0071e3] decoration-[2px] underline-offset-[6px]"
                   style={{ fontSize: "18px", lineHeight: 1.2 }}
@@ -68,7 +90,13 @@ export function ClosedGrid({ filters }: ClosedGridProps) {
                 <p className="text-[14px] tracking-[-0.014em] text-[color:var(--text-secondary)]">
                   {location}
                 </p>
-                <p className="mt-4 text-[20px] font-semibold tabular-nums tracking-[-0.014em] text-[#1d1d1f]">
+                <p
+                  className={
+                    hasPhoto
+                      ? "mt-3 text-[16px] font-semibold tabular-nums tracking-[-0.014em] text-[#1d1d1f]"
+                      : "mt-4 text-[20px] font-semibold tabular-nums tracking-[-0.014em] text-[#1d1d1f]"
+                  }
+                >
                   {formatPrice(deal.dealSize)}
                 </p>
               </div>
