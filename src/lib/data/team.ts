@@ -101,7 +101,7 @@ export const team: TeamMember[] = [
     email: "luke.thompson@matthews.com",
     linkedin: "https://www.linkedin.com/in/hotelfinance101/",
     cover: { tone: "ink" },
-    photo: "/team/luke-thompson.avif",
+    photo: "/headshots/luke-thompson.avif",
     photoTone: LEGACY_PHOTO_TONE.ink,
     bio: `Luke is a real estate professional at Matthews™ specializing in hospitality capital markets nationwide. He focuses on originating and closing loans and advising clients through investment-sales processes. His methodology centers on structured finance, development, and asset sales.
 
@@ -130,7 +130,7 @@ In 2019, Luke spearheaded a joint venture to develop a 276-key, dual-branded Hil
     phone: "(303) 653-2963",
     email: "miles.cortez@matthews.com",
     cover: { tone: "graphite" },
-    photo: "/team/miles-cortez.avif",
+    photo: "/headshots/miles-cortez.avif",
     photoTone: LEGACY_PHOTO_TONE.graphite,
     bio: `Miles is a seasoned real estate investment banker and investment professional for Matthews™ Capital Markets, with an established track record of leading complex finance transactions across private equity, venture capital, and public markets — principally in the hospitality sector. A creative financial strategist, Miles leverages his buy-side experience to engineer tailored financial solutions for institutional clients. His expertise spans opportunity identification, capital sourcing, and transaction execution, and he brings professionalism and clarity to every stage of the investment lifecycle. Miles approaches every transaction through a buy-side lens — informed by his own experience as a principal.
 
@@ -155,7 +155,7 @@ Earlier in his career, Miles co-founded Aventine Capital Partners, where he play
     email: "nate.solomon@matthews.com",
     linkedin: "https://www.linkedin.com/in/nathaniel-solomon-4b2b9125a/",
     cover: { tone: "navy" },
-    photo: "/team/nate-solomon.jpg",
+    photo: "/headshots/nate-solomon.jpg",
     photoTone: LEGACY_PHOTO_TONE.navy,
     bio: `Nate is a real estate professional specializing in the acquisition and disposition of hospitality properties at Matthews™. He leverages extensive knowledge of underwriting and market fundamentals. Nate's expertise extends to asset management, property identification and acquisition, lease coordination and negotiation, compliance and permitting, and financial reconciliation and reporting — all of which provide a distinct advantage in navigating complex hospitality transactions. He is dedicated to providing clients with data-driven insights and meticulous attention to detail, ensuring strategic decision-making and optimal outcomes for every opportunity within the national hospitality market.`,
     // Career stats and named deals pending direct confirmation with Nate.
