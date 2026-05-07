@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -63,12 +64,25 @@ export function SiteHeader() {
           {/* Logo */}
           <Link
             href="/"
-            className={cn(
-              "text-[15px] font-semibold tracking-[-0.014em] transition-colors duration-300",
-              textColor,
-            )}
+            aria-label="Matthews — home"
+            className="flex items-center gap-2"
           >
-            Matthews
+            <Image
+              src="/images/matthews-logo.jpg"
+              alt="Matthews"
+              width={32}
+              height={32}
+              priority
+              className="h-7 w-7 rounded-[6px]"
+            />
+            <span
+              className={cn(
+                "text-[15px] font-semibold tracking-[-0.014em] transition-colors duration-300",
+                textColor,
+              )}
+            >
+              Matthews
+            </span>
           </Link>
 
           {/* Desktop nav */}
