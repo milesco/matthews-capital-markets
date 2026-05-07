@@ -14,8 +14,15 @@ interface Stat {
   animated?: boolean;
 }
 
+// A stat is "unset" when its underlying value is a placeholder. Hide rather
+// than render "0 / Confirm" — Miles's stats are still pending confirmation
+// while Luke and Nate are filled in.
+function isPlaceholder(value: string): boolean {
+  return value === "" || value === "0" || value === "$0" || /confirm|tbd|pending/i.test(value);
+}
+
 function buildStats(member: TeamMember): Stat[] {
-  return [
+  const all: Stat[] = [
     {
       label: "Years experience",
       value: `${member.yearsExperience}`,
@@ -37,10 +44,13 @@ function buildStats(member: TeamMember): Stat[] {
       animated: true,
     },
   ];
+  return all.filter((s) => !isPlaceholder(s.value));
 }
 
 export function TeamStats({ member }: TeamStatsProps) {
   const stats = buildStats(member);
+
+  if (stats.length === 0) return null;
 
   return (
     <section className="bg-white py-16 border-b border-[color:var(--divider)]">

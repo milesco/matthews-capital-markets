@@ -183,19 +183,15 @@ Luke sources roughly half of his transactions through repeat client relationship
   {
     slug: "miles-cortez",
     name: "Miles Cortez",
-    // TODO: confirm Miles's actual title with him directly.
-    title: "Senior Vice President, Hospitality",
+    title: "VP & Director, Hospitality Capital Markets",
     office: "Austin",
-    specialties: ["Capital Markets", "Full Service", "Lifestyle", "Resort"],
-    // TODO: confirm phone, email, and LinkedIn with Miles.
-    phone: "(512) 338-7800",
+    specialties: ["Capital Markets"],
+    phone: "(303) 653-2963",
     email: "miles.cortez@matthews.com",
     cover: { tone: "graphite" },
     photoTone: LEGACY_PHOTO_TONE.graphite,
-    // TODO: replace with bio approved by Miles.
-    bio: `Miles partners with Luke and Nate on the Matthews hospitality team, focused on full-service, lifestyle, and resort hotel transactions across Texas and the broader Sun Belt. His client base spans institutional sponsors, family offices, and developer-owners.
-
-Specific career deal track record, named transactions, and credentials will be added when confirmed with Miles directly.`,
+    bio: `Miles directs Matthews' Hospitality Capital Markets practice — debt and equity placement, recapitalizations, and structured financing for owners, developers, and institutional sponsors across the firm's hospitality platform.`,
+    // Career stats and named deals pending direct confirmation with Miles.
     yearsExperience: 0,
     careerVolume: "Confirm",
     last12Volume: "Confirm",
