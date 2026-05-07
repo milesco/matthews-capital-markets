@@ -18,30 +18,29 @@ function formatVolume(num: number): string {
 }
 
 export function ClosedHero() {
-  const totalDeals = "670+";
+  const totalDeals = `${closed.length}`;
   const volume = formatVolume(totalKnownVolume(closed));
-  const yearsActive = "30+";
+  const segmentsCovered = new Set(closed.map((d) => d.segment)).size;
 
   return (
     <section className="bg-white py-20 lg:py-24">
       <div className="mx-auto max-w-[1024px] px-6">
         <Reveal>
-          <Eyebrow>Track Record</Eyebrow>
+          <Eyebrow>Recent Transactions</Eyebrow>
         </Reveal>
         <Reveal delay={0.05}>
           <TwoToneHeadline
             size="section"
-            lead="670+ closed."
-            follow="Decades of trusted execution."
+            lead="Selected closings."
+            follow="Capital markets, debt placement, and investment sales."
           />
         </Reveal>
 
         <Reveal delay={0.1}>
           <p className="mt-6 max-w-[640px] text-[19px] leading-[1.42] tracking-[0.012em] text-[#86868b]">
-            Hospitality investment sales, debt placement, equity, and
-            recapitalization across every chain scale and sponsor profile.
-            Filter the database by year, segment, region, brand, sponsor, or
-            transaction type — the same way our buyers think.
+            A representative slice of recent hospitality transactions across
+            the team. Filter by year, segment, region, brand, sponsor, or
+            transaction type — the same way buyers think.
           </p>
         </Reveal>
 
@@ -53,7 +52,7 @@ export function ClosedHero() {
                 className="block text-[#1d1d1f] font-semibold tabular-nums text-[clamp(36px,4.5vw,64px)] leading-none tracking-[-0.04em]"
               />
               <p className="mt-3 text-[13px] tracking-[-0.014em] text-[#86868b]">
-                Total transactions
+                Featured transactions
               </p>
             </div>
           </Reveal>
@@ -71,11 +70,11 @@ export function ClosedHero() {
           <Reveal delay={0.1}>
             <div>
               <Counter
-                value={yearsActive}
+                value={`${segmentsCovered}`}
                 className="block text-[#1d1d1f] font-semibold tabular-nums text-[clamp(36px,4.5vw,64px)] leading-none tracking-[-0.04em]"
               />
               <p className="mt-3 text-[13px] tracking-[-0.014em] text-[#86868b]">
-                Years active
+                Chain-scale segments
               </p>
             </div>
           </Reveal>
