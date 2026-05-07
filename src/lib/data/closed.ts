@@ -363,6 +363,7 @@ export const closed: ClosedDeal[] = [
     dealSize: "$3,500,000",
     transactionType: "Debt Placement",
     transactionTypeLabel: "Permanent Financing",
+    photo: "/closed/country-inn-suites-san-antonio.jpg",
     sponsorProfile: "Family Office",
     brokerSlugs: ["luke-thompson", "miles-cortez"],
     toneClass: "from-[#0a1226] to-[#1a3a6b]",
