@@ -184,16 +184,20 @@ Luke sources roughly half of his transactions through repeat client relationship
     slug: "miles-cortez",
     name: "Miles Cortez",
     title: "VP & Director, Hospitality Capital Markets",
-    office: "Austin",
-    specialties: ["Capital Markets"],
+    office: "Denver",
+    specialties: ["Capital Markets", "Resort", "Portfolios"],
     phone: "(303) 653-2963",
     email: "miles.cortez@matthews.com",
     cover: { tone: "graphite" },
     photoTone: LEGACY_PHOTO_TONE.graphite,
-    bio: `Miles directs Matthews' Hospitality Capital Markets practice — debt and equity placement, recapitalizations, and structured financing for owners, developers, and institutional sponsors across the firm's hospitality platform.`,
-    // Career stats and named deals pending direct confirmation with Miles.
+    bio: `Miles is a seasoned real estate investment banker and investment professional for Matthews™ Capital Markets, with an established track record of leading complex finance transactions across private equity, venture capital, and public markets — principally in the hospitality sector. A creative financial strategist, Miles leverages his buy-side experience to engineer tailored financial solutions for institutional clients. His expertise spans opportunity identification, capital sourcing, and transaction execution, and he brings professionalism and clarity to every stage of the investment lifecycle. Miles approaches every transaction through a buy-side lens — informed by his own experience as a principal.
+
+Prior to Matthews, Miles founded and remains a principal and shareholder at SparkPoint Real Estate Advisors in Denver, Colorado — a real estate–focused merchant bank. He also led the institutional client effort at F10 Hotels, one of the nation's most active hotel mortgage brokers, where he placed more than $500 million in financing, including a landmark CMBS refinance for a major private equity client and a mezzanine piece for the acquisition of a portfolio from Blackstone.
+
+Earlier in his career, Miles co-founded Aventine Capital Partners, where he played a pivotal role in the $1B+ development of Mayakoba, a master-planned luxury resort in Mexico — in partnership with Rosewood, Fairmont, Viceroy, and Hyatt. He also served as CFO and founding principal of Punch Bowl Social, leading the company's initial capitalization and building the financial infrastructure during its national expansion.`,
+    // Career stats pending direct confirmation with Miles.
     yearsExperience: 0,
-    careerVolume: "Confirm",
+    careerVolume: "$1.5B+",
     last12Volume: "Confirm",
     designations: [],
     education: [],
