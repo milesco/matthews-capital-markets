@@ -19,6 +19,7 @@ const COLUMNS: FooterColumn[] = [
     links: [
       { href: "/listings", label: "Active Listings" },
       { href: "/closed", label: "Closed Deals" },
+      { href: "/process", label: "Transaction Process" },
       { href: "/insights", label: "Quarterly Outlook" },
     ],
   },
