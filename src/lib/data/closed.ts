@@ -343,6 +343,7 @@ export const closed: ClosedDeal[] = [
     dealSize: "$7,200,000",
     transactionType: "Debt Placement",
     transactionTypeLabel: "Permanent Financing",
+    photo: "/closed/staybridge-suites-houston.jpg",
     sponsorProfile: "Family Office",
     brokerSlugs: ["luke-thompson", "miles-cortez"],
     toneClass: "from-[#0e1a34] to-[#1a3a6b]",
