@@ -14,16 +14,15 @@ export function TeamHero() {
           <TwoToneHeadline
             as="h1"
             size="section"
-            lead="Eight specialists."
+            lead="Three specialists."
             follow="One hospitality team."
           />
         </Reveal>
         <Reveal delay={0.1}>
           <p className="mt-6 max-w-[58ch] text-[17px] leading-[1.47] tracking-[-0.022em] text-[color:var(--text-tertiary)]">
-            Capital markets, select service, full service, resort and lifestyle —
-            organized as one Texas-based desk with national investor reach.
-            Filter by office or specialty to find the right point of contact for
-            your asset, sponsor profile, or capital question.
+            Hospitality capital markets and investment sales, anchored in
+            Austin and Denver with national investor reach. Pick the broker
+            who fits your asset, sponsor profile, or capital question.
           </p>
         </Reveal>
       </div>
