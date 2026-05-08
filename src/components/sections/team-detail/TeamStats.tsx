@@ -15,7 +15,7 @@ interface Stat {
 }
 
 // A stat is "unset" when its underlying value is a placeholder. Hide rather
-// than render "0 / Confirm" — Miles's stats are still pending confirmation
+// than render "0 / Confirm", Miles's stats are still pending confirmation
 // while Luke and Nate are filled in.
 function isPlaceholder(value: string): boolean {
   return value === "" || value === "0" || value === "$0" || /confirm|tbd|pending/i.test(value);

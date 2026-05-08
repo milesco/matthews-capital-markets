@@ -304,7 +304,7 @@ export function ClosedTable({ filters }: ClosedTableProps) {
                       </dt>
                       <dd className="mt-1 text-[14px] text-[#1d1d1f] tabular-nums">
                         {d.dealSize === "Confidential"
-                          ? "—"
+                          ? ","
                           : d.dealSize}
                       </dd>
                     </div>

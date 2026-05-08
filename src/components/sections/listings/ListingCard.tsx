@@ -23,14 +23,14 @@ function previewFromSummary(summary: string): string {
 export function ListingCard({ listing, className }: ListingCardProps) {
   const isUponRequest = /upon request/i.test(listing.askingPrice);
   // When a listing has a hosted OM, every click on the card jumps straight
-  // to it (same tab) — the detail page is skipped entirely. Without an OM,
+  // to it (same tab), the detail page is skipped entirely. Without an OM,
   // the card links to the internal detail page as usual.
   const cardHref = listing.omUrl ?? `/listings/${listing.slug}`;
   const isExternal = Boolean(listing.omUrl);
   const linkLabel = listing.omUrl ? "View OM" : "View listing";
   const description = previewFromSummary(listing.summary);
 
-  // Shared cover content — same JSX inside either <a> or <Link> wrapper.
+  // Shared cover content, same JSX inside either <a> or <Link> wrapper.
   const cover = (
     <>
       {listing.photo ? (

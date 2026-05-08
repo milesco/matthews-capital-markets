@@ -21,10 +21,10 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   const member = team.find((m) => m.slug === slug);
-  if (!member) return { title: "Team — Matthews Hotel Team" };
+  if (!member) return { title: "Team, Matthews Hotel Team" };
   return {
-    title: `${member.name} — Matthews Hotel Team`,
-    description: `${member.title} — ${member.office}. ${member.specialties.join(
+    title: `${member.name}, Matthews Hotel Team`,
+    description: `${member.title}, ${member.office}. ${member.specialties.join(
       ", ",
     )}.`,
   };
@@ -45,7 +45,7 @@ const TONE_AVATAR: Record<
 };
 
 function BrokerContactRail({ broker }: BrokerRailProps) {
-  const subject = encodeURIComponent(`Inquiry — ${broker.name}`);
+  const subject = encodeURIComponent(`Inquiry, ${broker.name}`);
   const mailtoHref = `mailto:${broker.email}?subject=${subject}`;
   const telHref = `tel:${broker.phone.replace(/[^0-9+]/g, "")}`;
   const avatar = TONE_AVATAR[broker.cover.tone];

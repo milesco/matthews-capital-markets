@@ -34,7 +34,7 @@ export function ListingHero({ listing }: ListingHeroProps) {
             priority
             className="object-cover"
           />
-          {/* Bottom-anchored gradient — let the photo breathe up top, darken
+          {/* Bottom-anchored gradient, let the photo breathe up top, darken
               only where text sits at the bottom */}
           <div
             aria-hidden="true"

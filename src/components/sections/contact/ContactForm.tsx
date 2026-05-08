@@ -38,11 +38,11 @@ export function ContactForm() {
   const [errorMsg, setErrorMsg] = React.useState<string | null>(null);
 
   /**
-   * Build a mailto fallback URL — used when HubSpot is not configured on
+   * Build a mailto fallback URL, used when HubSpot is not configured on
    * the deployment, or when the API route returns an error.
    */
   const mailtoFallback = React.useCallback(() => {
-    const subject = `Hotel Team inquiry — ${topic}`;
+    const subject = `Hotel Team inquiry, ${topic}`;
     const lines = [
       `Name: ${firstName} ${lastName}`.trim(),
       `Email: ${email}`,
@@ -106,7 +106,7 @@ export function ContactForm() {
           "Something went wrong. Email hotelteam@matthews.com directly.",
       );
     } catch {
-      // Network failure — open mailto as a hard fallback.
+      // Network failure, open mailto as a hard fallback.
       window.location.href = mailtoFallback();
       setState("success");
     }

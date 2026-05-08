@@ -7,7 +7,7 @@ import { Reveal } from "@/components/ui/Reveal";
 export function HomeInsightTeaser() {
   return (
     <section className="dark-section relative overflow-hidden bg-black py-24 lg:py-32">
-      {/* Subtle radial gradient — apple-tokens.md §7.C */}
+      {/* Subtle radial gradient, apple-tokens.md §7.C */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-70"
@@ -47,7 +47,7 @@ export function HomeInsightTeaser() {
               className="relative aspect-[4/5] w-full overflow-hidden rounded-[28px] bg-gradient-to-br from-[#0a1226] to-[#1a3a6b] p-8 text-white"
               aria-label="Q1 2026 Hotel Investment Outlook cover"
             >
-              {/* Editorial chart-pattern background — three diagonal arcs */}
+              {/* Editorial chart-pattern background, three diagonal arcs */}
               <svg
                 aria-hidden="true"
                 className="absolute inset-0 h-full w-full"
@@ -61,7 +61,7 @@ export function HomeInsightTeaser() {
                   </linearGradient>
                 </defs>
 
-                {/* Three thin arcing diagonals — apple.com/iphone-17-pro chart-y feel */}
+                {/* Three thin arcing diagonals, apple.com/iphone-17-pro chart-y feel */}
                 <path
                   d="M-20,470 Q120,360 220,300 T420,140"
                   fill="none"

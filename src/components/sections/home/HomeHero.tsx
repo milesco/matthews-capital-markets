@@ -21,7 +21,7 @@ export function HomeHero() {
       ref={sectionRef}
       className="dark-section relative overflow-hidden bg-[color:var(--surface-inverse)] text-[color:var(--text-on-dark)]"
     >
-      {/* Three-tone ambient gradient — lobby-at-dusk composite. apple-tokens.md §7.C */}
+      {/* Three-tone ambient gradient, lobby-at-dusk composite. apple-tokens.md §7.C */}
       <motion.div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
@@ -35,7 +35,7 @@ export function HomeHero() {
 
       <div className="relative mx-auto flex min-h-screen max-w-[1024px] flex-col items-stretch justify-center px-6 py-32 lg:py-40">
         <div className="flex w-full flex-col">
-          {/* Editorial wordmark above the eyebrow — magazine column header */}
+          {/* Editorial wordmark above the eyebrow, magazine column header */}
           <motion.p
             {...heroBody}
             className="text-[14px] font-medium uppercase tracking-[0.4em] text-white/40"
@@ -85,7 +85,7 @@ export function HomeHero() {
         </div>
       </div>
 
-      {/* Scroll cue — thin vertical line, gentle drift */}
+      {/* Scroll cue, thin vertical line, gentle drift */}
       <motion.div
         aria-hidden="true"
         className="pointer-events-none absolute bottom-10 left-1/2 -translate-x-1/2"

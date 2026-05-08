@@ -52,7 +52,7 @@ export function ProcessTimeline() {
                           {step.bullets.map((b) => (
                             <li
                               key={b}
-                              className="text-[14px] leading-[1.5] tracking-[-0.014em] text-[color:var(--text-secondary)] before:mr-2 before:content-['—']"
+                              className="text-[14px] leading-[1.5] tracking-[-0.014em] text-[color:var(--text-secondary)] before:mr-2 before:content-[',']"
                             >
                               {b}
                             </li>

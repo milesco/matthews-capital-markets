@@ -31,7 +31,7 @@ export function TeamCard({ member }: TeamCardProps) {
           tone={member.cover.tone}
           size="card"
           photoSrc={member.photo}
-          photoAlt={`${member.name} — ${member.title}`}
+          photoAlt={`${member.name}, ${member.title}`}
         />
       </Link>
 

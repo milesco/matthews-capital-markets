@@ -1,5 +1,5 @@
 /**
- * Active listings — typed catalog used by /listings, /listings/[slug],
+ * Active listings, typed catalog used by /listings, /listings/[slug],
  * and the Home featured strip. Six listings per design spec.
  *
  * `toneClass` is a Tailwind gradient (used until photography lands).
@@ -49,7 +49,7 @@ export type Listing = {
   toneClass: string;
 };
 
-// Four reusable gradient placeholders — match the Home page tones so the
+// Four reusable gradient placeholders, match the Home page tones so the
 // listings feel like the same family of photography until real images land.
 const TONE = {
   navy: "from-[#0a1226] to-[#1a3a6b]",
@@ -90,7 +90,7 @@ export const listings: Listing[] = [
       "Top-of-set ADR. $612 trailing-twelve, 38% premium to nearest comp.",
       "Expansion entitled. 24 additional cabin pads approved through 2027.",
       "Unencumbered. No debt, no franchise, no management contract.",
-      "Repeat guest base. 41% repeat rate inside 18 months — driven by wedding bookings.",
+      "Repeat guest base. 41% repeat rate inside 18 months, driven by wedding bookings.",
     ],
   },
   {
@@ -117,11 +117,11 @@ export const listings: Listing[] = [
     photoCount: 24,
     toneClass: TONE.blue,
     summary:
-      "A 124-key Holiday Inn Express in Austin's North Central submarket, three miles from The Domain and adjacent to Highway 183 with 168,000 vehicles per day. The asset was completed in 2015 to current IHG Formula Blue prototype and completed a $1.4M soft-goods PIP in 2022 — putting the next franchise-required PIP outside any reasonable hold.\n\nThe sale offers a stabilized select-service hotel inside Austin's tightest submarket for new supply. PIP-light, brand-protected, and underwritten conservatively at trailing-twelve numbers.",
+      "A 124-key Holiday Inn Express in Austin's North Central submarket, three miles from The Domain and adjacent to Highway 183 with 168,000 vehicles per day. The asset was completed in 2015 to current IHG Formula Blue prototype and completed a $1.4M soft-goods PIP in 2022, putting the next franchise-required PIP outside any reasonable hold.\n\nThe sale offers a stabilized select-service hotel inside Austin's tightest submarket for new supply. PIP-light, brand-protected, and underwritten conservatively at trailing-twelve numbers.",
     bullets: [
       "Domain-adjacent. 3 miles from Austin's #1 office and retail submarket.",
       "PIP-light. 2022 soft-goods refresh; next required PIP not until 2030.",
-      "Franchise long. IHG license through 2035 — full term assumable.",
+      "Franchise long. IHG license through 2035, full term assumable.",
       "76% occupancy. Strong corporate and crew-room contract base.",
       "183 visibility. 168K daily vehicle count, full pylon signage.",
     ],
@@ -149,7 +149,7 @@ export const listings: Listing[] = [
     photoCount: 22,
     toneClass: TONE.midnight,
     summary:
-      "A 98-key Hampton Inn & Suites in Round Rock, the fastest-growing suburb in the Austin MSA. Direct I-35 frontage with 232,000 daily vehicle counts, two miles from the Dell campus and eight miles from the Samsung Taylor fab now ramping production.\n\nThe hotel was developed in 2018 to current Hampton prototype, has never required a brand-mandated PIP, and benefits from Round Rock's industrial absorption story — 11.4M square feet under construction within a fifteen-mile radius as of Q4 2025.",
+      "A 98-key Hampton Inn & Suites in Round Rock, the fastest-growing suburb in the Austin MSA. Direct I-35 frontage with 232,000 daily vehicle counts, two miles from the Dell campus and eight miles from the Samsung Taylor fab now ramping production.\n\nThe hotel was developed in 2018 to current Hampton prototype, has never required a brand-mandated PIP, and benefits from Round Rock's industrial absorption story, 11.4M square feet under construction within a fifteen-mile radius as of Q4 2025.",
     bullets: [
       "Samsung Taylor proximity. 8 miles to the $17B fab now in production.",
       "Dell HQ adjacent. 2 miles to Round Rock campus, 36K employees.",
@@ -182,13 +182,13 @@ export const listings: Listing[] = [
     photoCount: 31,
     toneClass: TONE.graphite,
     summary:
-      "A 154-key Courtyard by Marriott on the San Antonio Riverwalk, two blocks from the Convention Center and one block from the Henry B. Gonzalez Convention Center expansion. The asset completed a $9.2M comprehensive renovation in 2021, including all guestrooms, public space, F&B, and a rooftop bar conversion.\n\nUnder contract — re-trade contingency window expires December 2025. The buyer is a private REIT executing a Marriott select-service rollup across Texas Tier 1 markets.",
+      "A 154-key Courtyard by Marriott on the San Antonio Riverwalk, two blocks from the Convention Center and one block from the Henry B. Gonzalez Convention Center expansion. The asset completed a $9.2M comprehensive renovation in 2021, including all guestrooms, public space, F&B, and a rooftop bar conversion.\n\nUnder contract, re-trade contingency window expires December 2025. The buyer is a private REIT executing a Marriott select-service rollup across Texas Tier 1 markets.",
     bullets: [
       "Riverwalk core. Two blocks from Convention Center main entry.",
       "Recent renovation. $9.2M comprehensive 2021 reposition.",
       "Rooftop activation. F&B converted to top-grossing rooftop in submarket.",
       "Convention demand. Henry B. Gonzalez expansion adds 350K sq ft by 2027.",
-      "Long franchise. Marriott license through 2031 — assumable.",
+      "Long franchise. Marriott license through 2031, assumable.",
     ],
   },
   {
@@ -208,16 +208,16 @@ export const listings: Listing[] = [
     adr: "$398",
     revpar: "$311",
     occupancy: "78%",
-    callForOffersDate: "Open ended — qualified parties only",
+    callForOffersDate: "Open ended, qualified parties only",
     encumbrance: "Long-term ground lease (term and rent disclosed under NDA)",
     brokerSlugs: ["luke-thompson", "miles-cortez"],
     photo: "/listings/the-driskill-trophy-lease-option.jpg",
     photoCount: 32,
     toneClass: TONE.graphite,
     summary:
-      "The Driskill is the iconic 189-key luxury hotel in downtown Austin, originally built in 1886 and substantially renovated in 2017. The offering is a leasehold acquisition opportunity — the underlying fee is held by a long-tenured family ownership group, and the lease is being marketed to a qualified successor operator.\n\nThe Driskill carries the highest leisure-mix ADR of any hotel in downtown Austin and serves as the social anchor of the Sixth Street historic district. This is a discreet process; financials and lease terms are released under NDA only.",
+      "The Driskill is the iconic 189-key luxury hotel in downtown Austin, originally built in 1886 and substantially renovated in 2017. The offering is a leasehold acquisition opportunity, the underlying fee is held by a long-tenured family ownership group, and the lease is being marketed to a qualified successor operator.\n\nThe Driskill carries the highest leisure-mix ADR of any hotel in downtown Austin and serves as the social anchor of the Sixth Street historic district. This is a discreet process; financials and lease terms are released under NDA only.",
     bullets: [
-      "Trophy asset. The most iconic hotel in Austin — period.",
+      "Trophy asset. The most iconic hotel in Austin, period.",
       "Sixth Street anchor. Social and F&B center of downtown's historic core.",
       "$398 ADR. Highest leisure-mix rate in downtown Austin.",
       "Leasehold structure. Discreet sale to qualified luxury operator.",
@@ -247,13 +247,13 @@ export const listings: Listing[] = [
     photoCount: 18,
     toneClass: TONE.midnight,
     summary:
-      "An 84-key Fairfield Inn & Suites by Marriott in Waco, four miles from Magnolia Market and adjacent to the I-35 / Loop 340 interchange. The asset was developed in 2019 to current Fairfield Generation 4.5 prototype — no required PIP through 2030.\n\nWaco's leisure-tourism story is durable: Magnolia, Baylor athletics, and a steady regional drive-to base out of Dallas-Fort Worth. The asset trades below replacement cost at $133K per key.",
+      "An 84-key Fairfield Inn & Suites by Marriott in Waco, four miles from Magnolia Market and adjacent to the I-35 / Loop 340 interchange. The asset was developed in 2019 to current Fairfield Generation 4.5 prototype, no required PIP through 2030.\n\nWaco's leisure-tourism story is durable: Magnolia, Baylor athletics, and a steady regional drive-to base out of Dallas-Fort Worth. The asset trades below replacement cost at $133K per key.",
     bullets: [
       "Below replacement. $133K per key vs. ~$165K replacement build cost.",
       "Magnolia adjacent. 4 miles to Magnolia Market and Silos District.",
       "Baylor proximity. 5 miles to Baylor stadium and main campus.",
       "PIP-clean. 2019 vintage on current prototype.",
-      "Drive-to demand. 90 minutes from DFW — durable leisure base.",
+      "Drive-to demand. 90 minutes from DFW, durable leisure base.",
     ],
   },
 ];

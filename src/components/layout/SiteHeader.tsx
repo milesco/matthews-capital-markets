@@ -71,7 +71,7 @@ export function SiteHeader() {
           {/* Logo */}
           <Link
             href="/"
-            aria-label="Matthews — home"
+            aria-label="Matthews, home"
             className="flex items-center gap-2"
           >
             <Image

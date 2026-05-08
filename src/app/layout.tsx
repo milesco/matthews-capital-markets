@@ -17,12 +17,12 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hotel-team-site.vercel.app"),
-  title: "Matthews Hotel Team — National Hospitality Investment Sales",
+  title: "Matthews Hotel Team, National Hospitality Investment Sales",
   description:
-    "Matthews hospitality team. National hotel investment sales — select-service, full-service, resort, lifestyle. Austin, Texas.",
+    "Matthews hospitality team. National hotel investment sales, select-service, full-service, resort, lifestyle. Austin, Texas.",
   icons: { icon: "/favicon.ico" },
   openGraph: {
-    title: "Matthews Hotel Team — National Hospitality Investment Sales",
+    title: "Matthews Hotel Team, National Hospitality Investment Sales",
     description:
       "Hotel investment sales backed by Matthews Real Estate Investment Services. 30+ offices, 1M+ investors, $84.3B closed.",
     type: "website",

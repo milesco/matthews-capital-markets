@@ -51,7 +51,7 @@ export type ClosedDeal = {
 };
 
 export const closed: ClosedDeal[] = [
-  // === MCC Capital Markets — Debt Placement Track Record ===
+  // === MCC Capital Markets, Debt Placement Track Record ===
   // Sourced from "MCC Deals for Matthews" (May 2026).
   // Some keys are estimates (source sheet listed total raise / fees only).
   {
@@ -138,7 +138,7 @@ export const closed: ClosedDeal[] = [
   // === Capital Markets Track Record (extended) ===
   // Sourced from the team's printed transaction sheet (May 2026).
   // TODO: confirm year, key counts, and sponsorProfile per deal with broker
-  // before the next data refresh — the source sheet listed only Tenant /
+  // before the next data refresh, the source sheet listed only Tenant /
   // City / State / Amount / Type. Brand inferred from flag, segment from
   // brand archetype, region from state.
   {
@@ -407,7 +407,7 @@ export const closed: ClosedDeal[] = [
 ];
 
 /* --------------------------------------------------------------------------
- * Photo mapping — closed-deal cards use stock-archetype photos by segment.
+ * Photo mapping, closed-deal cards use stock-archetype photos by segment.
  * Photos live in /public/closed/ (sourced from Unsplash). Each segment
  * cycles through its available photos in deal-list order so adjacent cards
  * in the grid don't repeat.

@@ -16,10 +16,10 @@ export async function generateMetadata(props: {
   const { slug } = await props.params;
   const insight = getInsight(slug);
   if (!insight) {
-    return { title: "Insight not found — Matthews Hotel Team" };
+    return { title: "Insight not found, Matthews Hotel Team" };
   }
   return {
-    title: `${insight.title} — Matthews Hotel Team`,
+    title: `${insight.title}, Matthews Hotel Team`,
     description: insight.subtitle,
   };
 }

@@ -113,7 +113,7 @@ export function ListingGallery({ listing }: ListingGalleryProps) {
               <div className="absolute inset-0 transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.04]">
                 <Image
                   src={listing.photo}
-                  alt={`${listing.name} — photo ${tile.id + 1}`}
+                  alt={`${listing.name}, photo ${tile.id + 1}`}
                   fill
                   quality={86}
                   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
@@ -201,7 +201,7 @@ export function ListingGallery({ listing }: ListingGalleryProps) {
               {tiles[openIndex].usePhoto && (
                 <Image
                   src={listing.photo}
-                  alt={`${listing.name} — photo ${openIndex + 1}`}
+                  alt={`${listing.name}, photo ${openIndex + 1}`}
                   fill
                   quality={92}
                   sizes="90vw"

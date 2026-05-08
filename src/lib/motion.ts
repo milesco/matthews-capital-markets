@@ -1,5 +1,5 @@
 /**
- * Motion tokens — Apple's signature decel curve runs almost everything.
+ * Motion tokens, Apple's signature decel curve runs almost everything.
  * See /design-system/motion-spec.md for the full spec.
  */
 

@@ -22,7 +22,7 @@ export function HomeClosedTeaser() {
               />
               <p className="mt-6 max-w-[48ch] text-[17px] leading-[1.47] tracking-[-0.022em] text-[#424245]">
                 The Matthews hospitality team has executed across the full
-                spectrum of hotel investment — select-service, full-service,
+                spectrum of hotel investment, select-service, full-service,
                 resort, and lifestyle. Each transaction underwritten with deep
                 market intelligence and closed with the conviction sellers and
                 buyers expect from a platform proven at every scale.
@@ -49,7 +49,7 @@ export function HomeClosedTeaser() {
               <div className="relative aspect-[5/4] w-full overflow-hidden bg-[#1d1d1f]">
                 <Image
                   src="/listings/the-driskill-trophy-lease-option.jpg"
-                  alt="The Driskill — historic trophy hotel facade"
+                  alt="The Driskill, historic trophy hotel facade"
                   fill
                   quality={88}
                   sizes="(min-width: 1024px) 600px, 100vw"

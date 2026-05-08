@@ -1,5 +1,5 @@
 /**
- * Matthews Hotel Team — published transaction process / marketing timeline.
+ * Matthews Hotel Team, published transaction process / marketing timeline.
  *
  * Firm-level playbook for taking a hotel listing from engagement to close.
  * No individual attribution. ~24 weeks across four phases.

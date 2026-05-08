@@ -9,7 +9,7 @@ export interface ListingLocationProps {
 
 /**
  * Per-listing demand drivers shown in the right column of the location card.
- * Keep them tight, three lines max, copy-only — no hard distance claims that
+ * Keep them tight, three lines max, copy-only, no hard distance claims that
  * would need fact-checking before launch.
  */
 const DEMAND_DRIVERS: Record<string, string[]> = {
@@ -30,7 +30,7 @@ const DEMAND_DRIVERS: Record<string, string[]> = {
   ],
   "courtyard-san-antonio-riverwalk": [
     "Two blocks from the Convention Center",
-    "Riverwalk core — direct pedestrian access",
+    "Riverwalk core, direct pedestrian access",
     "Henry B. Gonzalez expansion 2027",
   ],
   "the-driskill-trophy-lease-option": [
@@ -90,7 +90,7 @@ export function ListingLocation({ listing }: ListingLocationProps) {
           )}
         </div>
 
-        {/* Map placeholder — CSS-only grid pattern with a single pin marker */}
+        {/* Map placeholder, CSS-only grid pattern with a single pin marker */}
         <div
           className="relative aspect-[4/3] overflow-hidden rounded-[18px] bg-white"
           role="img"

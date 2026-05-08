@@ -6,9 +6,9 @@ import ContactInfo from "@/components/sections/contact/ContactInfo";
 import ContactForm from "@/components/sections/contact/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact — Matthews Hotel Team",
+  title: "Contact, Matthews Hotel Team",
   description:
-    "Talk to the Matthews hospitality team. Sale, acquisition, market intelligence — we respond within one business day.",
+    "Talk to the Matthews hospitality team. Sale, acquisition, market intelligence, we respond within one business day.",
 };
 
 export default function ContactPage() {

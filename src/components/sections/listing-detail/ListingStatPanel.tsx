@@ -15,11 +15,11 @@ export function ListingStatPanel({ listing }: ListingStatPanelProps) {
     { label: "Year Built", value: String(listing.yearBuilt) },
     {
       label: "Year Renovated",
-      value: listing.yearRenovated ? String(listing.yearRenovated) : "—",
+      value: listing.yearRenovated ? String(listing.yearRenovated) : ",",
     },
-    { label: "ADR", value: listing.adr ?? "—" },
-    { label: "RevPAR", value: listing.revpar ?? "—" },
-    { label: "Occupancy", value: listing.occupancy ?? "—" },
+    { label: "ADR", value: listing.adr ?? "," },
+    { label: "RevPAR", value: listing.revpar ?? "," },
+    { label: "Occupancy", value: listing.occupancy ?? "," },
     { label: "Asking Price", value: listing.askingPrice },
     { label: "Encumbrance", value: listing.encumbrance },
     {

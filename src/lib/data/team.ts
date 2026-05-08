@@ -1,5 +1,5 @@
 /**
- * Matthews Hotel Team — broker roster.
+ * Matthews Hotel Team, broker roster.
  *
  * Three-person hospitality team. Source of truth for all team-related
  * surfaces (Team index, Team bio pages, Listing detail sticky broker rail,
@@ -87,7 +87,7 @@ const LEGACY_PHOTO_TONE: Record<CoverTone, string> = {
 };
 
 /* --------------------------------------------------------------------------
- * Roster — 3 brokers (Luke Thompson, Miles Cortez, Nate Solomon)
+ * Roster, 3 brokers (Luke Thompson, Miles Cortez, Nate Solomon)
  * ------------------------------------------------------------------------ */
 
 export const team: TeamMember[] = [
@@ -105,19 +105,19 @@ export const team: TeamMember[] = [
     photoTone: LEGACY_PHOTO_TONE.ink,
     bio: `Luke is a real estate professional at Matthews™ specializing in hospitality capital markets nationwide. He focuses on originating and closing loans and advising clients through investment-sales processes. His methodology centers on structured finance, development, and asset sales.
 
-Before Matthews, Luke worked in private credit, direct lending, preferred equity, and mezzanine debt at Matterhorn Capital Partners. With over fifteen years of experience in hotel real estate structured finance, development, and asset sales, Luke has built a distinguished career. His background also includes the investment-banking arm of HVS — the world's leading hospitality consulting firm — and co-founding the boutique mortgage brokerage F10 Hotels.
+Before Matthews, Luke worked in private credit, direct lending, preferred equity, and mezzanine debt at Matterhorn Capital Partners. With over fifteen years of experience in hotel real estate structured finance, development, and asset sales, Luke has built a distinguished career. His background also includes the investment-banking arm of HVS, the world's leading hospitality consulting firm, and co-founding the boutique mortgage brokerage F10 Hotels.
 
 In 2019, Luke spearheaded a joint venture to develop a 276-key, dual-branded Hilton hotel in downtown Austin, TX, which opened in 2024. He further expanded his personal portfolio through his investment arm, Coldwater Equites, with the ground-up development of the 103-key Home2 Suites by Hilton in Del Rio, TX, which opened in late 2025.`,
     yearsExperience: 15,
     careerVolume: "Confirm",
     last12Volume: "Confirm",
     designations: [],
-    education: ["B.A., Communications & Business — Baylor University"],
+    education: ["B.A., Communications & Business, Baylor University"],
     affiliations: [
       "Real Estate Council of Austin (RECA)",
       "Urban Land Institute (ULI)",
       "Asian American Hotel Owners Association (AAHOA)",
-      "Texas Real Estate Commission — License No. 593889",
+      "Texas Real Estate Commission, License No. 593889",
     ],
     topDeals: [],
   },
@@ -132,11 +132,11 @@ In 2019, Luke spearheaded a joint venture to develop a 276-key, dual-branded Hil
     cover: { tone: "graphite" },
     photo: "/headshots/miles-cortez.avif",
     photoTone: LEGACY_PHOTO_TONE.graphite,
-    bio: `Miles is a seasoned real estate investment banker and investment professional for Matthews™ Capital Markets, with an established track record of leading complex finance transactions across private equity, venture capital, and public markets — principally in the hospitality sector. A creative financial strategist, Miles leverages his buy-side experience to engineer tailored financial solutions for institutional clients. His expertise spans opportunity identification, capital sourcing, and transaction execution, and he brings professionalism and clarity to every stage of the investment lifecycle. Miles approaches every transaction through a buy-side lens — informed by his own experience as a principal.
+    bio: `Miles is a seasoned real estate investment banker and investment professional for Matthews™ Capital Markets, with an established track record of leading complex finance transactions across private equity, venture capital, and public markets, principally in the hospitality sector. A creative financial strategist, Miles leverages his buy-side experience to engineer tailored financial solutions for institutional clients. His expertise spans opportunity identification, capital sourcing, and transaction execution, and he brings professionalism and clarity to every stage of the investment lifecycle. Miles approaches every transaction through a buy-side lens, informed by his own experience as a principal.
 
-Prior to Matthews, Miles founded and remains a principal and shareholder at SparkPoint Real Estate Advisors in Denver, Colorado — a real estate–focused merchant bank. He also led the institutional client effort at F10 Hotels, one of the nation's most active hotel mortgage brokers, where he placed more than $500 million in financing, including a landmark CMBS refinance for a major private equity client and a mezzanine piece for the acquisition of a portfolio from Blackstone.
+Prior to Matthews, Miles founded and remains a principal and shareholder at SparkPoint Real Estate Advisors in Denver, Colorado, a real estate–focused merchant bank. He also led the institutional client effort at F10 Hotels, one of the nation's most active hotel mortgage brokers, where he placed more than $500 million in financing, including a landmark CMBS refinance for a major private equity client and a mezzanine piece for the acquisition of a portfolio from Blackstone.
 
-Earlier in his career, Miles co-founded Aventine Capital Partners, where he played a pivotal role in the $1B+ development of Mayakoba, a master-planned luxury resort in Mexico — in partnership with Rosewood, Fairmont, Viceroy, and Hyatt. He also served as CFO and founding principal of Punch Bowl Social, leading the company's initial capitalization and building the financial infrastructure during its national expansion.`,
+Earlier in his career, Miles co-founded Aventine Capital Partners, where he played a pivotal role in the $1B+ development of Mayakoba, a master-planned luxury resort in Mexico, in partnership with Rosewood, Fairmont, Viceroy, and Hyatt. He also served as CFO and founding principal of Punch Bowl Social, leading the company's initial capitalization and building the financial infrastructure during its national expansion.`,
     // Career stats pending direct confirmation with Miles.
     yearsExperience: 0,
     careerVolume: "$1.5B+",
@@ -157,14 +157,14 @@ Earlier in his career, Miles co-founded Aventine Capital Partners, where he play
     cover: { tone: "navy" },
     photo: "/headshots/nate-solomon.jpg",
     photoTone: LEGACY_PHOTO_TONE.navy,
-    bio: `Nate is a real estate professional specializing in the acquisition and disposition of hospitality properties at Matthews™. He leverages extensive knowledge of underwriting and market fundamentals. Nate's expertise extends to asset management, property identification and acquisition, lease coordination and negotiation, compliance and permitting, and financial reconciliation and reporting — all of which provide a distinct advantage in navigating complex hospitality transactions. He is dedicated to providing clients with data-driven insights and meticulous attention to detail, ensuring strategic decision-making and optimal outcomes for every opportunity within the national hospitality market.`,
+    bio: `Nate is a real estate professional specializing in the acquisition and disposition of hospitality properties at Matthews™. He leverages extensive knowledge of underwriting and market fundamentals. Nate's expertise extends to asset management, property identification and acquisition, lease coordination and negotiation, compliance and permitting, and financial reconciliation and reporting, all of which provide a distinct advantage in navigating complex hospitality transactions. He is dedicated to providing clients with data-driven insights and meticulous attention to detail, ensuring strategic decision-making and optimal outcomes for every opportunity within the national hospitality market.`,
     // Career stats and named deals pending direct confirmation with Nate.
     yearsExperience: 0,
     careerVolume: "Confirm",
     last12Volume: "Confirm",
     designations: [],
-    education: ["B.S., Economics — St. Edward's University"],
-    affiliations: ["Texas Real Estate Commission — License No. 842300"],
+    education: ["B.S., Economics, St. Edward's University"],
+    affiliations: ["Texas Real Estate Commission, License No. 842300"],
     topDeals: [],
   },
 ];

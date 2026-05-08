@@ -5,23 +5,23 @@ import { NextResponse } from "next/server";
  *
  * Inbound-lead pipe. Dual-write strategy:
  *
- *   1. Airtable (primary, always-on) — appends a row to the "Website Leads"
+ *   1. Airtable (primary, always-on), appends a row to the "Website Leads"
  *      table in the Hotels CRE base. Authoritative log of every submission.
  *
- *   2. HubSpot (best-effort) — creates a Contact in HubSpot CRM tagged
+ *   2. HubSpot (best-effort), creates a Contact in HubSpot CRM tagged
  *      with `website_lead_source = "Matthews Hotel Team Website"`. Skipped
  *      gracefully if the account hits its tier limit (HubSpot Free caps at
- *      1,000 contacts) — Airtable still receives the lead and we mark
+ *      1,000 contacts), Airtable still receives the lead and we mark
  *      `HubSpot Status` as "Skipped (cap)" or "Error".
  *
  * The user always gets a success response if Airtable accepted the lead.
  * If both sinks fail, we return 502 and the form falls back to mailto.
  *
  * Env vars (set as Sensitive in Vercel):
- *   AIRTABLE_PAT          — Airtable Personal Access Token
- *   AIRTABLE_BASE_ID      — Airtable base id (appXXXX...)
- *   AIRTABLE_LEADS_TABLE  — table name, default "Website Leads"
- *   HUBSPOT_TOKEN         — HubSpot Private App token (optional)
+ *   AIRTABLE_PAT         , Airtable Personal Access Token
+ *   AIRTABLE_BASE_ID     , Airtable base id (appXXXX...)
+ *   AIRTABLE_LEADS_TABLE , table name, default "Website Leads"
+ *   HUBSPOT_TOKEN        , HubSpot Private App token (optional)
  */
 
 type ContactPayload = {
@@ -209,7 +209,7 @@ export async function POST(req: Request) {
     pageName,
   };
 
-  // Sequential — HubSpot first so we know its status before Airtable logs it.
+  // Sequential, HubSpot first so we know its status before Airtable logs it.
   const hubspotStatus = await sendToHubSpot(payload);
   const airtable = await sendToAirtable(payload, hubspotStatus);
 

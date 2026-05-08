@@ -26,7 +26,7 @@ const benefits: Benefit[] = [
     icon: Users,
     titleLead: "Investor reach.",
     titleFollow: "Deep.",
-    body: "Over one million direct relationships. Family offices, REITs, PE, and institutional capital — the right buyer for every brand and class.",
+    body: "Over one million direct relationships. Family offices, REITs, PE, and institutional capital, the right buyer for every brand and class.",
   },
   {
     icon: Network,

@@ -7,10 +7,10 @@ import { cn } from "@/lib/utils";
  * -------------
  * Editorial publication-quality monogram cover for broker tiles. Replaces the
  * "initials on colored gradient" Slack-style avatar with a typography-led
- * cover in the spirit of Apple's flagship tile aesthetic — a single Fraunces
+ * cover in the spirit of Apple's flagship tile aesthetic, a single Fraunces
  * mark on a flat tonal field, with restraint and confidence.
  *
- * Server component — pure JSX, no client state.
+ * Server component, pure JSX, no client state.
  */
 
 export type MonogramTone = "ink" | "navy" | "graphite" | "paper";
@@ -22,8 +22,8 @@ export interface MonogramCoverProps {
   /** Surface tone. Distribute across a roster so the grid doesn't read monotonous. */
   tone: MonogramTone;
   /**
-   * `card`  — aspect-[3/4] cover sized for grid tiles.
-   * `hero`  — aspect square cover sized for the team detail page (fills its
+   * `card` , aspect-[3/4] cover sized for grid tiles.
+   * `hero` , aspect square cover sized for the team detail page (fills its
    *           parent; pair with an aspect-[3/4] container if desired).
    */
   size?: MonogramSize;
@@ -143,7 +143,7 @@ export function MonogramCover({
         />
       )}
 
-      {/* Editorial monogram block — vertically anchored to ~60% (slightly
+      {/* Editorial monogram block, vertically anchored to ~60% (slightly
           low, in the spirit of a magazine cover mark). */}
       <div
         className="absolute inset-x-0 flex flex-col items-center"
@@ -168,7 +168,7 @@ export function MonogramCover({
           style={{ backgroundColor: spec.rule }}
         />
 
-        {/* Optional caption slot — caller passes broker name/title or omits. */}
+        {/* Optional caption slot, caller passes broker name/title or omits. */}
         {children ? (
           <div
             className="mt-3 px-4 text-center"

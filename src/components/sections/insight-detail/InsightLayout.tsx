@@ -86,7 +86,7 @@ function ChartIllustration() {
         ))}
       </svg>
       <figcaption className="mt-3 text-[12px] tracking-[-0.01em] text-[#86868b]">
-        Indicative trend — full chart pack in the downloadable PDF.
+        Indicative trend, full chart pack in the downloadable PDF.
       </figcaption>
     </figure>
   );
@@ -154,7 +154,7 @@ export function InsightLayout({ insight }: InsightLayoutProps) {
 
         {/* Byline */}
         <p className="mt-6 text-[13px] tracking-[-0.014em] text-[#86868b]">
-          By {authorByline(insight.authorSlugs)} — Matthews Hotel Team
+          By {authorByline(insight.authorSlugs)}, Matthews Hotel Team
         </p>
 
         {/* Cover image card */}

@@ -13,7 +13,7 @@ export interface RevealProps {
  * triggered by IntersectionObserver, but that pattern caused content to render
  * invisible whenever the observer didn't fire (programmatic scroll, screenshot
  * tools, A11y crawlers, hydration races). Apple's product pages don't actually
- * use viewport-triggered fades on every section — heroes get entrance
+ * use viewport-triggered fades on every section, heroes get entrance
  * animations, sections render statically. We do the same.
  *
  * Kept as a component so existing imports across sections continue to work.

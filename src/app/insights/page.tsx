@@ -7,7 +7,7 @@ import { InsightsArchive } from "@/components/sections/insights/InsightsArchive"
 import { insights } from "@/lib/data/insights";
 
 export const metadata: Metadata = {
-  title: "Insights — Matthews Hotel Team",
+  title: "Insights, Matthews Hotel Team",
   description:
     "Quarterly hotel investment outlooks, white papers, and briefings from the Matthews Hotel Team.",
 };

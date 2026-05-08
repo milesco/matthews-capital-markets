@@ -49,7 +49,7 @@ function formatNumber(value: number, decimals: number, withCommas: boolean): str
 /**
  * Counter renders the target value from SSR (no zero flash) and applies a soft
  * opacity fade-in once the element enters the viewport. Apple's stat bands
- * actually use static numbers more often than count-up — we follow that.
+ * actually use static numbers more often than count-up, we follow that.
  *
  * For users with reduced motion, the value renders fully visible from first
  * paint with no animation.

@@ -17,10 +17,10 @@ export interface PosterCTAProps {
 /**
  * PosterCTA
  * ---------
- * Editorial closer — full-bleed dark backdrop, hero-scale typography,
+ * Editorial closer, full-bleed dark backdrop, hero-scale typography,
  * single primary action. Used at the bottom of /closed, /listings, and
  * /process to give every page editorial weight at the close. Same
- * pattern as Apple/Framer flagship pages — repetition is the brand.
+ * pattern as Apple/Framer flagship pages, repetition is the brand.
  *
  * No supporting body copy by default. The headline IS the message.
  */
@@ -32,7 +32,7 @@ export function PosterCTA({
 }: PosterCTAProps) {
   return (
     <section className="dark-section relative overflow-hidden bg-black py-32 lg:py-48">
-      {/* Subtle radial spotlight — keeps the field from going flat */}
+      {/* Subtle radial spotlight, keeps the field from going flat */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-60"

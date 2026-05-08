@@ -9,9 +9,9 @@ export interface PillProps {
   variant?: Variant;
   size?: Size;
   href?: string;
-  /** Anchor target — only respected when `href` is an external URL. */
+  /** Anchor target, only respected when `href` is an external URL. */
   target?: "_blank" | "_self" | "_parent" | "_top";
-  /** Anchor rel — only respected when `href` is an external URL. */
+  /** Anchor rel, only respected when `href` is an external URL. */
   rel?: string;
   onClick?: () => void;
   children: React.ReactNode;
@@ -52,7 +52,7 @@ export function Pill({
   if (href) {
     const isExternal = /^https?:\/\//.test(href) || href.startsWith("mailto:") || href.startsWith("tel:");
     if (isExternal) {
-      // Default rel for new-tab external links — security + perf hardening.
+      // Default rel for new-tab external links, security + perf hardening.
       const safeRel =
         rel ?? (target === "_blank" ? "noopener noreferrer" : undefined);
       return (

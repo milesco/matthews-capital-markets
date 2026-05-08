@@ -109,7 +109,7 @@ export function SiteFooter() {
 
         <div className="mt-12 hairline" />
 
-        {/* Footprint — tracked uppercase city line, hospitality-brokerage
+        {/* Footprint, tracked uppercase city line, hospitality-brokerage
             convention (cf. Hunter Hotel Advisors). Anchors the brand to its
             real geography while signaling national reach. */}
         <p className="mt-6 text-[11px] uppercase tracking-[0.22em] font-medium text-[color:var(--text-secondary)]">
@@ -127,7 +127,7 @@ export function SiteFooter() {
         {/* Legal */}
         <div className="mt-4 space-y-1.5">
           <p className="text-[11px] tracking-[-0.005em] text-[color:var(--text-tertiary)]">
-            Matthews Real Estate Investment Services — 515 Congress Ave., Suite 2410, Austin, TX 78701.
+            Matthews Real Estate Investment Services, 515 Congress Ave., Suite 2410, Austin, TX 78701.
           </p>
           <p className="text-[11px] tracking-[-0.005em] text-[color:var(--text-tertiary)]">
             Copyright &copy; {year} Matthews Real Estate Investment Services. All rights reserved.

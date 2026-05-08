@@ -27,10 +27,10 @@ export async function generateMetadata(
   if (!listing) return {};
 
   return {
-    title: `${listing.name} — Matthews Hotel Team`,
+    title: `${listing.name}, Matthews Hotel Team`,
     description: `${listing.keys}-key ${listing.segment.toLowerCase()} hotel for sale in ${listing.city}, ${listing.state}. ${listing.askingPrice}.`,
     openGraph: {
-      title: `${listing.name} — Matthews Hotel Team`,
+      title: `${listing.name}, Matthews Hotel Team`,
       description: `${listing.keys}-key ${listing.segment.toLowerCase()} hotel for sale in ${listing.city}, ${listing.state}.`,
       type: "article",
     },
@@ -44,7 +44,7 @@ export default async function ListingDetailPage(
   const listing = getListing(slug);
   if (!listing) notFound();
 
-  // When a listing has a hosted OM, the detail page is skipped entirely —
+  // When a listing has a hosted OM, the detail page is skipped entirely ,
   // anyone hitting this route gets redirected straight to the OM. The card
   // on /listings does the same redirect on click. Server-side redirect is
   // the cleanest path: works for direct URL hits, shared links, and any

@@ -13,7 +13,7 @@ export function HomeStats() {
   return (
     <section className="bg-white py-32 lg:py-40">
       <div className="mx-auto max-w-[1024px] px-6">
-        {/* One reveal wraps the entire block — Apple product-page restraint */}
+        {/* One reveal wraps the entire block, Apple product-page restraint */}
         <Reveal>
           <div>
             <Eyebrow>Matthews Hospitality · 2024</Eyebrow>

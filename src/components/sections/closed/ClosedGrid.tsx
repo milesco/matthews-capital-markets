@@ -24,13 +24,13 @@ function applyFilters(items: ClosedDeal[], f: ClosedFilterValues): ClosedDeal[] 
 
 /** Format a deal-size string for the card (drops trailing ',000' rounding). */
 function formatPrice(raw: string): string {
-  if (!raw) return "—";
+  if (!raw) return ",";
   if (/confidential/i.test(raw)) return "Confidential";
   return raw; // Already pre-formatted as e.g. "$19,400,000"
 }
 
 // Editorial tonal palette for placeholder covers when a deal has no photo.
-// Mirrors the MonogramCover treatment used on /team — same brand language.
+// Mirrors the MonogramCover treatment used on /team, same brand language.
 const SEGMENT_TONE: Record<string, { bg: string; fg: string; rule: string }> = {
   "Select Service": { bg: "#0e1a34", fg: "#fafafa", rule: "rgba(250,250,250,0.3)" },
   "Full Service":   { bg: "#0a0a0a", fg: "#ffffff", rule: "rgba(255,255,255,0.3)" },
@@ -91,7 +91,7 @@ export function ClosedGrid({ filters }: ClosedGridProps) {
                   <div className="absolute inset-0 transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.04]">
                     <Image
                       src={deal.photo as string}
-                      alt={`${deal.name} — ${location}`}
+                      alt={`${deal.name}, ${location}`}
                       fill
                       quality={86}
                       sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"

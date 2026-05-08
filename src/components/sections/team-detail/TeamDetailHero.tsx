@@ -33,7 +33,7 @@ export function TeamDetailHero({ member }: TeamDetailHeroProps) {
                 tone={member.cover.tone}
                 size="hero"
                 photoSrc={member.photo}
-                photoAlt={`${member.name} — ${member.title}`}
+                photoAlt={`${member.name}, ${member.title}`}
               />
             </div>
           </Reveal>
