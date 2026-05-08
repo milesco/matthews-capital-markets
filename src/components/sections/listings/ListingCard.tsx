@@ -11,9 +11,62 @@ export interface ListingCardProps {
   className?: string;
 }
 
+/** First-sentence preview of the listing summary, capped to ~140 chars. */
+function previewFromSummary(summary: string): string {
+  if (!summary) return "";
+  // Take the first sentence (period followed by space, or end of paragraph).
+  const firstSentence = summary.split(/(?<=\.)\s/)[0] ?? summary;
+  const compact = firstSentence.replace(/\s+/g, " ").trim();
+  return compact.length > 140 ? compact.slice(0, 137).trimEnd() + "…" : compact;
+}
+
 export function ListingCard({ listing, className }: ListingCardProps) {
   const isUponRequest = /upon request/i.test(listing.askingPrice);
-  const detailHref = `/listings/${listing.slug}`;
+  // When a listing has a hosted OM, every click on the card jumps straight
+  // to it (same tab) — the detail page is skipped entirely. Without an OM,
+  // the card links to the internal detail page as usual.
+  const cardHref = listing.omUrl ?? `/listings/${listing.slug}`;
+  const isExternal = Boolean(listing.omUrl);
+  const linkLabel = listing.omUrl ? "View OM" : "View listing";
+  const description = previewFromSummary(listing.summary);
+
+  // Shared cover content — same JSX inside either <a> or <Link> wrapper.
+  const cover = (
+    <>
+      {listing.photo ? (
+        <div className="absolute inset-0 transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.04]">
+          <Image
+            src={listing.photo}
+            alt={listing.name}
+            fill
+            quality={88}
+            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            className="object-cover"
+          />
+        </div>
+      ) : (
+        <div
+          className={cn(
+            "absolute inset-0 bg-gradient-to-br transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.04]",
+            listing.toneClass,
+          )}
+          aria-hidden="true"
+        />
+      )}
+      <div className="absolute top-3 left-3">
+        <StatusBadge status={listing.status} size="sm" />
+      </div>
+      <div className="absolute top-3 right-3">
+        <span className="rounded-full bg-white/90 backdrop-blur px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] font-medium text-[#1d1d1f]">
+          {listing.brand}
+        </span>
+      </div>
+    </>
+  );
+
+  const coverClass =
+    "block relative aspect-[16/10] w-full overflow-hidden";
+  const titleClass = "after:absolute after:inset-0 after:content-['']";
 
   return (
     <article
@@ -22,54 +75,46 @@ export function ListingCard({ listing, className }: ListingCardProps) {
         className,
       )}
     >
-      {/* Cover — real photo when available, gradient fallback otherwise */}
-      <Link
-        href={detailHref}
-        className="block relative aspect-[16/10] w-full overflow-hidden"
-        aria-label={`${listing.name}, ${listing.city}, ${listing.state}`}
-      >
-        {listing.photo ? (
-          <div className="absolute inset-0 transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.04]">
-            <Image
-              src={listing.photo}
-              alt={listing.name}
-              fill
-              quality={88}
-              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-              className="object-cover"
-            />
-          </div>
-        ) : (
-          <div
-            className={cn(
-              "absolute inset-0 bg-gradient-to-br transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.04]",
-              listing.toneClass,
-            )}
-            aria-hidden="true"
-          />
-        )}
-        <div className="absolute top-3 left-3">
-          <StatusBadge status={listing.status} size="sm" />
-        </div>
-        <div className="absolute top-3 right-3">
-          <span className="rounded-full bg-white/90 backdrop-blur px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] font-medium text-[#1d1d1f]">
-            {listing.brand}
-          </span>
-        </div>
-      </Link>
+      {/* Cover */}
+      {isExternal ? (
+        <a
+          href={cardHref}
+          className={coverClass}
+          aria-label={`${listing.name}, ${listing.city}, ${listing.state}`}
+        >
+          {cover}
+        </a>
+      ) : (
+        <Link
+          href={cardHref}
+          className={coverClass}
+          aria-label={`${listing.name}, ${listing.city}, ${listing.state}`}
+        >
+          {cover}
+        </Link>
+      )}
 
       <div className="p-6">
         <p className="text-[12px] tracking-[-0.01em] text-[#86868b] mb-2">
           {listing.city}, {listing.state}
         </p>
         <h3 className="font-semibold text-[18px] tracking-[-0.022em] text-[#1d1d1f] line-clamp-2">
-          <Link
-            href={detailHref}
-            className="after:absolute after:inset-0 after:content-['']"
-          >
-            {listing.name}
-          </Link>
+          {isExternal ? (
+            <a href={cardHref} className={titleClass}>
+              {listing.name}
+            </a>
+          ) : (
+            <Link href={cardHref} className={titleClass}>
+              {listing.name}
+            </Link>
+          )}
         </h3>
+
+        {description ? (
+          <p className="mt-3 text-[14px] leading-[1.45] tracking-[-0.014em] text-[#424245] line-clamp-3">
+            {description}
+          </p>
+        ) : null}
 
         <div className="mt-5 hairline" />
 
@@ -100,7 +145,7 @@ export function ListingCard({ listing, className }: ListingCardProps) {
         </div>
 
         <div className="mt-5 relative z-10">
-          <GhostLink href={detailHref}>View listing</GhostLink>
+          <GhostLink href={cardHref}>{linkLabel}</GhostLink>
         </div>
       </div>
     </article>

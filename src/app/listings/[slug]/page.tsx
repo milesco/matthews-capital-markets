@@ -1,6 +1,6 @@
 import * as React from "react";
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { StickyBrokerRail } from "@/components/ui/StickyBrokerRail";
@@ -43,6 +43,15 @@ export default async function ListingDetailPage(
   const { slug } = await props.params;
   const listing = getListing(slug);
   if (!listing) notFound();
+
+  // When a listing has a hosted OM, the detail page is skipped entirely —
+  // anyone hitting this route gets redirected straight to the OM. The card
+  // on /listings does the same redirect on click. Server-side redirect is
+  // the cleanest path: works for direct URL hits, shared links, and any
+  // residual internal links.
+  if (listing.omUrl) {
+    redirect(listing.omUrl);
+  }
 
   const primaryBrokerSlug = listing.brokerSlugs[0];
   const primaryBroker = primaryBrokerSlug

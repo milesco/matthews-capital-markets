@@ -29,12 +29,7 @@ export function GhostLink({ href, children, className }: GhostLinkProps) {
 
   if (isExternal) {
     return (
-      <a
-        href={href}
-        target={/^https?:\/\//.test(href) ? "_blank" : undefined}
-        rel={/^https?:\/\//.test(href) ? "noopener noreferrer" : undefined}
-        className={classes}
-      >
+      <a href={href} className={classes}>
         {content}
       </a>
     );
