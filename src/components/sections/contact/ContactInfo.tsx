@@ -34,6 +34,15 @@ const rows: Row[] = [
       </span>
     ),
   },
+  {
+    icon: MapPin,
+    label: "Denver",
+    value: (
+      <span className="block whitespace-pre-line text-[color:var(--text-primary)]">
+        Denver, CO
+      </span>
+    ),
+  },
 ];
 
 export function ContactInfo() {
@@ -64,13 +73,6 @@ export function ContactInfo() {
           })}
         </ul>
 
-        <p className="mt-10 text-[12px] tracking-[-0.01em] text-[color:var(--text-secondary)]">
-          <span className="font-medium uppercase tracking-[0.18em] text-[#86868b]">
-            Office hours
-          </span>
-          <span className="mx-2 text-[color:var(--divider)]">/</span>
-          Mon&ndash;Fri, 8am&ndash;6pm CT
-        </p>
       </div>
     </Reveal>
   );

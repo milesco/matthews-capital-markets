@@ -7,8 +7,8 @@ export type Office = {
   hq?: boolean;
 };
 
-// Single Matthews Hotel Team office. The parent firm has 30+ offices nationally,
-// but the hospitality practice is anchored in Austin.
+// Matthews Hotel Team operates from Austin (HQ) and Denver. The parent firm
+// has a national footprint behind that.
 export const offices: Office[] = [
   {
     city: "Austin",
@@ -16,5 +16,11 @@ export const offices: Office[] = [
     state: "TX",
     zip: "78701",
     hq: true,
+  },
+  {
+    city: "Denver",
+    address: "Confirm address with Miles",
+    state: "CO",
+    zip: "",
   },
 ];
