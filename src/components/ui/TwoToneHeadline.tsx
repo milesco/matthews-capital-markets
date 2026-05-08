@@ -23,7 +23,10 @@ const sizeClass: Record<Size, string> = {
   // Sotheby's, etc.) ship display type at 100-300 weights, never 600 — thin
   // reads editorial and confident at 96px while bold reads tech-startup.
   // Slightly tighter tracking compensates for the reduced visual weight.
-  hero: "font-light text-[clamp(48px,7vw,96px)] leading-[1.05] tracking-[-0.025em]",
+  // NOTE: globals.css h1-h6 { font-weight: 600 } is unlayered, so it would
+  // beat the Tailwind `font-light` utility (cascade-layer ordering — unlayered
+  // rules win over layered rules). Inline `!font-light` is the override.
+  hero: "!font-light text-[clamp(48px,7vw,96px)] leading-[1.05] tracking-[-0.025em]",
 };
 
 export function TwoToneHeadline({
