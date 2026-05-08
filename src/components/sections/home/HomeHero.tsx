@@ -65,10 +65,31 @@ export function HomeHero() {
             {...heroBody}
             className="mt-6 max-w-[640px] text-[19px] leading-[1.42] tracking-[0.012em] text-[color:var(--text-on-dark-secondary)]"
           >
-            Hotel finance and investment sales, backed by Matthews Real
-            Estate Investment Services. $84.3 billion closed across 33,500+
-            transactions.
+            Whether you want to finance a hotel purchase, refinance a property
+            you own, or sell a hotel, we are here to help.
           </motion.p>
+
+          <motion.dl
+            {...heroBody}
+            className="mt-10 grid max-w-[640px] grid-cols-1 gap-x-10 gap-y-4 sm:grid-cols-2"
+          >
+            <div>
+              <dt className="text-[11px] font-medium uppercase tracking-[0.22em] text-white/60">
+                Capital Markets
+              </dt>
+              <dd className="mt-2 text-[15px] leading-[1.45] tracking-[-0.014em] text-[color:var(--text-on-dark-secondary)]">
+                Loans from $5M, experience up to $200M, every chain scale.
+              </dd>
+            </div>
+            <div>
+              <dt className="text-[11px] font-medium uppercase tracking-[0.22em] text-white/60">
+                Sales
+              </dt>
+              <dd className="mt-2 text-[15px] leading-[1.45] tracking-[-0.014em] text-[color:var(--text-on-dark-secondary)]">
+                Dispositions from $2M, nationwide.
+              </dd>
+            </div>
+          </motion.dl>
 
           <motion.div
             {...heroCta}
