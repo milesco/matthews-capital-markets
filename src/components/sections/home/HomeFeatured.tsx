@@ -17,6 +17,8 @@ type Featured = {
   photo?: string;
 };
 
+// Featured strip on the home page. Walden is the only active listing today;
+// add more entries as new assignments come on.
 const featuredSeed: Omit<Featured, "photo">[] = [
   {
     slug: "walden-retreats-hill-country",
@@ -26,24 +28,6 @@ const featuredSeed: Omit<Featured, "photo">[] = [
     segment: "Boutique",
     asking: "Upon Request",
     gradient: "from-[#1a3a6b] to-[#0a1226]",
-  },
-  {
-    slug: "holiday-inn-express-austin-north-central",
-    name: "Holiday Inn Express Austin North Central",
-    city: "Austin, TX",
-    keys: 124,
-    segment: "Select Service · IHG",
-    asking: "Upon Request",
-    gradient: "from-[#0066cc] to-[#1a56db]",
-  },
-  {
-    slug: "hampton-inn-suites-round-rock",
-    name: "Hampton Inn & Suites Round Rock",
-    city: "Round Rock, TX",
-    keys: 98,
-    segment: "Select Service · Hilton",
-    asking: "Upon Request",
-    gradient: "from-[#0e1a34] to-[#1a3a6b]",
   },
 ];
 
@@ -74,14 +58,26 @@ export function HomeFeatured() {
           </div>
         </Reveal>
 
-        <div className="mt-16 grid grid-cols-1 gap-5 md:grid-cols-3">
+        <div
+          className={
+            featured.length === 1
+              ? "mt-16"
+              : "mt-16 grid grid-cols-1 gap-5 md:grid-cols-3"
+          }
+        >
           {featured.map((listing, i) => (
             <Reveal key={listing.slug} delay={i * 0.05}>
               <Link
                 href={`/listings/${listing.slug}`}
                 className="group block overflow-hidden rounded-[18px] bg-white card-lift"
               >
-                <div className="relative aspect-[16/10] w-full overflow-hidden">
+                <div
+                  className={
+                    featured.length === 1
+                      ? "relative aspect-[21/9] w-full overflow-hidden"
+                      : "relative aspect-[16/10] w-full overflow-hidden"
+                  }
+                >
                   {listing.photo ? (
                     <div className="absolute inset-0 transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.04]">
                       <Image

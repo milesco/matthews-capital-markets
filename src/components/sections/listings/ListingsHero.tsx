@@ -20,37 +20,39 @@ export function ListingsHero() {
             as="h1"
             size="section"
             lead="Listings."
-            follow="Six active assignments across Texas and beyond."
+            follow="Hotels available now."
           />
         </Reveal>
-        <Reveal delay={0.1}>
-          <dl className="mt-8 flex flex-wrap gap-x-8 gap-y-4 text-[15px] tracking-[-0.014em]">
-            <div className="flex items-baseline gap-2">
-              <dt className="text-[color:var(--text-secondary)]">Active</dt>
-              <dd className="font-semibold tabular-nums text-[color:var(--text-primary)]">
-                {listings.length}
-              </dd>
-            </div>
-            <div className="flex items-baseline gap-2">
-              <dt className="text-[color:var(--text-secondary)]">Keys</dt>
-              <dd className="font-semibold tabular-nums text-[color:var(--text-primary)]">
-                {totalKeys.toLocaleString()}
-              </dd>
-            </div>
-            <div className="flex items-baseline gap-2">
-              <dt className="text-[color:var(--text-secondary)]">Segments</dt>
-              <dd className="font-semibold tabular-nums text-[color:var(--text-primary)]">
-                {segments}
-              </dd>
-            </div>
-            <div className="flex items-baseline gap-2">
-              <dt className="text-[color:var(--text-secondary)]">Markets</dt>
-              <dd className="font-semibold tabular-nums text-[color:var(--text-primary)]">
-                {states}
-              </dd>
-            </div>
-          </dl>
-        </Reveal>
+        {listings.length >= 3 ? (
+          <Reveal delay={0.1}>
+            <dl className="mt-8 flex flex-wrap gap-x-8 gap-y-4 text-[15px] tracking-[-0.014em]">
+              <div className="flex items-baseline gap-2">
+                <dt className="text-[color:var(--text-secondary)]">Active</dt>
+                <dd className="font-semibold tabular-nums text-[color:var(--text-primary)]">
+                  {listings.length}
+                </dd>
+              </div>
+              <div className="flex items-baseline gap-2">
+                <dt className="text-[color:var(--text-secondary)]">Keys</dt>
+                <dd className="font-semibold tabular-nums text-[color:var(--text-primary)]">
+                  {totalKeys.toLocaleString()}
+                </dd>
+              </div>
+              <div className="flex items-baseline gap-2">
+                <dt className="text-[color:var(--text-secondary)]">Segments</dt>
+                <dd className="font-semibold tabular-nums text-[color:var(--text-primary)]">
+                  {segments}
+                </dd>
+              </div>
+              <div className="flex items-baseline gap-2">
+                <dt className="text-[color:var(--text-secondary)]">Markets</dt>
+                <dd className="font-semibold tabular-nums text-[color:var(--text-primary)]">
+                  {states}
+                </dd>
+              </div>
+            </dl>
+          </Reveal>
+        ) : null}
       </div>
     </section>
   );
