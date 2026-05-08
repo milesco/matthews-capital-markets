@@ -65,26 +65,26 @@ export function SiteHeader() {
       <div className="mx-auto max-w-[1024px] px-6">
         <div
           className={cn(
-            "flex items-center justify-between h-12 md:h-11",
+            "flex items-center justify-between h-16 md:h-16",
           )}
         >
           {/* Logo */}
           <Link
             href="/"
             aria-label="Matthews, home"
-            className="flex items-center gap-2"
+            className="flex items-center gap-2.5"
           >
             <Image
               src="/images/matthews-logo.jpg"
               alt="Matthews"
-              width={32}
-              height={32}
+              width={48}
+              height={48}
               priority
-              className="h-7 w-7 rounded-[6px]"
+              className="h-10 w-10 rounded-[8px]"
             />
             <span
               className={cn(
-                "text-[15px] font-semibold tracking-[-0.014em] transition-colors duration-300",
+                "text-[17px] font-semibold tracking-[-0.014em] transition-colors duration-300",
                 textColor,
               )}
             >
@@ -117,13 +117,8 @@ export function SiteHeader() {
             })}
           </nav>
 
-          {/* Right side: pill + mobile menu */}
+          {/* Right side: mobile menu only — Contact lives in the nav */}
           <div className="flex items-center gap-3">
-            <div className="hidden md:block">
-              <Pill variant="primary" size="sm" href="/contact">
-                Get in touch
-              </Pill>
-            </div>
             <button
               type="button"
               className={cn(
@@ -183,11 +178,6 @@ export function SiteHeader() {
                   );
                 })}
               </nav>
-              <div className="mt-4">
-                <Pill variant="primary" size="default" href="/contact" className="w-full">
-                  Get in touch
-                </Pill>
-              </div>
             </div>
           </motion.div>
         )}
