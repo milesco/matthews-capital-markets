@@ -399,6 +399,7 @@ export const closed: ClosedDeal[] = [
     dealSize: "$10,000,000",
     transactionType: "Investment Sale",
     transactionTypeLabel: "Asset Sale",
+    photo: "/closed/mansion-at-judges-hill.jpg",
     sponsorProfile: "Family Office",
     brokerSlugs: ["luke-thompson", "miles-cortez"],
     toneClass: "from-[#0066cc] to-[#1a56db]",
