@@ -76,6 +76,7 @@ export default async function ListingDetailPage(
                     tone: primaryBroker.cover.tone,
                   }}
                   listingName={listing.name}
+                  omUrl={listing.omUrl}
                 />
               </aside>
             )}

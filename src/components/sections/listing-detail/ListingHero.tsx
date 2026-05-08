@@ -116,13 +116,24 @@ export function ListingHero({ listing }: ListingHeroProps) {
 
         {/* CTA */}
         <div className="mt-10 flex flex-wrap items-center gap-4">
-          <Pill
-            variant="primary"
-            size="default"
-            href={`/contact?ref=${encodeURIComponent(listing.slug)}`}
-          >
-            Request OM
-          </Pill>
+          {listing.omUrl ? (
+            <Pill
+              variant="primary"
+              size="default"
+              href={listing.omUrl}
+              target="_blank"
+            >
+              View OM
+            </Pill>
+          ) : (
+            <Pill
+              variant="primary"
+              size="default"
+              href={`/contact?ref=${encodeURIComponent(listing.slug)}`}
+            >
+              Request OM
+            </Pill>
+          )}
           <Pill
             variant="secondary"
             size="default"

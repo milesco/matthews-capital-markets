@@ -31,6 +31,9 @@ export interface BrokerRailContact {
 export interface StickyBrokerRailProps {
   broker: BrokerRailContact;
   listingName: string;
+  /** When set, the primary "Request OM" pill becomes "View OM" linking
+   *  directly to this URL in a new tab. Falls back to mailto when unset. */
+  omUrl?: string;
   className?: string;
 }
 
@@ -98,11 +101,16 @@ function BrokerAvatar({
 export function StickyBrokerRail({
   broker,
   listingName,
+  omUrl,
   className,
 }: StickyBrokerRailProps) {
   const subject = encodeURIComponent(`Request OM — ${listingName}`);
   const mailtoHref = `mailto:${broker.email}?subject=${subject}`;
   const telHref = `tel:${broker.phone.replace(/[^0-9+]/g, "")}`;
+  // Primary CTA target — direct OM link when available, mailto fallback otherwise.
+  const primaryHref = omUrl ?? mailtoHref;
+  const primaryLabel = omUrl ? "View OM" : "Request OM";
+  const primaryTarget = omUrl ? "_blank" : undefined;
 
   return (
     <>
@@ -150,8 +158,14 @@ export function StickyBrokerRail({
         </div>
 
         <div className="mt-5">
-          <Pill variant="primary" size="default" href={mailtoHref} className="w-full">
-            Request OM
+          <Pill
+            variant="primary"
+            size="default"
+            href={primaryHref}
+            target={primaryTarget}
+            className="w-full"
+          >
+            {primaryLabel}
           </Pill>
         </div>
       </aside>
@@ -178,8 +192,13 @@ export function StickyBrokerRail({
               {broker.title}
             </p>
           </div>
-          <Pill variant="primary" size="sm" href={mailtoHref}>
-            Request OM
+          <Pill
+            variant="primary"
+            size="sm"
+            href={primaryHref}
+            target={primaryTarget}
+          >
+            {primaryLabel}
           </Pill>
         </div>
       </div>

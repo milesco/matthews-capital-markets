@@ -38,6 +38,12 @@ export type Listing = {
   brokerSlugs: string[];
   photo: string;
   photoCount: number;
+  /**
+   * Direct link to a hosted Offering Memorandum. When set, the "Request OM"
+   * CTA on the listing detail and broker rail becomes "View OM" and opens
+   * this URL in a new tab. Falls back to the contact-form mailto when unset.
+   */
+  omUrl?: string;
   summary: string;
   bullets: string[];
   toneClass: string;
@@ -75,6 +81,7 @@ export const listings: Listing[] = [
     brokerSlugs: ["luke-thompson", "nate-solomon"],
     photo: "/listings/walden-retreats-hill-country.jpg",
     photoCount: 28,
+    omUrl: "https://walden-retreats-om.vercel.app/",
     toneClass: TONE.navy,
     summary:
       "Walden Retreats is a 15-key luxury glamping resort on 96 acres in the Texas Hill Country, twenty-five minutes from downtown Fredericksburg and ninety minutes from Austin. The asset opened in 2020, expanded its food and beverage program in 2022, and trades at the highest ADR of any independent resort in its competitive set.\n\nThe offering is unencumbered with no debt, no franchise, and no management contract. A successor sponsor inherits a stabilized cash flow with embedded upside from cabin expansion (entitled for 24 additional units), wedding venue activation, and a wellness layer the current owner has not pursued.",
