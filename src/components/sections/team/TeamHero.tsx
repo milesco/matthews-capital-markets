@@ -14,15 +14,14 @@ export function TeamHero() {
           <TwoToneHeadline
             as="h1"
             size="section"
-            lead="Three specialists."
-            follow="One hospitality team."
+            lead="The team."
+            follow="Three specialists, one hospitality desk."
           />
         </Reveal>
         <Reveal delay={0.1}>
           <p className="mt-6 max-w-[58ch] text-[17px] leading-[1.47] tracking-[-0.022em] text-[color:var(--text-tertiary)]">
-            Hospitality capital markets and investment sales, anchored in
-            Austin and Denver with national investor reach. Pick the broker
-            who fits your asset, sponsor profile, or capital question.
+            Hospitality finance and investment sales, anchored in Austin
+            and Denver with national investor reach.
           </p>
         </Reveal>
       </div>
