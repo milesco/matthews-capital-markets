@@ -109,8 +109,23 @@ export function SiteFooter() {
 
         <div className="mt-12 hairline" />
 
+        {/* Footprint — tracked uppercase city line, hospitality-brokerage
+            convention (cf. Hunter Hotel Advisors). Anchors the brand to its
+            real geography while signaling national reach. */}
+        <p className="mt-6 text-[11px] uppercase tracking-[0.22em] font-medium text-[color:var(--text-secondary)]">
+          Austin
+          <span aria-hidden="true" className="mx-2 text-[color:var(--text-tertiary)]">
+            ·
+          </span>
+          Denver
+          <span aria-hidden="true" className="mx-2 text-[color:var(--text-tertiary)]">
+            ·
+          </span>
+          National investor reach
+        </p>
+
         {/* Legal */}
-        <div className="mt-6 space-y-1.5">
+        <div className="mt-4 space-y-1.5">
           <p className="text-[11px] tracking-[-0.005em] text-[color:var(--text-tertiary)]">
             Matthews Real Estate Investment Services — 515 Congress Ave., Suite 2410, Austin, TX 78701.
           </p>
