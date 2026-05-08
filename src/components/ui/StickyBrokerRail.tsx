@@ -107,10 +107,10 @@ export function StickyBrokerRail({
   const subject = encodeURIComponent(`Request OM — ${listingName}`);
   const mailtoHref = `mailto:${broker.email}?subject=${subject}`;
   const telHref = `tel:${broker.phone.replace(/[^0-9+]/g, "")}`;
-  // Primary CTA target — direct OM link when available, mailto fallback otherwise.
+  // Primary CTA — direct OM link (same-tab redirect) when available,
+  // mailto fallback otherwise.
   const primaryHref = omUrl ?? mailtoHref;
   const primaryLabel = omUrl ? "View OM" : "Request OM";
-  const primaryTarget = omUrl ? "_blank" : undefined;
 
   return (
     <>
@@ -162,7 +162,6 @@ export function StickyBrokerRail({
             variant="primary"
             size="default"
             href={primaryHref}
-            target={primaryTarget}
             className="w-full"
           >
             {primaryLabel}
@@ -192,12 +191,7 @@ export function StickyBrokerRail({
               {broker.title}
             </p>
           </div>
-          <Pill
-            variant="primary"
-            size="sm"
-            href={primaryHref}
-            target={primaryTarget}
-          >
+          <Pill variant="primary" size="sm" href={primaryHref}>
             {primaryLabel}
           </Pill>
         </div>
