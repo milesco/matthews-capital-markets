@@ -15,10 +15,10 @@
   --surface: #ffffff;
   --surface-elevated: #f5f5f7;
   --surface-inverse: #000000;
-  --accent: #0071e3;
-  --accent-hover: #0077ed;
-  --accent-active: #006edb;
-  --accent-on-dark: #2997ff;
+  --accent: #1a3a6b;
+  --accent-hover: #234a82;
+  --accent-active: #0e1a34;
+  --accent-on-dark: #5d80b8;
   --divider: #d2d2d7;
   --divider-on-dark: #424245;
   --success: #30d158;
@@ -117,7 +117,7 @@ section[id] {
 }
 
 ::selection {
-  background-color: rgba(0, 113, 227, 0.18);
+  background-color: rgba(26, 58, 107, 0.18);
   color: var(--text-primary);
 }
 
@@ -257,7 +257,7 @@ section[id] {
 .form-input:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.20);
+  box-shadow: 0 0 0 4px rgba(26, 58, 107, 0.20);
 }
 
 /* Hairline divider */

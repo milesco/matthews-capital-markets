@@ -34,7 +34,7 @@ export function InsightsHero({ featured }: InsightsHeroProps) {
           <article className="mt-16 grid grid-cols-1 lg:grid-cols-2 overflow-hidden rounded-[28px] bg-[#f5f5f7]">
             <div className="p-10 lg:p-14 flex flex-col">
               <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.18em]">
-                <span className="rounded-full bg-[#0071e3]/10 text-[#0071e3] px-2.5 py-1 font-medium">
+                <span className="rounded-full bg-[#1a3a6b]/10 text-[#1a3a6b] px-2.5 py-1 font-medium">
                   {kindLabel[featured.kind]}
                 </span>
                 <span className="text-[#86868b]">{featured.date}</span>
@@ -58,7 +58,7 @@ export function InsightsHero({ featured }: InsightsHeroProps) {
                 {featured.downloadHref && (
                   <a
                     href={featured.downloadHref}
-                    className="text-[15px] tracking-[-0.014em] text-[#0071e3] hover:underline underline-offset-[3px]"
+                    className="text-[15px] tracking-[-0.014em] text-[#1a3a6b] hover:underline underline-offset-[3px]"
                   >
                     Download PDF
                   </a>

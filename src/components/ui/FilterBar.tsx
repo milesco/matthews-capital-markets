@@ -47,7 +47,7 @@ export function FilterBar({
               id={id}
               value={values[filter.key] ?? ""}
               onChange={(e) => onChange(filter.key, e.target.value)}
-              className="appearance-none rounded-full bg-[#f5f5f7] border border-[#d2d2d7] px-4 py-2 pr-8 text-[14px] text-[#1d1d1f] focus:outline-none focus:border-[#0071e3] focus:ring-4 focus:ring-[#0071e3]/20 transition-colors duration-200"
+              className="appearance-none rounded-full bg-[#f5f5f7] border border-[#d2d2d7] px-4 py-2 pr-8 text-[14px] text-[#1d1d1f] focus:outline-none focus:border-[#1a3a6b] focus:ring-4 focus:ring-[#1a3a6b]/20 transition-colors duration-200"
               style={{
                 backgroundImage:
                   "url(\"data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='none' stroke='%231d1d1f' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' d='M1 1l4 4 4-4'/%3E%3C/svg%3E\")",

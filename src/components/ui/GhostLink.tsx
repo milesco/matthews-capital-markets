@@ -11,7 +11,7 @@ export interface GhostLinkProps {
 
 export function GhostLink({ href, children, className }: GhostLinkProps) {
   const classes = cn(
-    "inline-flex items-center gap-1 text-[#0071e3] text-[15px] tracking-[-0.014em] hover:underline underline-offset-[3px] [.dark-section_&]:text-[#2997ff]",
+    "inline-flex items-center gap-1 text-[#1a3a6b] text-[15px] tracking-[-0.014em] hover:underline underline-offset-[3px] [.dark-section_&]:text-[#5d80b8]",
     className,
   );
 

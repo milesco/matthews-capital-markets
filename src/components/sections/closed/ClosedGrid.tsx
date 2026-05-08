@@ -130,7 +130,7 @@ export function ClosedGrid({ filters }: ClosedGridProps) {
               </div>
               <div className="px-5 pt-6 pb-7 text-center">
                 <h3
-                  className="font-semibold text-[#1d1d1f] tracking-[-0.014em] inline-block underline decoration-[#0071e3] decoration-[2px] underline-offset-[6px]"
+                  className="font-semibold text-[#1d1d1f] tracking-[-0.014em] inline-block underline decoration-[#1a3a6b] decoration-[2px] underline-offset-[6px]"
                   style={{ fontSize: "18px", lineHeight: 1.2 }}
                 >
                   {deal.name}

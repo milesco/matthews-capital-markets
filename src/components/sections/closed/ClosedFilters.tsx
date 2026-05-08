@@ -131,9 +131,9 @@ export function ClosedFilters({
                 onChange({ ...values, [key]: "" })
               }
               className={cn(
-                "inline-flex items-center gap-1.5 rounded-full bg-[#0071e3]/10 text-[#0071e3]",
+                "inline-flex items-center gap-1.5 rounded-full bg-[#1a3a6b]/10 text-[#1a3a6b]",
                 "px-3 py-1.5 text-[12px] font-medium tracking-[-0.01em]",
-                "hover:bg-[#0071e3]/15 transition-colors duration-200",
+                "hover:bg-[#1a3a6b]/15 transition-colors duration-200",
               )}
               aria-label={`Remove filter ${labelMap[key]}: ${values[key]}`}
             >

@@ -60,7 +60,7 @@ export function TeamDetailHero({ member }: TeamDetailHeroProps) {
                 {member.specialties.map((s) => (
                   <span
                     key={s}
-                    className="text-[12px] text-[#0071e3] bg-[#0071e3]/10 rounded-full px-3 py-1"
+                    className="text-[12px] text-[#1a3a6b] bg-[#1a3a6b]/10 rounded-full px-3 py-1"
                   >
                     {s}
                   </span>

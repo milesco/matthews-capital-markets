@@ -106,7 +106,7 @@ export function ListingGallery({ listing }: ListingGalleryProps) {
             key={tile.id}
             type="button"
             onClick={() => setOpenIndex(tile.id)}
-            className="group relative aspect-[4/3] overflow-hidden rounded-[18px] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0071e3] focus-visible:ring-offset-2"
+            className="group relative aspect-[4/3] overflow-hidden rounded-[18px] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1a3a6b] focus-visible:ring-offset-2"
             aria-label={`Open photo ${tile.id + 1} of ${total}`}
           >
             {tile.usePhoto ? (

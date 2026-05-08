@@ -14,7 +14,7 @@ function DealCard({ deal }: { deal: NamedDeal }) {
         <span className="inline-flex rounded-full bg-white px-2.5 py-1 text-[11px] uppercase tracking-[0.16em] text-[#1d1d1f]">
           {deal.year}
         </span>
-        <span className="inline-flex rounded-full bg-[#0071e3]/10 px-2.5 py-1 text-[11px] text-[#0071e3]">
+        <span className="inline-flex rounded-full bg-[#1a3a6b]/10 px-2.5 py-1 text-[11px] text-[#1a3a6b]">
           {deal.segment}
         </span>
       </div>

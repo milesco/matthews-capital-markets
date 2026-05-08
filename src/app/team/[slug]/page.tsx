@@ -91,14 +91,14 @@ function BrokerContactRail({ broker }: BrokerRailProps) {
       <div className="mt-5 space-y-2.5">
         <a
           href={telHref}
-          className="flex items-center gap-2 text-[15px] tracking-[-0.014em] text-[#1d1d1f] hover:text-[#0071e3] transition-colors duration-200"
+          className="flex items-center gap-2 text-[15px] tracking-[-0.014em] text-[#1d1d1f] hover:text-[#1a3a6b] transition-colors duration-200"
         >
           <Phone className="h-4 w-4 shrink-0" strokeWidth={1.75} aria-hidden="true" />
           <span>{broker.phone}</span>
         </a>
         <a
           href={mailtoHref}
-          className="flex items-center gap-2 text-[15px] tracking-[-0.014em] text-[#1d1d1f] hover:text-[#0071e3] transition-colors duration-200"
+          className="flex items-center gap-2 text-[15px] tracking-[-0.014em] text-[#1d1d1f] hover:text-[#1a3a6b] transition-colors duration-200"
         >
           <Mail className="h-4 w-4 shrink-0" strokeWidth={1.75} aria-hidden="true" />
           <span className="truncate">{broker.email}</span>
@@ -108,7 +108,7 @@ function BrokerContactRail({ broker }: BrokerRailProps) {
             href={broker.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-[15px] tracking-[-0.014em] text-[#1d1d1f] hover:text-[#0071e3] transition-colors duration-200"
+            className="flex items-center gap-2 text-[15px] tracking-[-0.014em] text-[#1d1d1f] hover:text-[#1a3a6b] transition-colors duration-200"
           >
             <ExternalLink
               className="h-4 w-4 shrink-0"

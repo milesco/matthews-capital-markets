@@ -19,7 +19,7 @@ const rows: Row[] = [
     value: (
       <a
         href="mailto:hotelteam@matthews.com"
-        className="text-[#0071e3] hover:underline"
+        className="text-[#1a3a6b] hover:underline"
       >
         hotelteam@matthews.com
       </a>
@@ -46,7 +46,7 @@ export function ContactInfo() {
             return (
               <li key={row.label} className="flex items-start gap-4">
                 <span
-                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#0071e3]/10 text-[#0071e3]"
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#1a3a6b]/10 text-[#1a3a6b]"
                   aria-hidden="true"
                 >
                   <Icon className="h-[18px] w-[18px]" strokeWidth={1.75} />

@@ -34,7 +34,7 @@ export function InsightsArchive({ items }: InsightsArchiveProps) {
                 />
                 <div className="p-6">
                   <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.18em]">
-                    <span className="rounded-full bg-[#0071e3]/10 text-[#0071e3] px-2 py-0.5 font-medium">
+                    <span className="rounded-full bg-[#1a3a6b]/10 text-[#1a3a6b] px-2 py-0.5 font-medium">
                       {kindLabel[insight.kind]}
                     </span>
                     <span className="text-[#86868b]">{insight.date}</span>

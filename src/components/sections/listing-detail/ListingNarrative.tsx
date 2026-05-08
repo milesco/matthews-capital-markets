@@ -57,7 +57,7 @@ export function ListingNarrative({ listing }: ListingNarrativeProps) {
                 <div className="flex gap-3">
                   <span
                     aria-hidden="true"
-                    className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0071e3]"
+                    className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1a3a6b]"
                   />
                   <p className="text-[15px] leading-[1.5] tracking-[-0.014em] text-[#424245]">
                     <span className="font-semibold text-[color:var(--text-primary)]">

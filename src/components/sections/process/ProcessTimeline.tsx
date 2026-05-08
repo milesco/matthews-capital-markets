@@ -26,7 +26,7 @@ export function ProcessTimeline() {
                   >
                     {phase.name}
                   </h2>
-                  <div className="mt-4 inline-flex items-center rounded-full bg-[#0071e3]/10 px-3 py-1 text-[12px] font-medium tracking-[-0.01em] text-[#0071e3]">
+                  <div className="mt-4 inline-flex items-center rounded-full bg-[#1a3a6b]/10 px-3 py-1 text-[12px] font-medium tracking-[-0.01em] text-[#1a3a6b]">
                     {phase.weeks}
                   </div>
                   {phase.weeksNote && (

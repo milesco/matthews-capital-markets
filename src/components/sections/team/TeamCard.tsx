@@ -23,7 +23,7 @@ export function TeamCard({ member }: TeamCardProps) {
     <article className="group overflow-hidden rounded-[18px] bg-white card-lift">
       <Link
         href={href}
-        className="block focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0071e3] rounded-[18px]"
+        className="block focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1a3a6b] rounded-[18px]"
         aria-label={`View bio for ${member.name}`}
       >
         <MonogramCover
@@ -37,7 +37,7 @@ export function TeamCard({ member }: TeamCardProps) {
 
       <div className="p-5">
         <h3 className="text-[16px] font-semibold tracking-[-0.014em] text-[#1d1d1f]">
-          <Link href={href} className="hover:text-[#0071e3] transition-colors duration-200">
+          <Link href={href} className="hover:text-[#1a3a6b] transition-colors duration-200">
             {member.name}
           </Link>
         </h3>
@@ -55,7 +55,7 @@ export function TeamCard({ member }: TeamCardProps) {
           {member.specialties.map((s) => (
             <span
               key={s}
-              className="text-[11px] text-[#0071e3] bg-[#0071e3]/10 rounded-full px-2.5 py-0.5"
+              className="text-[11px] text-[#1a3a6b] bg-[#1a3a6b]/10 rounded-full px-2.5 py-0.5"
             >
               {s}
             </span>

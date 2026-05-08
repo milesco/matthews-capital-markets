@@ -50,8 +50,8 @@ function ChartIllustration() {
             />
           </pattern>
           <linearGradient id="line" x1="0" x2="1" y1="0" y2="0">
-            <stop offset="0%" stopColor="#0071e3" />
-            <stop offset="100%" stopColor="#2997ff" />
+            <stop offset="0%" stopColor="#1a3a6b" />
+            <stop offset="100%" stopColor="#5d80b8" />
           </linearGradient>
         </defs>
         <rect width="600" height="280" fill="url(#grid)" />
@@ -80,7 +80,7 @@ function ChartIllustration() {
             cy={y}
             r="3.5"
             fill="#fff"
-            stroke="#0071e3"
+            stroke="#1a3a6b"
             strokeWidth="2"
           />
         ))}
@@ -121,7 +121,7 @@ export function InsightLayout({ insight }: InsightLayoutProps) {
       <div className="mx-auto max-w-[692px] px-6">
         {/* Header meta */}
         <div className="flex flex-wrap items-center gap-2 text-[11px] uppercase tracking-[0.18em]">
-          <span className="rounded-full bg-[#0071e3]/10 text-[#0071e3] px-2.5 py-1 font-medium">
+          <span className="rounded-full bg-[#1a3a6b]/10 text-[#1a3a6b] px-2.5 py-1 font-medium">
             {kindLabel[insight.kind]}
           </span>
           <span className="text-[#86868b]">{insight.date}</span>
@@ -172,7 +172,7 @@ export function InsightLayout({ insight }: InsightLayoutProps) {
               elements.push(
                 <blockquote
                   key={`q-${i}`}
-                  className="my-10 italic font-serif text-[clamp(22px,2.4vw,32px)] leading-[1.32] tracking-[-0.012em] text-[#1d1d1f] max-w-[58ch] border-l-2 border-[#0071e3] pl-6"
+                  className="my-10 italic font-serif text-[clamp(22px,2.4vw,32px)] leading-[1.32] tracking-[-0.012em] text-[#1d1d1f] max-w-[58ch] border-l-2 border-[#1a3a6b] pl-6"
                 >
                   {p}
                 </blockquote>,

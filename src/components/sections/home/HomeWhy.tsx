@@ -64,7 +64,7 @@ export function HomeWhy() {
               <Reveal key={benefit.titleLead} delay={i * 0.05}>
                 <article className="rounded-[22px] bg-[#f5f5f7] p-8 h-full">
                   <Icon
-                    className="mb-5 h-10 w-10 text-[#0071e3]"
+                    className="mb-5 h-10 w-10 text-[#1a3a6b]"
                     strokeWidth={1.75}
                     aria-hidden={true}
                   />

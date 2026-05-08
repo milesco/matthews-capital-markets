@@ -21,7 +21,7 @@ export interface PillProps {
 }
 
 const base =
-  "inline-flex items-center justify-center rounded-full leading-none font-normal whitespace-nowrap min-h-[44px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0071e3] transition-colors duration-200";
+  "inline-flex items-center justify-center rounded-full leading-none font-normal whitespace-nowrap min-h-[44px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1a3a6b] transition-colors duration-200";
 
 const sizeClass: Record<Size, string> = {
   default: "px-[22px] py-[12px] text-[17px]",
@@ -30,9 +30,9 @@ const sizeClass: Record<Size, string> = {
 
 const variantClass: Record<Variant, string> = {
   primary:
-    "bg-[#0071e3] text-white hover:bg-[#0077ed] active:bg-[#006edb]",
+    "bg-[#1a3a6b] text-white hover:bg-[#234a82] active:bg-[#0e1a34]",
   secondary:
-    "border border-[#0071e3] text-[#0071e3] hover:bg-[#0071e3] hover:text-white",
+    "border border-[#1a3a6b] text-[#1a3a6b] hover:bg-[#1a3a6b] hover:text-white",
 };
 
 export function Pill({

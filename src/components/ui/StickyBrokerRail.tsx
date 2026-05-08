@@ -143,14 +143,14 @@ export function StickyBrokerRail({
         <div className="mt-5 space-y-2">
           <a
             href={telHref}
-            className="flex items-center gap-2 text-[15px] text-[color:var(--text-primary)] hover:text-[#0071e3]"
+            className="flex items-center gap-2 text-[15px] text-[color:var(--text-primary)] hover:text-[#1a3a6b]"
           >
             <Phone className="h-4 w-4" strokeWidth={1.75} aria-hidden="true" />
             <span>{broker.phone}</span>
           </a>
           <a
             href={mailtoHref}
-            className="flex items-center gap-2 text-[15px] text-[color:var(--text-primary)] hover:text-[#0071e3]"
+            className="flex items-center gap-2 text-[15px] text-[color:var(--text-primary)] hover:text-[#1a3a6b]"
           >
             <Mail className="h-4 w-4" strokeWidth={1.75} aria-hidden="true" />
             <span className="truncate">{broker.email}</span>

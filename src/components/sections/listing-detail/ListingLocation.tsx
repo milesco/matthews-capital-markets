@@ -80,7 +80,7 @@ export function ListingLocation({ listing }: ListingLocationProps) {
                   >
                     <span
                       aria-hidden="true"
-                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0071e3]"
+                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1a3a6b]"
                     />
                     <span>{d}</span>
                   </li>
@@ -121,10 +121,10 @@ export function ListingLocation({ listing }: ListingLocationProps) {
             <div className="relative">
               <span
                 aria-hidden="true"
-                className="absolute inset-0 -z-10 h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0071e3]/20 left-1/2 top-1/2 animate-ping"
+                className="absolute inset-0 -z-10 h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#1a3a6b]/20 left-1/2 top-1/2 animate-ping"
                 style={{ animationDuration: "2.4s" }}
               />
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0071e3] text-white shadow-[0_4px_12px_rgba(0,113,227,0.4)]">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1a3a6b] text-white shadow-[0_4px_12px_rgba(26, 58, 107,0.4)]">
                 <MapPin
                   className="h-5 w-5"
                   strokeWidth={2}

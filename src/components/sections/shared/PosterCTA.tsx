@@ -38,7 +38,7 @@ export function PosterCTA({
         className="pointer-events-none absolute inset-0 opacity-60"
         style={{
           background:
-            "radial-gradient(900px 600px at 50% 60%, rgba(0,113,227,0.18), transparent 65%)",
+            "radial-gradient(900px 600px at 50% 60%, rgba(26, 58, 107,0.18), transparent 65%)",
         }}
       />
 

@@ -19,7 +19,7 @@ export interface ClosedTableProps {
 }
 
 const sponsorChip: Record<SponsorProfile, string> = {
-  PE: "bg-[#0071e3]/10 text-[#0071e3]",
+  PE: "bg-[#1a3a6b]/10 text-[#1a3a6b]",
   REIT: "bg-[#30d158]/12 text-[#1c8b3c]",
   Developer: "bg-[#ff9f0a]/15 text-[#a25b00]",
   "Family Office": "bg-[#7d3cff]/12 text-[#5e2bcb]",
