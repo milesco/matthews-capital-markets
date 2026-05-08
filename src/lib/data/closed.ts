@@ -277,6 +277,7 @@ export const closed: ClosedDeal[] = [
     dealSize: "$11,700,000",
     transactionType: "Investment Sale",
     transactionTypeLabel: "Asset Sale + Bridge Financing",
+    photo: "/closed/hampton-inn-suites-beaumont.jpg",
     sponsorProfile: "Family Office",
     brokerSlugs: ["luke-thompson", "miles-cortez"],
     toneClass: "from-[#0a1226] to-[#1a3a6b]",
