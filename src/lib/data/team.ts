@@ -189,7 +189,7 @@ Earlier in his career, Miles co-founded Aventine Capital Partners, where he play
     name: "Nate Solomon",
     title: "Hospitality Associate",
     office: "Austin",
-    specialties: ["Capital Markets"],
+    specialties: ["Select Service"],
     phone: "(737) 296-3875",
     email: "nate.solomon@matthews.com",
     linkedin: "https://www.linkedin.com/in/nathaniel-solomon-4b2b9125a/",
