@@ -36,7 +36,9 @@ export type Listing = {
   callForOffersDate?: string;
   encumbrance: string;
   brokerSlugs: string[];
-  photo: string;
+  /** Optional. When unset, the card and detail hero render the toneClass
+   *  gradient as a placeholder until photography lands. */
+  photo?: string;
   photoCount: number;
   /**
    * Direct link to a hosted Offering Memorandum. When set, the "Request OM"
@@ -91,6 +93,38 @@ export const listings: Listing[] = [
       "Expansion entitled. 24 additional cabin pads approved through 2027.",
       "Unencumbered. No debt, no franchise, no management contract.",
       "Repeat guest base. 41% repeat rate inside 18 months, driven by wedding bookings.",
+    ],
+  },
+  {
+    slug: "hampton-inn-shelbyville",
+    name: "Hampton Inn Shelbyville",
+    address: "59 E Rampart St",
+    city: "Shelbyville",
+    state: "IN",
+    region: "Midwest",
+    segment: "Select Service",
+    brand: "Hampton by Hilton",
+    status: "available",
+    keys: 57,
+    yearBuilt: 1999,
+    yearRenovated: 2025,
+    askingPrice: "$6,400,000",
+    adr: "$136.16",
+    revpar: "$94.84",
+    occupancy: "69.7%",
+    encumbrance: "Hilton franchise, 15-year license extension",
+    brokerSlugs: ["luke-thompson", "nate-solomon"],
+    photoCount: 12,
+    toneClass: TONE.midnight,
+    summary:
+      "A 57-key Hampton Inn in Shelbyville, Indiana, southeast of Indianapolis with direct access to Interstate 74. The asset combines stabilized in-place cash flow with a fresh 15-year Hilton license extension and a 2025 renovation already scheduled, removing the two underwriting questions buyers ask first.\n\nDemand draws from a diversified base. Manufacturing employers Knauf Insulation and Ryobi Die Casting anchor weekday compression. Indiana Grand Racing & Casino drives leisure on weekends. Indianapolis demand generators including the Indiana Convention Center, Lucas Oil Stadium, Eli Lilly, and Salesforce sit within commuting distance and overflow to the Shelbyville sub-market when the urban core sells out.\n\nGuidance is $6.4M, 3.47x trailing-twelve room revenue.",
+    bullets: [
+      "57 keys, upper-midscale, three stories, interior corridor.",
+      "Fresh 15-year Hilton license extension. 2025 renovation scheduled.",
+      "2024 projected: 69.7% occupancy, $136.16 ADR, $94.84 RevPAR.",
+      "Pricing $6.4M, $112K per key, $196 per SF (32,516 SF on 1.99 acres).",
+      "Diversified demand: Knauf, Ryobi, Indiana Grand Casino, Indianapolis spillover.",
+      "Amenities: fitness, pool, event space, hot breakfast, meeting rooms, pet friendly, digital key.",
     ],
   },
 ];

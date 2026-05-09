@@ -12,21 +12,21 @@ export interface ListingHeroProps {
 }
 
 export function ListingHero({ listing }: ListingHeroProps) {
-  const hasPhoto = Boolean(listing.photo);
+  const photo = listing.photo;
 
   return (
     <section
       className={cn(
         "dark-section relative overflow-hidden text-white pt-32 pb-20 lg:pt-40 lg:pb-24 min-h-[60vh]",
-        !hasPhoto && "bg-gradient-to-br",
-        !hasPhoto && listing.toneClass,
+        !photo && "bg-gradient-to-br",
+        !photo && listing.toneClass,
       )}
     >
       {/* Photo backdrop with bottom-anchored gradient for headline legibility */}
-      {hasPhoto ? (
+      {photo ? (
         <>
           <Image
-            src={listing.photo}
+            src={photo}
             alt={listing.name}
             fill
             quality={92}

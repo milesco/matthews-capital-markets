@@ -109,7 +109,7 @@ export function ListingGallery({ listing }: ListingGalleryProps) {
             className="group relative aspect-[4/3] overflow-hidden rounded-[18px] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1a3a6b] focus-visible:ring-offset-2"
             aria-label={`Open photo ${tile.id + 1} of ${total}`}
           >
-            {tile.usePhoto ? (
+            {tile.usePhoto && listing.photo ? (
               <div className="absolute inset-0 transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.04]">
                 <Image
                   src={listing.photo}
@@ -198,7 +198,7 @@ export function ListingGallery({ listing }: ListingGalleryProps) {
                     : tiles[openIndex].tone),
               )}
             >
-              {tiles[openIndex].usePhoto && (
+              {tiles[openIndex].usePhoto && listing.photo && (
                 <Image
                   src={listing.photo}
                   alt={`${listing.name}, photo ${openIndex + 1}`}
