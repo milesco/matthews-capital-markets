@@ -3,6 +3,7 @@
 import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Pill } from "@/components/ui/Pill";
@@ -30,6 +31,11 @@ const NAV_ITEMS: NavItem[] = [
 ];
 
 export function SiteHeader() {
+  const pathname = usePathname();
+  // Only the home route opens with a dark hero behind a transparent chrome.
+  // Every other page lands on a light surface, so the chrome must default
+  // to frosted or the white nav links sit invisibly on white.
+  const transparentRoute = pathname === "/";
   const [scrolled, setScrolled] = React.useState(false);
   const [open, setOpen] = React.useState(false);
 
@@ -49,7 +55,7 @@ export function SiteHeader() {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
-  const frosted = scrolled || open;
+  const frosted = scrolled || open || !transparentRoute;
   const textColor = frosted ? "text-[color:var(--text-primary)]" : "text-white";
 
   return (
