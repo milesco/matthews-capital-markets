@@ -102,14 +102,20 @@ body {
   font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "ss01" 1, "cv11" 1;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 600;
-  letter-spacing: -0.025em;
+/* Layered so Tailwind utilities (e.g. tracking-[0.009em] for the
+   positive-letter-spacing card titles in design-system/SPEC.md) can
+   override these defaults. Unlayered rules beat any layered rule
+   regardless of specificity. */
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
 }
 
 section[id] {
