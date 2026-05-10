@@ -25,9 +25,11 @@ export function TeamDetailHero({ member }: TeamDetailHeroProps) {
     <section className="bg-[#f5f5f7] pt-28 pb-20 lg:pt-32 lg:pb-24">
       <div className="mx-auto max-w-[1024px] px-6">
         <div className="grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-10 lg:gap-14">
-          {/* Editorial monogram cover */}
+          {/* Editorial monogram cover. On mobile, cap the height so the
+              portrait doesn't eat the entire fold and the name + bio sit
+              above the second screen. */}
           <Reveal>
-            <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[28px]">
+            <div className="relative mx-auto max-w-[280px] aspect-[3/4] w-full overflow-hidden rounded-[28px] lg:mx-0 lg:max-w-none">
               <MonogramCover
                 initials={initials(member.name)}
                 tone={member.cover.tone}
