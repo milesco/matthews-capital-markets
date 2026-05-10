@@ -26,7 +26,7 @@ export const markets: Market[] = [
     region: "Texas",
     msa: "Austin-Round Rock-Georgetown MSA",
     geo: { lat: 30.2672, lng: -97.7431 },
-    tagline: "Hotels for sale in Austin, TX.",
+    tagline: "Cap rates, comps, and brokers across the Austin MSA.",
     marketCommentary:
       "Austin is one of the deepest hotel investment markets in Texas. Demand is anchored by the State Capitol, University of Texas, the Austin tech corridor, ACL/SXSW seasonal compression, and steady leisure demand from Hill Country crossover. Matthews's headquarters is downtown on Congress Ave., and the Austin team handles dispositions across select-service, full-service, and Hill Country resort assets.",
     capRateRange:
@@ -51,7 +51,7 @@ export const markets: Market[] = [
     region: "Texas",
     msa: "Dallas-Fort Worth-Arlington MSA",
     geo: { lat: 32.7767, lng: -96.797 },
-    tagline: "Hotels for sale in Dallas-Fort Worth, TX.",
+    tagline: "Cap rates, comps, and brokers across DFW.",
     marketCommentary:
       "Dallas-Fort Worth is the largest hotel market in Texas by transaction volume. Corporate-driven weekday demand from Plano, Frisco, Las Colinas, and downtown Dallas is paired with strong group/convention demand at the Hyatt Regency Dallas and Omni Dallas. The DFW Airport hospitality cluster trades actively; Frisco and Plano sub-markets have been the most resilient through cycle resets.",
     capRateRange:
@@ -76,7 +76,7 @@ export const markets: Market[] = [
     region: "Texas",
     msa: "Houston-The Woodlands-Sugar Land MSA",
     geo: { lat: 29.7604, lng: -95.3698 },
-    tagline: "Hotels for sale in Houston, TX.",
+    tagline: "Cap rates, comps, and brokers across the Houston MSA.",
     marketCommentary:
       "Houston is an energy-cycle-sensitive market with structural medical and convention demand that smooths the cycle. Texas Medical Center alone drives material year-round demand. The Galleria, Energy Corridor, downtown, and Woodlands sub-markets each have distinct buyer pools and underwriting profiles.",
     capRateRange:
@@ -101,7 +101,7 @@ export const markets: Market[] = [
     region: "Texas",
     msa: "San Antonio-New Braunfels MSA",
     geo: { lat: 29.4241, lng: -98.4936 },
-    tagline: "Hotels for sale in San Antonio, TX.",
+    tagline: "Cap rates, comps, and brokers across San Antonio.",
     marketCommentary:
       "San Antonio is anchored by leisure (the Alamo, River Walk, SeaWorld, Six Flags Fiesta Texas) plus a strong military demand layer (Joint Base San Antonio is the largest military installation in DoD). Convention business at the Henry B. Gonzalez Convention Center adds group depth. Riverwalk hotels trade at premium versus suburban.",
     capRateRange:
@@ -126,7 +126,7 @@ export const markets: Market[] = [
     region: "Sun Belt",
     msa: "Nashville-Davidson-Murfreesboro-Franklin MSA",
     geo: { lat: 36.1627, lng: -86.7816 },
-    tagline: "Hotels for sale in Nashville, TN.",
+    tagline: "Cap rates, comps, and brokers across Music City.",
     marketCommentary:
       "Nashville is one of the most-watched Sun Belt hotel markets. Music tourism, bachelorette/bachelor party demand, and convention business at Music City Center drive top-tier RevPAR among comparable secondary metros. New supply through 2024-2025 has been heavy; underwriting now centers on which sub-markets absorb the supply best (Music Row, Gulch, downtown core vs. Brentwood/Cool Springs suburban).",
     capRateRange:
@@ -151,7 +151,7 @@ export const markets: Market[] = [
     region: "Sun Belt",
     msa: "Atlanta-Sandy Springs-Alpharetta MSA",
     geo: { lat: 33.749, lng: -84.388 },
-    tagline: "Hotels for sale in Atlanta, GA.",
+    tagline: "Cap rates, comps, and brokers across the Atlanta MSA.",
     marketCommentary:
       "Atlanta is the largest Southeast hotel market and a corporate / convention powerhouse. Hartsfield-Jackson Airport drives airport-hotel volume; downtown / Midtown / Buckhead each have distinct underwriting profiles. Atlanta has been the most actively traded Sun Belt market by transaction count, with strong PE and family-office bid for select-service portfolios.",
     capRateRange:
@@ -176,7 +176,7 @@ export const markets: Market[] = [
     region: "Sun Belt",
     msa: "Charleston-North Charleston MSA",
     geo: { lat: 32.7765, lng: -79.9311 },
-    tagline: "Hotels for sale in Charleston, SC.",
+    tagline: "Cap rates, comps, and brokers across the Charleston MSA.",
     marketCommentary:
       "Charleston is a top-tier Southeast leisure destination with material weekend ADR premium and growing weekday corporate / industrial demand from Boeing, Mercedes-Benz Vans, and the Charleston port. Historic downtown hotel inventory is supply-constrained — this is one of the few Southeast markets where new construction is genuinely difficult, supporting the bid.",
     capRateRange:
@@ -201,7 +201,7 @@ export const markets: Market[] = [
     region: "Sun Belt",
     msa: "Savannah MSA",
     geo: { lat: 32.0809, lng: -81.0912 },
-    tagline: "Hotels for sale in Savannah, GA.",
+    tagline: "Cap rates, comps, and brokers across coastal Georgia.",
     marketCommentary:
       "Savannah is a similar profile to Charleston — historic-district leisure premium plus growing port and industrial demand from Hyundai's $7.6B Bryan County plant. Boutique and lifestyle hotels in the historic district command top-of-market ADR. Select-service inventory at the I-95/I-16 interchange and around Hunter Army Airfield trades to a different buyer pool.",
     capRateRange:
@@ -226,7 +226,7 @@ export const markets: Market[] = [
     region: "Sun Belt",
     msa: "Charlotte-Concord-Gastonia MSA",
     geo: { lat: 35.2271, lng: -80.8431 },
-    tagline: "Hotels for sale in Charlotte, NC.",
+    tagline: "Cap rates, comps, and brokers across the Charlotte MSA.",
     marketCommentary:
       "Charlotte is a financial-services driven hotel market — Bank of America, Truist, and Wells Fargo (East Coast HQ) anchor weekday corporate demand. Charlotte Douglas International Airport supports a strong airport hotel cluster. Uptown + South End trade at premium; suburban airport / Concord / Pineville at select-service economics.",
     capRateRange:
@@ -251,7 +251,7 @@ export const markets: Market[] = [
     region: "Mountain West",
     msa: "Phoenix-Mesa-Chandler MSA",
     geo: { lat: 33.4484, lng: -112.074 },
-    tagline: "Hotels for sale in Phoenix and Scottsdale, AZ.",
+    tagline: "Cap rates, comps, and brokers across Phoenix and Scottsdale.",
     marketCommentary:
       "Phoenix and Scottsdale are one of the largest Mountain West hotel markets and a top resort/lifestyle destination. Scottsdale resort assets command premium economics through peak season (October–April). Phoenix select-service at the airport and in Tempe / Chandler / Mesa serves corporate demand from Intel, TSMC, and the Sky Harbor airport cluster.",
     capRateRange:
@@ -276,7 +276,7 @@ export const markets: Market[] = [
     region: "Mountain West",
     msa: "Denver-Aurora-Centennial MSA",
     geo: { lat: 39.7392, lng: -104.9903 },
-    tagline: "Hotels for sale in Denver, CO.",
+    tagline: "Cap rates, comps, and brokers across the Denver MSA.",
     marketCommentary:
       "Denver is the largest Mountain West hotel market and Matthews's secondary office. Convention demand at the Colorado Convention Center, year-round outdoor leisure (the gateway to the Rockies), and corporate demand from the energy and aerospace clusters all support stable RevPAR. The DEN airport cluster and downtown / RiNo / LoDo each have distinct sub-market profiles.",
     capRateRange:
@@ -301,7 +301,7 @@ export const markets: Market[] = [
     region: "Sun Belt",
     msa: "Miami-Fort Lauderdale-Pompano Beach MSA",
     geo: { lat: 25.7617, lng: -80.1918 },
-    tagline: "Hotels for sale in Miami, FL.",
+    tagline: "Cap rates, comps, and brokers across South Florida.",
     marketCommentary:
       "Miami is one of the highest-RevPAR markets in the U.S. and a top-tier luxury/lifestyle destination. Miami Beach (South Beach, Mid-Beach, North Beach) commands premium economics; Brickell and downtown serve corporate; Wynwood and Design District attract lifestyle and boutique buyers. Cap rates are tight; it is a market where capital is willing to accept lower yield for the supply-constrained urban / beachfront positioning.",
     capRateRange:
@@ -326,7 +326,7 @@ export const markets: Market[] = [
     region: "Sun Belt",
     msa: "Tampa-St. Petersburg-Clearwater MSA",
     geo: { lat: 27.9506, lng: -82.4572 },
-    tagline: "Hotels for sale in Tampa, FL.",
+    tagline: "Cap rates, comps, and brokers across Tampa Bay.",
     marketCommentary:
       "Tampa Bay is a top-10 Sun Belt hotel market with broad-based demand: corporate (the Westshore business district), leisure (Clearwater Beach), convention (Tampa Convention Center), and sports (Buccaneers, Lightning, Rays). The market has been one of the most actively traded in 2024-2026.",
     capRateRange:
@@ -351,7 +351,7 @@ export const markets: Market[] = [
     region: "Sun Belt",
     msa: "Orlando-Kissimmee-Sanford MSA",
     geo: { lat: 28.5383, lng: -81.3792 },
-    tagline: "Hotels for sale in Orlando, FL.",
+    tagline: "Cap rates, comps, and brokers across Central Florida.",
     marketCommentary:
       "Orlando is the largest leisure hotel market in the U.S. by transaction volume and one of the most institutional. Walt Disney World, Universal Studios (with Epic Universe expansion), SeaWorld, and the Orange County Convention Center anchor a market with extraordinary visitor volume. Lake Buena Vista and International Drive each have distinct buyer pools.",
     capRateRange:
