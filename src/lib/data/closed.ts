@@ -214,6 +214,7 @@ export const closed: ClosedDeal[] = [
     transactionTypeLabel: "Asset Sale + Bridge Financing",
     sponsorProfile: "PE",
     brokerSlugs: ["luke-thompson", "miles-cortez"],
+    photo: "/closed/hampton-inn-portfolio-atlanta.jpg",
     toneClass: "from-[#1d1d1f] to-[#2c2c2e]",
   },
   {
