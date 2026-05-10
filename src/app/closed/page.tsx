@@ -1,69 +1,39 @@
-"use client";
-
-import * as React from "react";
+import type { Metadata } from "next";
 import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
 import { ClosedHero } from "@/components/sections/closed/ClosedHero";
-import {
-  EMPTY_FILTERS,
-  type ClosedFilterValues,
-} from "@/components/sections/closed/ClosedFilters";
-import { ClosedGrid } from "@/components/sections/closed/ClosedGrid";
-import { SegmentChips } from "@/components/sections/listings/SegmentChips";
+import { ClosedBrowser } from "@/components/sections/closed/ClosedBrowser";
 import PosterCTA from "@/components/sections/shared/PosterCTA";
-import { closed } from "@/lib/data/closed";
 
-const SEGMENT_ORDER = [
-  "Select Service",
-  "Full Service",
-  "Resort",
-  "Lifestyle",
-  "Boutique",
-  "Extended Stay",
-] as const;
+const SITE_URL = "https://matthewshotelmarkets.com";
+
+export const metadata: Metadata = {
+  title: "Closed Hotel Transactions | Track Record",
+  description:
+    "Recent hotel closings by Matthews Hotel Markets. Investment sales, capital markets, and debt placements across select-service, full-service, resort, and boutique segments.",
+  alternates: { canonical: `${SITE_URL}/closed` },
+  openGraph: {
+    title: "Closed Hotel Transactions | Matthews Hotel Markets",
+    description:
+      "Recent hotel closings: investment sales, capital markets, and debt placements across the United States.",
+    url: `${SITE_URL}/closed`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Closed Hotel Transactions | Matthews Hotel Markets",
+    description:
+      "Recent hotel closings across select-service, full-service, resort, and boutique.",
+  },
+};
 
 export default function ClosedPage() {
-  const [activeSegment, setActiveSegment] = React.useState<string>("");
-
-  const availableSegments = React.useMemo(() => {
-    const present = new Set(closed.map((d) => d.segment));
-    return SEGMENT_ORDER.filter((s) => present.has(s));
-  }, []);
-
-  const filterValues: ClosedFilterValues = React.useMemo(
-    () => ({ ...EMPTY_FILTERS, segment: activeSegment }),
-    [activeSegment],
-  );
-
-  const visibleCount = React.useMemo(
-    () =>
-      activeSegment
-        ? closed.filter((d) => d.segment === activeSegment).length
-        : closed.length,
-    [activeSegment],
-  );
-
   return (
     <>
       <SiteHeader />
       <main className="pt-16">
         <ClosedHero />
-        {availableSegments.length > 1 && (
-          <section className="bg-white">
-            <div className="mx-auto max-w-[1024px] px-6 pb-2">
-              <SegmentChips
-                segments={availableSegments as unknown as string[]}
-                active={activeSegment}
-                onChange={setActiveSegment}
-                resultCount={visibleCount}
-                unitLabel="closing"
-              />
-            </div>
-          </section>
-        )}
-        <section className="bg-[color:var(--surface-elevated)] py-16 lg:py-24">
-          <ClosedGrid filters={filterValues} />
-        </section>
+        <ClosedBrowser />
         <PosterCTA
           lead="Ready for your closing."
           follow="Start the 24-week conversation."

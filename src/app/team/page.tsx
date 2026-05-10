@@ -1,48 +1,38 @@
-"use client";
-
-import * as React from "react";
+import type { Metadata } from "next";
 import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
 import TeamHero from "@/components/sections/team/TeamHero";
-import TeamFilters, {
-  type TeamFilterValues,
-} from "@/components/sections/team/TeamFilters";
-import TeamGrid from "@/components/sections/team/TeamGrid";
-import { team } from "@/lib/data/team";
+import TeamBrowser from "@/components/sections/team/TeamBrowser";
+
+const SITE_URL = "https://matthewshotelmarkets.com";
+
+export const metadata: Metadata = {
+  title: "Hotel Brokers & Capital Markets Team",
+  description:
+    "Meet the Matthews Hotel Markets team. Hotel brokers and capital markets advisors specializing in select-service, full-service, resort, and boutique investment sales nationwide.",
+  alternates: { canonical: `${SITE_URL}/team` },
+  openGraph: {
+    title: "Hotel Brokers & Capital Markets Team | Matthews Hotel Markets",
+    description:
+      "Hotel brokers and capital markets advisors. Select-service, full-service, resort, and boutique investment sales nationwide.",
+    url: `${SITE_URL}/team`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hotel Brokers & Capital Markets Team",
+    description:
+      "Hotel brokers and capital markets advisors at Matthews Hotel Markets.",
+  },
+};
 
 export default function TeamPage() {
-  const [values, setValues] = React.useState<TeamFilterValues>({
-    office: "",
-    specialty: "",
-  });
-
-  const filtered = React.useMemo(() => {
-    return team.filter((m) => {
-      if (values.office && m.office !== values.office) return false;
-      if (values.specialty && !m.specialties.includes(values.specialty))
-        return false;
-      return true;
-    });
-  }, [values]);
-
   return (
     <>
       <SiteHeader />
       <main className="pt-16">
         <TeamHero />
-        {team.length > 4 && (
-          <section className="bg-white border-b border-[#d2d2d7]">
-            <div className="max-w-[1024px] mx-auto px-6 py-6">
-              <TeamFilters
-                values={values}
-                onChange={setValues}
-                visibleCount={filtered.length}
-                totalCount={team.length}
-              />
-            </div>
-          </section>
-        )}
-        <TeamGrid filtered={filtered} />
+        <TeamBrowser />
       </main>
       <SiteFooter />
     </>
