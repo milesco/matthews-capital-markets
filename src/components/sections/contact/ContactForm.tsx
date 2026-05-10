@@ -23,7 +23,7 @@ const TOPICS: Exclude<Topic, "">[] = [
 ];
 
 const labelClass =
-  "block text-[12px] uppercase tracking-[0.01em] text-[#86868b] mb-2";
+  "block text-[12px] uppercase tracking-[0.01em] text-[#6e6e73] mb-2";
 
 type SubmitState = "idle" | "submitting" | "success" | "error";
 
@@ -232,7 +232,7 @@ export function ContactForm() {
         {state === "error" && errorMsg && (
           <div
             role="alert"
-            className="mt-5 rounded-2xl bg-[#ff3b30]/8 p-4 text-[14px] leading-[1.5] tracking-[-0.014em] text-[#ff3b30]"
+            className="mt-5 rounded-2xl bg-[#ff3b30]/8 p-4 text-[14px] leading-[1.5] tracking-[-0.014em] text-[#c8261d]"
           >
             {errorMsg}
           </div>

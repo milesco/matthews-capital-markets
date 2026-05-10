@@ -72,7 +72,7 @@ export function HomeWhy() {
                     <span className="text-[#1d1d1f]">{benefit.titleLead}</span>{" "}
                     <span className="text-[#86868b]">{benefit.titleFollow}</span>
                   </h3>
-                  <p className="mt-3 text-[17px] leading-[1.47] tracking-[-0.022em] text-[#86868b]">
+                  <p className="mt-3 text-[17px] leading-[1.47] tracking-[-0.022em] text-[#424245]">
                     {benefit.body}
                   </p>
                 </article>
