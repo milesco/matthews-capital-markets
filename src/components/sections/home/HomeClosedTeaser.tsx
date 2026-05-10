@@ -65,7 +65,7 @@ export function HomeClosedTeaser() {
                   Representative transaction
                 </p>
 
-                <dl className="mt-6 grid grid-cols-2 gap-y-4 gap-x-6 border-t border-[color:var(--divider)] pt-6 text-[14px] tracking-[-0.016em]">
+                <dl className="mt-6 grid grid-cols-1 gap-y-4 gap-x-6 border-t border-[color:var(--divider)] pt-6 text-[14px] tracking-[-0.016em] sm:grid-cols-2">
                   <div>
                     <dt className="text-[12px] uppercase tracking-[0.18em] text-[#86868b]">
                       City
