@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { closed as allClosed, type ClosedDeal } from "@/lib/data/closed";
 import type { ClosedFilterValues } from "./ClosedFilters";
 
@@ -80,6 +81,7 @@ export function ClosedGrid({ filters }: ClosedGridProps) {
               key={deal.slug}
               className="group overflow-hidden rounded-[18px] bg-white shadow-[0_1px_3px_rgba(0,0,0,0.04),0_4px_16px_-8px_rgba(0,0,0,0.08)] transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-0.5 hover:shadow-[0_2px_6px_rgba(0,0,0,0.06),0_12px_32px_-10px_rgba(0,0,0,0.14)]"
             >
+              <Link href={`/closed/${deal.slug}`} className="block">
               {/* Uniform 4:3 cover. Real photo when set, else a tonal
                   monogram placeholder. Keeps card heights aligned across
                   the grid regardless of photo coverage. */}
@@ -145,6 +147,7 @@ export function ClosedGrid({ filters }: ClosedGridProps) {
                   {formatPrice(deal.dealSize)}
                 </p>
               </div>
+              </Link>
             </li>
           );
         })}

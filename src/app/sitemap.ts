@@ -2,6 +2,11 @@ import type { MetadataRoute } from "next";
 import { listings } from "@/lib/data/listings";
 import { team } from "@/lib/data/team";
 import { insights } from "@/lib/data/insights";
+import { closed } from "@/lib/data/closed";
+import { markets } from "@/lib/data/markets";
+import { brands } from "@/lib/data/brands";
+import { services } from "@/lib/data/services";
+import { offices } from "@/lib/data/offices";
 
 const SITE_URL = "https://matthewshotelmarkets.com";
 
@@ -83,10 +88,53 @@ export default function sitemap(): MetadataRoute.Sitemap {
     images: [`${SITE_URL}/insights/${i.slug}/opengraph-image`],
   }));
 
+  const closedRoutes: MetadataRoute.Sitemap = closed.map((d) => ({
+    url: `${SITE_URL}/closed/${d.slug}`,
+    lastModified: now,
+    changeFrequency: "yearly",
+    priority: 0.7,
+    images: d.photo
+      ? [`${SITE_URL}${d.photo}`]
+      : [`${SITE_URL}/closed/${d.slug}/opengraph-image`],
+  }));
+
+  const marketRoutes: MetadataRoute.Sitemap = markets.map((m) => ({
+    url: `${SITE_URL}/markets/${m.slug}`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.9,
+  }));
+
+  const brandRoutes: MetadataRoute.Sitemap = brands.map((b) => ({
+    url: `${SITE_URL}/hotels-for-sale/${b.slug}`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.85,
+  }));
+
+  const serviceRoutes: MetadataRoute.Sitemap = services.map((s) => ({
+    url: `${SITE_URL}/services/${s.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.75,
+  }));
+
+  const officeRoutes: MetadataRoute.Sitemap = offices.map((o) => ({
+    url: `${SITE_URL}/offices/${o.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
   return [
     ...staticRoutes,
     ...listingRoutes,
+    ...closedRoutes,
     ...teamRoutes,
     ...insightRoutes,
+    ...marketRoutes,
+    ...brandRoutes,
+    ...serviceRoutes,
+    ...officeRoutes,
   ];
 }
