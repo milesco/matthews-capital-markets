@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { TwoToneHeadline } from "@/components/ui/TwoToneHeadline";
 import { Pill } from "@/components/ui/Pill";
@@ -13,23 +14,48 @@ export function HomeHero() {
     target: sectionRef,
     offset: ["start start", "end start"],
   });
-  // Subtle parallax: gradient slowly scales up as the hero scrolls past.
-  const gradientScale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
+  const photoScale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
 
   return (
     <section
       ref={sectionRef}
       className="dark-section relative overflow-hidden bg-[color:var(--surface-inverse)] text-[color:var(--text-on-dark)]"
     >
-      {/* Three-tone ambient gradient, lobby-at-dusk composite. apple-tokens.md §7.C */}
+      {/* Hero photograph backdrop. Slow parallax zoom as the section scrolls
+          past, capped at 1.05 to stay subtle. */}
       <motion.div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
+        style={{ scale: photoScale, transformOrigin: "center" }}
+      >
+        <Image
+          src="/images/hero-landscape.jpg"
+          alt=""
+          fill
+          quality={88}
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+      </motion.div>
+
+      {/* Left-anchored darkening wash. On desktop the photograph breathes
+          on the right; on mobile the same gradient extends darker further
+          right so the type sits cleanly above water. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
         style={{
-          scale: gradientScale,
           background:
-            "radial-gradient(1200px 700px at 22% 18%, rgba(40,70,140,0.35), transparent 62%), radial-gradient(1100px 700px at 82% 22%, rgba(120,70,160,0.20), transparent 60%), radial-gradient(900px 600px at 50% 95%, rgba(180,120,60,0.10), transparent 65%)",
-          transformOrigin: "center",
+            "linear-gradient(95deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.70) 30%, rgba(0,0,0,0.40) 60%, rgba(0,0,0,0.20) 90%, rgba(0,0,0,0.10) 100%), linear-gradient(180deg, rgba(0,0,0,0.20) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,0) 65%, rgba(0,0,0,0.55) 100%)",
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 md:hidden"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(0,0,0,0.30) 0%, rgba(0,0,0,0.55) 100%)",
         }}
       />
 
