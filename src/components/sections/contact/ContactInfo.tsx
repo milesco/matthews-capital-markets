@@ -19,7 +19,7 @@ const rows: Row[] = [
     value: (
       <a
         href="mailto:hotelteam@matthews.com"
-        className="text-[#1a3a6b] hover:underline"
+        className="inline-flex min-h-[44px] -my-2 items-center text-[#1a3a6b] hover:underline"
       >
         hotelteam@matthews.com
       </a>
