@@ -20,7 +20,6 @@ function formatVolume(num: number): string {
 export function ClosedHero() {
   const totalDeals = `${closed.length}`;
   const volume = formatVolume(totalKnownVolume(closed));
-  const segmentsCovered = new Set(closed.map((d) => d.segment)).size;
 
   return (
     <section className="bg-white py-20 lg:py-24">
@@ -43,7 +42,7 @@ export function ClosedHero() {
           </p>
         </Reveal>
 
-        <div className="mt-14 grid grid-cols-3 gap-6 md:gap-12 border-t border-[color:var(--divider)] pt-10">
+        <div className="mt-14 grid grid-cols-2 gap-6 md:gap-16 border-t border-[color:var(--divider)] pt-10">
           <Reveal>
             <div>
               <Counter
@@ -63,17 +62,6 @@ export function ClosedHero() {
               />
               <p className="mt-3 text-[13px] tracking-[-0.014em] text-[#86868b]">
                 Disclosed volume
-              </p>
-            </div>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <div>
-              <Counter
-                value={`${segmentsCovered}`}
-                className="block text-[#1d1d1f] font-semibold tabular-nums text-[clamp(36px,4.5vw,64px)] leading-none tracking-[-0.04em]"
-              />
-              <p className="mt-3 text-[13px] tracking-[-0.014em] text-[#86868b]">
-                Chain-scale segments
               </p>
             </div>
           </Reveal>
