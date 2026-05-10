@@ -1,4 +1,5 @@
 import * as React from "react";
+import Link from "next/link";
 import { Pill } from "@/components/ui/Pill";
 import { team } from "@/lib/data/team";
 import type { Insight } from "@/lib/data/insights";
@@ -13,14 +14,13 @@ export interface InsightLayoutProps {
   insight: Insight;
 }
 
-function authorByline(authorSlugs: string[]): string {
-  const names = authorSlugs
-    .map((slug) => team.find((b) => b.slug === slug)?.name)
-    .filter((n): n is string => Boolean(n));
-  if (names.length === 0) return "Matthews Hotel Team";
-  if (names.length === 1) return names[0];
-  if (names.length === 2) return names.join(" and ");
-  return names.slice(0, -1).join(", ") + ", and " + names[names.length - 1];
+// Resolve author slugs to TeamMembers — used for both the byline and the
+// per-author Person JSON-LD. When no authors resolve, the article falls
+// back to "Matthews Hotel Markets" attribution.
+function resolveAuthors(authorSlugs: string[]) {
+  return authorSlugs
+    .map((slug) => team.find((b) => b.slug === slug))
+    .filter((m): m is NonNullable<typeof m> => Boolean(m));
 }
 
 function ChartIllustration() {
@@ -152,10 +152,47 @@ export function InsightLayout({ insight }: InsightLayoutProps) {
           {insight.subtitle}
         </p>
 
-        {/* Byline */}
-        <p className="mt-6 text-[13px] tracking-[-0.014em] text-[#86868b]">
-          By {authorByline(insight.authorSlugs)}, Matthews Hotel Team
-        </p>
+        {/* Byline — visible link to author profile when known */}
+        {(() => {
+          const authors = resolveAuthors(insight.authorSlugs);
+          if (authors.length === 0) {
+            return (
+              <p className="mt-6 text-[13px] tracking-[-0.014em] text-[#86868b]">
+                By Matthews Hotel Markets
+              </p>
+            );
+          }
+          return (
+            <p className="mt-6 text-[13px] tracking-[-0.014em] text-[#86868b]">
+              By{" "}
+              {authors.map((a, i) => {
+                const sep =
+                  i === 0
+                    ? ""
+                    : i === authors.length - 1
+                      ? authors.length > 2
+                        ? ", and "
+                        : " and "
+                      : ", ";
+                return (
+                  <React.Fragment key={a.slug}>
+                    {sep}
+                    <Link
+                      href={`/team/${a.slug}`}
+                      className="text-[#1a3a6b] hover:underline underline-offset-[3px]"
+                    >
+                      {a.name}
+                    </Link>
+                    {i === authors.length - 1 && (
+                      <>, {authors[i].title}</>
+                    )}
+                  </React.Fragment>
+                );
+              })}
+              <span className="text-[#86868b]"> · Matthews Hotel Markets</span>
+            </p>
+          );
+        })()}
 
         {/* Cover image card */}
         <div

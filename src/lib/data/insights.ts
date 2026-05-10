@@ -79,6 +79,108 @@ export const insights: Insight[] = [
     downloadHref: "#",
     tags: ["Resort", "Lifestyle", "Investment Thesis"],
   },
+  {
+    slug: "texas-hotel-cap-rates-q2-2026",
+    kind: "outlook",
+    title: "Texas Hotel Cap Rates, Q2 2026",
+    subtitle:
+      "Where cap rates sit across Austin, Houston, Dallas-Fort Worth, and San Antonio in the second quarter of 2026.",
+    date: "May 2026",
+    authorSlugs: ["luke-thompson", "nate-solomon"],
+    cover: "from-[#0a1226] via-[#1a3a6b] to-[#0066cc]",
+    excerpt:
+      "Texas hotel cap rates compressed roughly 25 to 50 basis points off the 2024 peak through the first half of 2026, with the tightest pricing concentrated in stabilized PIP-current select-service properties in Austin, Dallas-Fort Worth, Houston, and San Antonio. Sun Belt secondary markets continue to outperform primary metros on RevPAR recovery while pricing more aggressively on cap rate.",
+    body: [
+      "Texas hotel cap rates compressed roughly 25 to 50 basis points off the 2024 peak through the first half of 2026. The compression is concentrated in stabilized, PIP-current select-service properties in the Texas Triangle: Austin, Dallas-Fort Worth, Houston, and San Antonio. Resort and lifestyle assets in the Hill Country and along the Texas coast traded slightly tighter than the urban averages. The bid-ask gap, which dominated 2023 and 2024 transaction conversation, narrowed materially in Q1 2026 and stayed narrow through Q2.",
+      "Austin sits at the tightest end of the Texas band. Stabilized PIP-current select-service trades in the 7.50 to 8.25 percent cap range. Full-service downtown and Domain-area assets price in the 7.00 to 8.00 percent range. Hill Country resort assets, where the supply pipeline is structurally constrained, trade in the 6.50 to 7.75 percent range. Austin's combination of state-government and university-driven weekday demand, ACL and SXSW seasonal compression, and the F1 USGP weekend supports the bid even as new construction works through delivery.",
+      "Dallas-Fort Worth is wider, reflecting the metro's scale and sub-market diversity. Stabilized select-service in the DFW Metroplex prices in a 7.75 to 8.50 percent cap range. Convention-adjacent full-service assets near downtown Dallas and Fort Worth price tighter, in the 7.00 to 7.75 percent range, on the back of strong recurring group demand. Plano, Frisco, and Las Colinas sub-markets have been the most actively traded; the airport hospitality cluster has seen increased PE bid in 2026.",
+      "Houston cap rates carry an energy-cycle premium. Stabilized select-service prices in the 7.75 to 8.75 percent range, the widest of the four Texas metros. Texas Medical Center proximity is the single largest cap rate compression factor for any Houston hotel; medical-adjacent select-service trades 50 basis points tighter than the metro average. The Galleria, Energy Corridor, and Woodlands sub-markets each carry distinct underwriting profiles and distinct buyer pools.",
+      "San Antonio is the most leisure-anchored of the four. Riverwalk full-service trades at the tightest cap rate in the state outside of Austin Hill Country resort, at 6.75 to 7.50 percent on stabilized cash flow. Suburban San Antonio select-service prices in the 7.75 to 8.50 percent range. Joint Base San Antonio and the South Texas Medical Center provide demand-side diversification that is structurally underpriced by the institutional bid.",
+      "What's driving the compression. Three things. First, the construction-loan freeze that lasted from late 2022 into early 2025 is now fully thawed for sponsors with track records, but the supply pipeline remains constrained because the freeze interrupted ground-breakings. New deliveries through 2027 will run materially below trend in every Texas metro. Second, hotel CMBS spreads tightened through Q4 2025 and have held tight through 2026 to-date, lowering the all-in cost of debt for stabilized acquisitions. Third, family-office and developer-sponsor capital that was waiting on cap rate expansion has accepted the new mid-band pricing and is deploying.",
+      "What we expect for H2 2026. Continued tightening at the stabilized end. We expect 25 additional basis points of compression in Texas Triangle stabilized select-service through year-end 2026 if the rate environment holds. Distress opportunity will remain limited in Texas; the markets where institutional capital has discounted the asset class are not the markets where Texas hotel owners hold paper. Submitted to print May 2026; refreshed quarterly.",
+    ].join("\n\n"),
+    downloadHref: "#",
+    tags: ["Cap Rates", "Texas", "Sun Belt", "Quarterly Outlook"],
+  },
+  {
+    slug: "select-service-vs-full-service-capital-markets-2026",
+    kind: "white-paper",
+    title: "Select-Service vs. Full-Service: Capital Markets Outlook 2026",
+    subtitle:
+      "Why select-service is the most-bid hospitality category in 2026, and what full-service has to do to compete.",
+    date: "May 2026",
+    authorSlugs: ["luke-thompson"],
+    cover: "from-[#1a3a6b] via-[#0066cc] to-[#1a56db]",
+    excerpt:
+      "Select-service hotel transactions are clearing the market at materially tighter cap rates than full-service in 2026. The gap is widening, not narrowing, and capital markets executions reflect it: select-service refinancings are getting done at attachment points that full-service workouts cannot reach. Owners and capital allocators reading this market need to understand why the divergence is structural, not cyclical.",
+    body: [
+      "Select-service hotel transactions are clearing the market at materially tighter cap rates than full-service in 2026. The gap is widening, not narrowing, and capital markets executions reflect it: select-service refinancings are getting done at attachment points that full-service workouts cannot reach. Owners and capital allocators reading this market need to understand why the divergence is structural, not cyclical.",
+      "The cap rate gap. Stabilized PIP-current select-service in Sun Belt secondary markets prices in the 7.50 to 8.50 percent range as of Q2 2026. Stabilized full-service in primary metros prices in the 7.00 to 8.00 percent range. On a yield-to-cost basis, select-service trades tighter when adjusted for the operating leverage embedded in full-service. Full-service food-and-beverage operations, group sales infrastructure, and labor base all consume basis points the cap rate alone does not capture.",
+      "Why select-service is the bid. Three reasons. First, the operating model is more legible. A Hampton Inn or Holiday Inn Express has a known cost structure, a known branded demand base, and a known PIP cycle. An institutional underwriter can produce a defensible underwriting memo on a select-service property in under 60 days. The same underwriter on a full-service asset is working through F&B labor, banquet contribution, and group-pace risk for two to three quarters longer. Speed of execution is a real cap rate compressor.",
+      "Second, the capital stack is deeper. Select-service properties have direct access to bank lenders, debt funds, CMBS originators, and bridge lenders willing to take attachment risk. Full-service properties at the upper end of the size band still find capital, but the menu of lenders narrows below the trophy-asset tier. Mid-tier full-service in tertiary CBDs is the single most under-financed segment in the U.S. hotel debt market today.",
+      "Third, the buyer pool is broader. Select-service attracts HNW first-time hotel buyers, family offices, PE roll-ups, and the dedicated select-service public REITs (Apple Hospitality, Summit Hotel Properties, Chatham Lodging Trust). Each tier has its own underwriting box. Full-service primarily attracts Host Hotels, Pebblebrook, sovereign wealth funds at the upper end, and large family offices selectively. The buyer pool is institutional, not retail, and it is concentrated.",
+      "What full-service has to do to compete. Three moves narrow the gap. First, ship the F&B repositioning. Full-service operating expense lines that get scrutinized in underwriting are food-and-beverage labor, banquet contribution at flat-to-declining group rates, and amenity costs that no longer produce ADR premium. Sponsors who have repositioned F&B before sale, simplified the dining program, outsourced banquet labor, or licensed amenity space to a third-party operator, sell at materially tighter cap rates than peers who have not.",
+      "Second, segment-rationalize the asset list. Some full-service properties are full-service only because the brand standards require it. They function as upscale select-service economically. Sponsors who can position their disposition narrative around the operating reality (compact F&B, lean group sales, premium ADR) instead of the brand requirement (full-service flag) sometimes recover 50 to 75 basis points of cap rate.",
+      "Third, accept that some assets need brand conversion. The most efficient use of capital for sponsors holding mid-tier full-service in tertiary CBDs is to underwrite a brand conversion to a select-service flag and price the asset accordingly. The conversion-candidate cap rate band is wider than the stabilized full-service band, but the conversion thesis attracts a different and broader buyer pool.",
+      "What we expect from here. Through H2 2026, select-service will remain the most actively bid hospitality category in the United States. Full-service in primary urban metros will continue to clear at attractive yields for the trophy-asset bid; full-service in tertiary metros will remain a workout exercise. Capital allocators reading 2027 should weight select-service heavily and approach full-service with a brand-conversion or repositioning thesis rather than a stabilized-cash-flow assumption.",
+    ].join("\n\n"),
+    downloadHref: "#",
+    tags: ["Select Service", "Full Service", "Capital Markets", "Cap Rates"],
+  },
+  {
+    slug: "hotel-owners-refinancing-wave-2026",
+    kind: "briefing",
+    title: "How Hotel Owners Should Read the Refinancing Wave",
+    subtitle:
+      "Roughly $30 billion in U.S. hotel CMBS matures through 2027. What owners need to evaluate now to refinance, sell, or restructure.",
+    date: "May 2026",
+    authorSlugs: ["luke-thompson", "miles-cortez"],
+    cover: "from-[#0e1a34] via-[#1a3a6b] to-[#5d80b8]",
+    excerpt:
+      "Roughly $30 billion in U.S. hotel CMBS matures through year-end 2027 (Trepp public summaries). For owners who originated debt in the 2017 to 2020 vintage, the refinancing math has changed materially. Underwriting standards are tighter, the in-place cap rate is wider than the cap rate at origination for many assets, and the proceeds-to-pay-off gap is real. Owners need a framework for deciding whether to refinance, sell, or restructure.",
+    body: [
+      "Roughly $30 billion in U.S. hotel CMBS matures through year-end 2027, per Trepp public summaries. For owners who originated debt in the 2017 to 2020 vintage, the refinancing math has changed materially. Underwriting standards are tighter, the in-place cap rate is wider than the cap rate at origination for many assets, and the proceeds-to-pay-off gap is real. Owners need a framework for deciding whether to refinance, sell, or restructure.",
+      "The structural shift. Hotel CMBS originated in 2018 was typically underwritten at 60 to 65 percent LTV against a stabilized cap rate band of 7.00 to 7.75 percent. The same property in 2026, even with full RevPAR recovery, prices on a 7.75 to 8.50 percent cap rate band in the Sun Belt secondary markets where most of this paper originated. Apply the wider cap rate to the same NOI and the implied value is 8 to 12 percent below origination basis. Apply tighter LTV underwriting (55 to 60 percent versus 60 to 65 percent at origination) and the maximum new-loan proceeds shrink further. The combined effect is a proceeds gap of 12 to 20 percent against the prior loan balance for a meaningful share of the maturing book.",
+      "Three options. Owners reading the maturity facing them have three paths.",
+      "Path 1: Refinance with a fresh equity check. The cleanest path. Take a fresh underwriting at current cap rates, write a check for the proceeds gap, and extend the hold. This works when (a) the sponsor has the equity available without breaking another fund constraint, (b) the in-place cash flow service the new debt comfortably, and (c) the sponsor's view of forward RevPAR justifies the marginal equity at current cap rates. For high-quality select-service assets in Sun Belt secondary markets where new-supply pipeline is constrained, this is the path most sponsors are taking in 2026.",
+      "Path 2: Sell. The path that has clarified materially in Q1 and Q2 2026. The bid for stabilized PIP-current select-service is tight enough now that selling at the new cap rate frequently produces a better outcome than writing a fresh equity check. The arithmetic: if the proceeds gap on refinance is 15 percent, and the sale produces a 6 percent net-of-fee residual on top of debt payoff, the sponsor is recovering equity worth roughly the same gap with the upside of redeploying into a new vintage. Sellers we have advised in the first half of 2026 are increasingly choosing this path for assets where their forward RevPAR view is moderate rather than aggressive.",
+      "Path 3: Restructure with the existing lender. The path of last resort, but a real path. CMBS special servicing has more tools available in 2026 than in 2024. Loan modifications, A/B note structures, partial payoffs with extension, and hope-note structures are all on the menu. Borrowers who can credibly demonstrate that the asset will produce stabilized DSCR within 18 to 24 months can negotiate constructively. Borrowers who cannot are facing transitional bridge debt at 9 to 11 percent all-in or a foreclosure-track outcome.",
+      "How to choose. The decision framework runs through four questions. First, what is the sponsor's view of forward RevPAR for this specific asset? Aggressive (>4 percent annual growth through cycle) supports refinance + equity check. Moderate (2 to 4 percent) supports sale. Negative supports restructure. Second, what is the equity availability without violating other portfolio constraints? Fund-end-of-life and concentration limits matter. Third, what is the brand standard / PIP timing? Properties facing a meaningful PIP within 24 months trade at materially wider cap rates and require additional equity even on refinance. Fourth, what is the strategic role of the asset in the portfolio? Trophy holds with strategic significance get a different answer than non-strategic mid-portfolio assets.",
+      "What we are advising. We are running BOVs alongside refinance evaluations for any client facing a 2026 or 2027 maturity. The cost of running both paths in parallel is small. The decision-making clarity it produces is large. Owners interested in a confidential look at where their asset prices today should reach out before the maturity calendar dictates the answer for them.",
+    ].join("\n\n"),
+    downloadHref: "#",
+    tags: [
+      "Refinancing",
+      "CMBS",
+      "Capital Markets",
+      "Owners",
+      "Disposition",
+    ],
+  },
+  {
+    slug: "sun-belt-hospitality-2026-investor-sentiment-preview",
+    kind: "briefing",
+    title: "Sun Belt Hospitality: 2026 Investor Sentiment Preview",
+    subtitle:
+      "Early indicators from Matthews investor relationships ahead of the full Q3 2026 Investor Outlook survey.",
+    date: "May 2026",
+    authorSlugs: ["luke-thompson", "nate-solomon"],
+    cover: "from-[#1a3a6b] via-[#0066cc] to-[#5d80b8]",
+    excerpt:
+      "We are in market with the inaugural Matthews Hotel Investor Outlook, an annual survey of 500+ hotel investor relationships covering 2027 deployment intent, cap rate expectations, and segment / geography preference. Full results publish Q3 2026. The early indicators from informal conversations point in a direction worth previewing now: capital is rotating toward Sun Belt secondary markets faster than the institutional consensus reads it.",
+    body: [
+      "We are in market with the inaugural Matthews Hotel Investor Outlook, an annual survey of 500+ hotel investor relationships covering 2027 deployment intent, cap rate expectations, and segment / geography preference. Full results publish Q3 2026. The early indicators from the informal conversations preceding the field period point in a direction worth previewing now: capital is rotating toward Sun Belt secondary markets faster than the institutional consensus reads it.",
+      "The pattern we are hearing. Three out of four hotel investors who deployed into primary urban metros in the 2018 to 2022 vintage are now actively rotating Sun Belt secondary on the next vintage. The driver is not nostalgia for a regional thesis. It is the cap rate spread. Stabilized PIP-current select-service in Tyler, Lubbock, College Station, Waco, Mobile, Knoxville, and Greenville prices 75 to 125 basis points wider than the same asset in Austin, Nashville, or Atlanta primary metros. The yield premium is real, the operating economics in those markets have outperformed primary metros on RevPAR recovery through 2024 and 2025, and the new-supply pipeline is constrained by the 2022 to 2024 construction-loan freeze.",
+      "Family-office capital is the most active. The fastest-moving capital in the Sun Belt secondary today is family-office. The institutional fund consensus remains anchored in primary metros for liquidity and exit-comp reasons. Family-office capital does not face the same constraint, deploys more flexibly, and is willing to underwrite longer hold periods. The deal pace we are seeing for family-office buyers in Sun Belt secondary markets has roughly doubled year-over-year through the first half of 2026.",
+      "PE roll-up capital is following. PE select-service roll-ups that were targeting primary metros in 2022 and 2023 have rebalanced their pipelines. The 2026 acquisition mix for the most active select-service PE platforms now skews 60 to 70 percent Sun Belt secondary, up from 35 to 45 percent two years ago. The pivot is not a strategy declaration; it is the result of running underwriting and finding that the secondary-market math works.",
+      "REITs are conservative but not absent. The public select-service REITs (Apple Hospitality, Summit Hotel Properties, Chatham Lodging Trust) are still acquiring selectively in primary metros where their portfolio strategy concentrates. They are also adding to Sun Belt secondary positions where the asset fits brand mix and submarket standards. The REIT acquisition pace in 2026 will not match family-office or PE pace, but the REITs are not absent from Sun Belt secondary.",
+      "Distress is limited. The investor expectation that 2026 would produce a wave of Sun Belt distressed dispositions has not materialized. The owners who hold paper in these markets are largely owner-operators with long hold horizons and clean balance sheets. The distress that has materialized is concentrated in mid-tier full-service in tertiary CBDs, not select-service in Sun Belt secondary. Buyers waiting for distressed pricing in Sun Belt secondary should reset their expectations.",
+      "What the full survey will measure. The Q3 2026 Matthews Hotel Investor Outlook will quantify what we are hearing. The instrument covers 2027 deployment intent change, cap rate expectations by segment, geography preference rankings, hold period assumptions, leverage targets, and a structured concern-ranking section. Field period runs four weeks; full report and free executive summary publish in September 2026.",
+      "Investors who want to participate in the survey can email outlook@matthewshotelmarkets.com. Participants receive the full report on publication. The aggregated, anonymized data will be available free at matthewshotelmarkets.com/insights once published. Owners and capital allocators interested in a confidential conversation about where their asset prices today should reach out directly.",
+    ].join("\n\n"),
+    downloadHref: "#",
+    tags: ["Sun Belt", "Investor Sentiment", "2027 Outlook", "Survey Preview"],
+  },
 ];
 
 export function getInsight(slug: string): Insight | undefined {
