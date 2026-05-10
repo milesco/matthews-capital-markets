@@ -10,7 +10,7 @@ import PosterCTA from "@/components/sections/shared/PosterCTA";
 import { listings, type Segment } from "@/lib/data/listings";
 
 export default function ListingsPage() {
-  const [activeSegment, setActiveSegment] = React.useState<Segment | "">("");
+  const [activeSegment, setActiveSegment] = React.useState<string>("");
 
   // Only show segments that actually exist in the catalog. Doubles as a
   // content signal: "these are the categories we trade in."

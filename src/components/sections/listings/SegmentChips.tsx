@@ -2,13 +2,13 @@
 
 import * as React from "react";
 import { cn } from "@/lib/utils";
-import type { Segment } from "@/lib/data/listings";
 
 export interface SegmentChipsProps {
-  segments: Segment[];
-  active: Segment | "";
-  onChange: (next: Segment | "") => void;
+  segments: string[];
+  active: string;
+  onChange: (next: string) => void;
   resultCount: number;
+  unitLabel?: string;
 }
 
 export function SegmentChips({
@@ -16,8 +16,9 @@ export function SegmentChips({
   active,
   onChange,
   resultCount,
+  unitLabel = "listing",
 }: SegmentChipsProps) {
-  const chips: Array<{ value: Segment | ""; label: string }> = [
+  const chips: Array<{ value: string; label: string }> = [
     { value: "", label: "All" },
     ...segments.map((s) => ({ value: s, label: s })),
   ];
@@ -52,7 +53,7 @@ export function SegmentChips({
         className="ml-auto text-[12px] uppercase tracking-[0.18em] font-medium text-[color:var(--text-tertiary)] tabular-nums"
         aria-live="polite"
       >
-        {resultCount} {resultCount === 1 ? "listing" : "listings"}
+        {resultCount} {resultCount === 1 ? unitLabel : `${unitLabel}s`}
       </span>
     </div>
   );
