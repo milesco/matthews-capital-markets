@@ -21,7 +21,7 @@ export const insights: Insight[] = [
     title: "Q1 2026 Hotel Investment Outlook",
     subtitle: "Cap rates compress, ADR steadies, the year ahead.",
     date: "March 2026",
-    authorSlugs: ["luke-thompson", "sarah-chen"],
+    authorSlugs: ["luke-thompson"],
     cover: "from-[#0a1226] via-[#1a3a6b] to-[#0066cc]",
     excerpt:
       "After eighteen months of bid-ask gridlock, the first six weeks of 2026 produced more select-service trades than all of Q4 2025. Cap rates have compressed roughly 50 bps off the 2024 peak in the categories where buyers can underwrite stable cash flow today, and the bid for resort and lifestyle assets has returned with conviction.",
@@ -43,7 +43,7 @@ export const insights: Insight[] = [
     subtitle:
       "What College Station, Lubbock, and Tyler tell us about underwriting risk.",
     date: "January 2026",
-    authorSlugs: ["marcus-reyes", "elena-park"],
+    authorSlugs: [],
     cover: "from-[#1a3a6b] via-[#0066cc] to-[#1a56db]",
     excerpt:
       "Texas secondary markets, the cities institutional capital wrote off in the 2023 reset, are quietly outperforming the rest of the country on ADR recovery. This paper examines the demand-side drivers, the construction-pipeline dynamics, and what those signals mean for underwriting risk on select-service assets in those markets.",

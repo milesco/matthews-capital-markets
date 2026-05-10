@@ -110,7 +110,7 @@ export function HomeInsightTeaser() {
                     Hotel Investment Outlook
                   </p>
                   <p className="mt-6 text-[11px] font-medium uppercase tracking-[0.22em] text-white/50">
-                    March 2026 · Luke Thompson &amp; Sarah Chen
+                    March 2026 · Matthews Hotel Team
                   </p>
                 </div>
               </div>
