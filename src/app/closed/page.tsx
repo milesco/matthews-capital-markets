@@ -5,42 +5,64 @@ import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
 import { ClosedHero } from "@/components/sections/closed/ClosedHero";
 import {
-  ClosedFilters,
   EMPTY_FILTERS,
   type ClosedFilterValues,
 } from "@/components/sections/closed/ClosedFilters";
 import { ClosedGrid } from "@/components/sections/closed/ClosedGrid";
+import { SegmentChips } from "@/components/sections/listings/SegmentChips";
 import PosterCTA from "@/components/sections/shared/PosterCTA";
 import { closed } from "@/lib/data/closed";
 
-export default function ClosedPage() {
-  const [filters, setFilters] =
-    React.useState<ClosedFilterValues>(EMPTY_FILTERS);
+const SEGMENT_ORDER = [
+  "Select Service",
+  "Full Service",
+  "Resort",
+  "Lifestyle",
+  "Boutique",
+  "Extended Stay",
+] as const;
 
-  const brands = React.useMemo(() => {
-    const set = new Set<string>();
-    for (const d of closed) {
-      if (d.brand) set.add(d.brand);
-    }
-    return Array.from(set).sort();
+export default function ClosedPage() {
+  const [activeSegment, setActiveSegment] = React.useState<string>("");
+
+  const availableSegments = React.useMemo(() => {
+    const present = new Set(closed.map((d) => d.segment));
+    return SEGMENT_ORDER.filter((s) => present.has(s));
   }, []);
+
+  const filterValues: ClosedFilterValues = React.useMemo(
+    () => ({ ...EMPTY_FILTERS, segment: activeSegment }),
+    [activeSegment],
+  );
+
+  const visibleCount = React.useMemo(
+    () =>
+      activeSegment
+        ? closed.filter((d) => d.segment === activeSegment).length
+        : closed.length,
+    [activeSegment],
+  );
 
   return (
     <>
       <SiteHeader />
       <main className="pt-14">
         <ClosedHero />
-        <section className="bg-white border-b border-[#d2d2d7]">
-          <div className="max-w-[1024px] mx-auto px-6 py-6">
-            <ClosedFilters
-              values={filters}
-              onChange={setFilters}
-              brands={brands}
-            />
-          </div>
-        </section>
+        {availableSegments.length > 1 && (
+          <section className="bg-white">
+            <div className="mx-auto max-w-[1024px] px-6 pb-2">
+              <SegmentChips
+                segments={availableSegments as unknown as string[]}
+                active={activeSegment}
+                onChange={setActiveSegment}
+                resultCount={visibleCount}
+                unitLabel="closing"
+              />
+            </div>
+          </section>
+        )}
         <section className="bg-[color:var(--surface-elevated)] py-16 lg:py-24">
-          <ClosedGrid filters={filters} />
+          <ClosedGrid filters={filterValues} />
         </section>
         <PosterCTA
           lead="Ready for your closing."
