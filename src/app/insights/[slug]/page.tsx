@@ -67,54 +67,49 @@ export default async function InsightDetailPage(props: {
     .map((s) => team.find((m) => m.slug === s))
     .filter((m): m is NonNullable<typeof m> => Boolean(m));
 
-  const articleJsonLd = {
+  const url = `${SITE_URL}/insights/${insight.slug}`;
+  const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: insight.title,
-    description: insight.subtitle,
-    datePublished: insight.date,
-    dateModified: insight.date,
-    inLanguage: "en-US",
-    author:
-      authors.length > 0
-        ? authors.map((a) => ({
-            "@type": "Person",
-            name: a.name,
-            url: `${SITE_URL}/team/${a.slug}`,
-          }))
-        : { "@type": "Organization", name: "Matthews Hotel Markets" },
-    publisher: {
-      "@type": "Organization",
-      "@id": `${SITE_URL}/#org`,
-      name: "Matthews Hotel Markets",
-      logo: {
-        "@type": "ImageObject",
-        url: `${SITE_URL}/images/matthews-logo.jpg`,
-      },
-    },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `${SITE_URL}/insights/${insight.slug}`,
-    },
-    keywords: insight.tags.join(", "),
-  };
-
-  const breadcrumbJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+    "@graph": [
       {
-        "@type": "ListItem",
-        position: 2,
-        name: "Insights",
-        item: `${SITE_URL}/insights`,
+        "@type": "Article",
+        "@id": `${url}#article`,
+        headline: insight.title,
+        description: insight.subtitle,
+        datePublished: insight.date,
+        dateModified: insight.date,
+        inLanguage: "en-US",
+        author:
+          authors.length > 0
+            ? authors.map((a) => ({
+                "@type": "Person",
+                "@id": `${SITE_URL}/team/${a.slug}#person`,
+                name: a.name,
+                url: `${SITE_URL}/team/${a.slug}`,
+              }))
+            : { "@id": `${SITE_URL}/#org` },
+        publisher: { "@id": `${SITE_URL}/#org` },
+        mainEntityOfPage: { "@type": "WebPage", "@id": url },
+        keywords: insight.tags.join(", "),
+        image: `${url}/opengraph-image`,
       },
       {
-        "@type": "ListItem",
-        position: 3,
-        name: insight.title,
-        item: `${SITE_URL}/insights/${insight.slug}`,
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Insights",
+            item: `${SITE_URL}/insights`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: insight.title,
+            item: url,
+          },
+        ],
       },
     ],
   };
@@ -125,13 +120,7 @@ export default async function InsightDetailPage(props: {
       <main>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(breadcrumbJsonLd),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <InsightLayout insight={insight} />
       </main>

@@ -104,6 +104,7 @@ const ORG_JSONLD = {
     {
       "@type": "RealEstateAgent",
       "@id": `${SITE_URL}/#org`,
+      additionalType: "https://schema.org/FinancialService",
       name: "Matthews Hotel Markets",
       alternateName: "Matthews Hotel Team",
       url: SITE_URL,
@@ -127,27 +128,37 @@ const ORG_JSONLD = {
         "Resort Sales",
         "Hotel Valuation",
         "Hotel Cap Rates",
+        "Hotel Acquisition Advisory",
+        "Hospitality Investment Sales",
       ],
       sameAs: [
         "https://www.linkedin.com/company/matthews-hotel-markets/",
         "https://www.matthews.com",
       ],
-      address: [
+      location: [
         {
-          "@type": "PostalAddress",
-          "@id": `${SITE_URL}/#hq`,
-          streetAddress: "515 Congress Ave., Suite 2410",
-          addressLocality: "Austin",
-          addressRegion: "TX",
-          postalCode: "78701",
-          addressCountry: "US",
+          "@type": "Place",
+          "@id": `${SITE_URL}/#hq-austin`,
+          name: "Austin Headquarters",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "515 Congress Ave., Suite 2410",
+            addressLocality: "Austin",
+            addressRegion: "TX",
+            postalCode: "78701",
+            addressCountry: "US",
+          },
         },
         {
-          "@type": "PostalAddress",
-          "@id": `${SITE_URL}/#denver`,
-          addressLocality: "Denver",
-          addressRegion: "CO",
-          addressCountry: "US",
+          "@type": "Place",
+          "@id": `${SITE_URL}/#office-denver`,
+          name: "Denver Office",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Denver",
+            addressRegion: "CO",
+            addressCountry: "US",
+          },
         },
       ],
       contactPoint: {

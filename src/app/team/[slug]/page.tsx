@@ -156,43 +156,51 @@ export default async function TeamMemberPage({
   const member = team.find((m) => m.slug === slug);
   if (!member) notFound();
 
-  const personJsonLd = {
+  const url = `${SITE_URL}/team/${member.slug}`;
+  const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    name: member.name,
-    jobTitle: member.title,
-    image: member.photo
-      ? `${SITE_URL}${member.photo}`
-      : `${SITE_URL}/images/matthews-logo.jpg`,
-    description: member.bio.slice(0, 280),
-    telephone: member.phone,
-    email: member.email,
-    url: `${SITE_URL}/team/${member.slug}`,
-    worksFor: { "@id": `${SITE_URL}/#org` },
-    knowsAbout: member.specialties,
-    workLocation: {
-      "@type": "Place",
-      name: `Matthews Hotel Markets, ${member.office}`,
-    },
-    sameAs: member.linkedin ? [member.linkedin] : undefined,
-  };
-
-  const breadcrumbJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+    "@graph": [
       {
-        "@type": "ListItem",
-        position: 2,
-        name: "Team",
-        item: `${SITE_URL}/team`,
+        "@type": "Person",
+        "@id": `${url}#person`,
+        name: member.name,
+        jobTitle: member.title,
+        image: member.photo
+          ? `${SITE_URL}${member.photo}`
+          : `${SITE_URL}/images/matthews-logo.jpg`,
+        description: member.bio.slice(0, 280),
+        telephone: member.phone,
+        email: member.email,
+        url,
+        worksFor: { "@id": `${SITE_URL}/#org` },
+        knowsAbout: member.specialties,
+        hasOccupation: {
+          "@type": "Occupation",
+          name: "Real Estate Broker",
+        },
+        workLocation: {
+          "@type": "Place",
+          name: `Matthews Hotel Markets, ${member.office}`,
+        },
+        ...(member.linkedin ? { sameAs: [member.linkedin] } : {}),
       },
       {
-        "@type": "ListItem",
-        position: 3,
-        name: member.name,
-        item: `${SITE_URL}/team/${member.slug}`,
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Team",
+            item: `${SITE_URL}/team`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: member.name,
+            item: url,
+          },
+        ],
       },
     ],
   };
@@ -203,13 +211,7 @@ export default async function TeamMemberPage({
       <main>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(breadcrumbJsonLd),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <TeamDetailHero member={member} />
         <TeamStats member={member} />

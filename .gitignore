@@ -7,3 +7,7 @@ node_modules
 .DS_Store
 .gstack/
 .gstack-design-review/
+
+# Plan documents — not part of build
+SEO_LLM_PLAN.md
+SEO_LLM_PLAN_v2.md

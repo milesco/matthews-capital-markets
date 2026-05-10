@@ -88,75 +88,123 @@ export default async function ListingDetailPage(
     : undefined;
 
   const url = `${SITE_URL}/listings/${listing.slug}`;
-  const productJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    name: listing.name,
-    description: `${listing.keys}-key ${listing.segment} ${listing.brand} hotel for sale in ${listing.city}, ${listing.state}. ${listing.summary.slice(0, 200)}`,
-    image: listing.photo
-      ? `${SITE_URL}${listing.photo}`
-      : `${SITE_URL}/images/hero-landscape.jpg`,
-    brand: { "@type": "Brand", name: listing.brand },
-    category: `${listing.segment} Hotel`,
-    additionalProperty: [
-      { "@type": "PropertyValue", name: "Keys", value: listing.keys },
-      { "@type": "PropertyValue", name: "Segment", value: listing.segment },
-      { "@type": "PropertyValue", name: "Brand", value: listing.brand },
-      { "@type": "PropertyValue", name: "Year Built", value: listing.yearBuilt },
-      ...(listing.yearRenovated
-        ? [
-            {
-              "@type": "PropertyValue",
-              name: "Year Renovated",
-              value: listing.yearRenovated,
-            },
-          ]
-        : []),
-      ...(listing.adr
-        ? [{ "@type": "PropertyValue", name: "ADR", value: listing.adr }]
-        : []),
-      ...(listing.revpar
-        ? [{ "@type": "PropertyValue", name: "RevPAR", value: listing.revpar }]
-        : []),
-      ...(listing.occupancy
-        ? [
-            {
-              "@type": "PropertyValue",
-              name: "Occupancy",
-              value: listing.occupancy,
-            },
-          ]
-        : []),
-    ],
-    offers: {
-      "@type": "Offer",
-      url,
-      availability:
-        listing.status === "available"
-          ? "https://schema.org/InStock"
-          : "https://schema.org/Reserved",
-      priceCurrency: "USD",
-      price: listing.askingPrice,
-      seller: { "@id": `${SITE_URL}/#org` },
-    },
-  };
+  const description = `${listing.keys}-key ${listing.segment} ${listing.brand} hotel for sale in ${listing.city}, ${listing.state}. ${listing.summary.slice(0, 200)}`;
+  const image = listing.photo
+    ? `${SITE_URL}${listing.photo}`
+    : `${SITE_URL}/images/hero-landscape.jpg`;
 
-  const breadcrumbJsonLd = {
+  // Single @graph: MTE Product+Hotel + Offer (sell) + Place + BreadcrumbList
+  // + WebPage. AI Overview retrievers consume @graph more reliably than
+  // multiple separate <script> tags.
+  const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+    "@graph": [
       {
-        "@type": "ListItem",
-        position: 2,
-        name: "Listings",
-        item: `${SITE_URL}/listings`,
+        "@type": ["Product", "Hotel"],
+        "@id": `${url}#listing`,
+        name: listing.name,
+        description,
+        image,
+        url,
+        brand: { "@type": "Brand", name: listing.brand },
+        category: `${listing.segment} Hotel`,
+        numberOfRooms: listing.keys,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: listing.address,
+          addressLocality: listing.city,
+          addressRegion: listing.state,
+          addressCountry: "US",
+        },
+        offers: { "@id": `${url}#offer` },
+        additionalProperty: [
+          { "@type": "PropertyValue", name: "Keys", value: listing.keys },
+          { "@type": "PropertyValue", name: "Segment", value: listing.segment },
+          { "@type": "PropertyValue", name: "Brand", value: listing.brand },
+          {
+            "@type": "PropertyValue",
+            name: "Year Built",
+            value: listing.yearBuilt,
+          },
+          ...(listing.yearRenovated
+            ? [
+                {
+                  "@type": "PropertyValue",
+                  name: "Year Renovated",
+                  value: listing.yearRenovated,
+                },
+              ]
+            : []),
+          ...(listing.adr
+            ? [{ "@type": "PropertyValue", name: "ADR", value: listing.adr }]
+            : []),
+          ...(listing.revpar
+            ? [
+                {
+                  "@type": "PropertyValue",
+                  name: "RevPAR",
+                  value: listing.revpar,
+                },
+              ]
+            : []),
+          ...(listing.occupancy
+            ? [
+                {
+                  "@type": "PropertyValue",
+                  name: "Occupancy",
+                  value: listing.occupancy,
+                },
+              ]
+            : []),
+        ],
       },
       {
-        "@type": "ListItem",
-        position: 3,
-        name: listing.name,
-        item: url,
+        "@type": "Offer",
+        "@id": `${url}#offer`,
+        // GoodRelations 'Sell' — disambiguates from a stay-night booking.
+        businessFunction: "http://purl.org/goodrelations/v1#Sell",
+        availability:
+          listing.status === "available"
+            ? "https://schema.org/InStock"
+            : "https://schema.org/Reserved",
+        priceCurrency: "USD",
+        price: listing.askingPrice,
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          priceCurrency: "USD",
+          description: listing.callForOffersDate
+            ? `Call for Offers ${listing.callForOffersDate}`
+            : listing.askingPrice,
+        },
+        url,
+        itemOffered: { "@id": `${url}#listing` },
+        broker: { "@id": `${SITE_URL}/#org` },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Listings",
+            item: `${SITE_URL}/listings`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: listing.name,
+            item: url,
+          },
+        ],
+      },
+      {
+        "@type": "WebPage",
+        "@id": url,
+        url,
+        isPartOf: { "@id": `${SITE_URL}/#website` },
+        primaryImageOfPage: image,
+        mainEntity: { "@id": `${url}#listing` },
       },
     ],
   };
@@ -167,13 +215,7 @@ export default async function ListingDetailPage(
       <main className={primaryBroker ? "pb-20 lg:pb-0" : undefined}>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(breadcrumbJsonLd),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <ListingHero listing={listing} />
         <ListingStatPanel listing={listing} />

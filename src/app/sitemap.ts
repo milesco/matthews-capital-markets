@@ -58,6 +58,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
     changeFrequency: "weekly",
     priority: 0.85,
+    images: [
+      l.photo
+        ? `${SITE_URL}${l.photo}`
+        : `${SITE_URL}/listings/${l.slug}/opengraph-image`,
+    ],
   }));
 
   const teamRoutes: MetadataRoute.Sitemap = team.map((m) => ({
@@ -65,6 +70,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
     changeFrequency: "monthly",
     priority: 0.7,
+    images: m.photo
+      ? [`${SITE_URL}${m.photo}`]
+      : [`${SITE_URL}/team/${m.slug}/opengraph-image`],
   }));
 
   const insightRoutes: MetadataRoute.Sitemap = insights.map((i) => ({
@@ -72,6 +80,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
     changeFrequency: "monthly",
     priority: 0.75,
+    images: [`${SITE_URL}/insights/${i.slug}/opengraph-image`],
   }));
 
   return [
