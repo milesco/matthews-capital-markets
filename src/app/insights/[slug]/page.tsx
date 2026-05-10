@@ -5,6 +5,9 @@ import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
 import { InsightLayout } from "@/components/sections/insight-detail/InsightLayout";
 import { insights, getInsight } from "@/lib/data/insights";
+import { team } from "@/lib/data/team";
+
+const SITE_URL = "https://matthewshotelmarkets.com";
 
 export function generateStaticParams() {
   return insights.map((i) => ({ slug: i.slug }));
@@ -16,11 +19,40 @@ export async function generateMetadata(props: {
   const { slug } = await props.params;
   const insight = getInsight(slug);
   if (!insight) {
-    return { title: "Insight not found, Matthews Hotel Team" };
+    return { title: "Insight not found" };
   }
+
+  const authorNames = insight.authorSlugs
+    .map((s) => team.find((m) => m.slug === s)?.name)
+    .filter((n): n is string => Boolean(n));
+  const byline =
+    authorNames.length > 0 ? authorNames.join(" and ") : "Matthews Hotel Team";
+
+  const url = `${SITE_URL}/insights/${insight.slug}`;
+  const description = `${insight.subtitle} ${insight.excerpt.slice(0, 100)}…`.slice(
+    0,
+    160,
+  );
+
   return {
-    title: `${insight.title}, Matthews Hotel Team`,
-    description: insight.subtitle,
+    title: insight.title,
+    description,
+    alternates: { canonical: url },
+    authors: [{ name: byline }],
+    openGraph: {
+      type: "article",
+      title: insight.title,
+      description,
+      url,
+      publishedTime: insight.date,
+      authors: authorNames.length ? authorNames : undefined,
+      tags: insight.tags,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: insight.title,
+      description,
+    },
   };
 }
 
@@ -31,10 +63,76 @@ export default async function InsightDetailPage(props: {
   const insight = getInsight(slug);
   if (!insight) notFound();
 
+  const authors = insight.authorSlugs
+    .map((s) => team.find((m) => m.slug === s))
+    .filter((m): m is NonNullable<typeof m> => Boolean(m));
+
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: insight.title,
+    description: insight.subtitle,
+    datePublished: insight.date,
+    dateModified: insight.date,
+    inLanguage: "en-US",
+    author:
+      authors.length > 0
+        ? authors.map((a) => ({
+            "@type": "Person",
+            name: a.name,
+            url: `${SITE_URL}/team/${a.slug}`,
+          }))
+        : { "@type": "Organization", name: "Matthews Hotel Markets" },
+    publisher: {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#org`,
+      name: "Matthews Hotel Markets",
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/images/matthews-logo.jpg`,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${SITE_URL}/insights/${insight.slug}`,
+    },
+    keywords: insight.tags.join(", "),
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Insights",
+        item: `${SITE_URL}/insights`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: insight.title,
+        item: `${SITE_URL}/insights/${insight.slug}`,
+      },
+    ],
+  };
+
   return (
     <>
       <SiteHeader />
       <main>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(breadcrumbJsonLd),
+          }}
+        />
         <InsightLayout insight={insight} />
       </main>
       <SiteFooter />
