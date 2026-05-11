@@ -11,6 +11,8 @@ import { Pill } from "@/components/ui/Pill";
 import { brands } from "@/lib/data/brands";
 import { listings } from "@/lib/data/listings";
 import { closed } from "@/lib/data/closed";
+import { markets } from "@/lib/data/markets";
+import { brandFaqs, faqJsonLdNode } from "@/lib/seo/faq";
 
 const SITE_URL = "https://matthewshotelmarkets.com";
 
@@ -73,6 +75,10 @@ export default async function BrandPage(props: { params: Promise<Params> }) {
   const active = findActiveListings(slug);
   const recentClosed = findRecentClosed(slug, 6);
   const url = `${SITE_URL}/hotels-for-sale/${b.slug}`;
+  const faqs = brandFaqs(b);
+  // Top-tier markets where this brand trades — surface as cross-links for
+  // topical-authority signal.
+  const topMarkets = markets.slice(0, 6);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -125,6 +131,7 @@ export default async function BrandPage(props: { params: Promise<Params> }) {
           { "@type": "ListItem", position: 3, name: b.name, item: url },
         ],
       },
+      faqJsonLdNode(url, faqs),
     ],
   };
 
@@ -291,6 +298,54 @@ export default async function BrandPage(props: { params: Promise<Params> }) {
             </div>
           </section>
         )}
+
+        {/* Markets where this brand trades */}
+        <section className="bg-white py-16 lg:py-20">
+          <div className="mx-auto max-w-[1024px] px-6">
+            <h2 className="text-[12px] uppercase tracking-[0.18em] font-medium text-[color:var(--text-secondary)]">
+              Markets where we sell {b.name}
+            </h2>
+            <ul className="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+              {topMarkets.map((m) => (
+                <li key={m.slug}>
+                  <Link
+                    href={`/markets/${m.slug}`}
+                    className="group block rounded-[14px] bg-[#f5f5f7] p-4 transition-colors duration-200 hover:bg-[#ececef]"
+                  >
+                    <p className="text-[14px] font-semibold tracking-[-0.014em] text-[color:var(--text-primary)]">
+                      {m.city}, {m.state}
+                    </p>
+                    <p className="mt-2 inline-flex items-center gap-1 text-[12px] tracking-[-0.014em] text-[#1a3a6b] group-hover:underline underline-offset-[3px]">
+                      View market
+                      <ChevronRight className="h-3 w-3" strokeWidth={1.75} aria-hidden="true" />
+                    </p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* FAQ — direct citation surface for AI Overview / ChatGPT / Perplexity */}
+        <section className="bg-[color:var(--surface-elevated)] py-16 lg:py-20">
+          <div className="mx-auto max-w-[1024px] px-6">
+            <h2 className="text-[12px] uppercase tracking-[0.18em] font-medium text-[color:var(--text-secondary)]">
+              {b.name} investment FAQ
+            </h2>
+            <dl className="mt-8 divide-y divide-[color:var(--divider)]">
+              {faqs.map((f, i) => (
+                <div key={i} className="py-6 first:pt-0 last:pb-0">
+                  <dt className="text-[18px] font-semibold tracking-[-0.014em] text-[color:var(--text-primary)]">
+                    {f.q}
+                  </dt>
+                  <dd className="mt-3 text-[15px] leading-[1.55] tracking-[-0.014em] text-[color:var(--text-secondary)]">
+                    {f.a}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
 
         <section className="bg-white py-16 lg:py-20">
           <div className="mx-auto max-w-[1024px] px-6">

@@ -12,6 +12,8 @@ import { markets } from "@/lib/data/markets";
 import { listings } from "@/lib/data/listings";
 import { closed } from "@/lib/data/closed";
 import { team } from "@/lib/data/team";
+import { brands } from "@/lib/data/brands";
+import { marketFaqs, faqJsonLdNode } from "@/lib/seo/faq";
 
 const SITE_URL = "https://matthewshotelmarkets.com";
 
@@ -73,11 +75,16 @@ export default async function MarketPage(props: { params: Promise<Params> }) {
     .filter((x): x is NonNullable<typeof x> => Boolean(x));
 
   const url = `${SITE_URL}/markets/${m.slug}`;
+  const faqs = marketFaqs(m);
+
+  // Brand-flag pages relevant to this market (surface as cross-links for
+  // topical-authority signal).
+  const relatedBrands = brands.slice(0, 4);
 
   // @graph: WebPage with mainEntity Place + Place node + ItemList of active
-  // listings + BreadcrumbList. Place schema gives this market page a real
-  // entity that AI Overview retrievers can attach to "hotels for sale [city]"
-  // queries.
+  // listings + BreadcrumbList + FAQPage. Place schema gives this market page
+  // a real entity that AI Overview retrievers can attach to "hotels for sale
+  // [city]" queries.
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -133,6 +140,7 @@ export default async function MarketPage(props: { params: Promise<Params> }) {
           },
         ],
       },
+      faqJsonLdNode(url, faqs),
     ],
   };
 
@@ -211,7 +219,7 @@ export default async function MarketPage(props: { params: Promise<Params> }) {
                 {m.adrCommentary}
               </p>
               <p className="mt-3 text-[13px] tracking-[-0.014em] text-[color:var(--text-tertiary)]">
-                Source: STR / CoStar public press releases (Q1 2026).
+                Source: STR (str.com) public press releases, AHLA State of the Industry, JLL Hotels Research (Q1 2026).
               </p>
             </div>
           </div>
@@ -305,6 +313,57 @@ export default async function MarketPage(props: { params: Promise<Params> }) {
             </div>
           </section>
         )}
+
+        {/* Brand-flag cross-links for topical authority */}
+        <section className="bg-white py-16 lg:py-20">
+          <div className="mx-auto max-w-[1024px] px-6">
+            <h2 className="text-[12px] uppercase tracking-[0.18em] font-medium text-[color:var(--text-secondary)]">
+              Brand flags we sell in {m.city}
+            </h2>
+            <ul className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-4">
+              {relatedBrands.map((b) => (
+                <li key={b.slug}>
+                  <Link
+                    href={`/hotels-for-sale/${b.slug}`}
+                    className="group block rounded-[18px] bg-[#f5f5f7] p-5 transition-colors duration-200 hover:bg-[#ececef]"
+                  >
+                    <p className="text-[15px] font-semibold tracking-[-0.014em] text-[color:var(--text-primary)]">
+                      {b.name}
+                    </p>
+                    <p className="mt-1 text-[12px] tracking-[-0.014em] text-[color:var(--text-secondary)]">
+                      {b.segment}
+                    </p>
+                    <p className="mt-3 inline-flex items-center gap-1 text-[12px] tracking-[-0.014em] text-[#1a3a6b] group-hover:underline underline-offset-[3px]">
+                      View brand
+                      <ChevronRight className="h-3 w-3" strokeWidth={1.75} aria-hidden="true" />
+                    </p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* FAQ — direct citation surface for AI Overview / ChatGPT / Perplexity */}
+        <section className="bg-[color:var(--surface-elevated)] py-16 lg:py-20">
+          <div className="mx-auto max-w-[1024px] px-6">
+            <h2 className="text-[12px] uppercase tracking-[0.18em] font-medium text-[color:var(--text-secondary)]">
+              {m.city} hotel investment FAQ
+            </h2>
+            <dl className="mt-8 divide-y divide-[color:var(--divider)]">
+              {faqs.map((f, i) => (
+                <div key={i} className="py-6 first:pt-0 last:pb-0">
+                  <dt className="text-[18px] font-semibold tracking-[-0.014em] text-[color:var(--text-primary)]">
+                    {f.q}
+                  </dt>
+                  <dd className="mt-3 text-[15px] leading-[1.55] tracking-[-0.014em] text-[color:var(--text-secondary)]">
+                    {f.a}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
 
         {/* Brokers + CTA */}
         <section className="bg-[color:var(--surface-elevated)] py-16 lg:py-20">

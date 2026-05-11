@@ -1,8 +1,6 @@
 # Priority Targets — 30 Queries to Attack This Sprint
 
-Built 2026-05-10 by Agent 2. Live SERP checks via Google web search. AIO inferred from SERP composition (tool surfaces organic only; "likely" = informational/question-form per Digital Bloom 2025 +258% real-estate AIO; "no" = aggregator-dominated SERP).
-
-Matthews Hotel Markets is not on page 1 for any of the 30. Parent matthews.com appears on #27, #28, #29.
+Built 2026-05-10 by Agent 2. SERP via Google. AIO inferred ("likely"=info+question per Digital Bloom +258% real-estate AIO; "no"=aggregator SERP). Matthews Hotel Markets absent from page 1 for all 30. Parent matthews.com surfaces on #27, #28, #29.
 
 ---
 
@@ -97,31 +95,19 @@ Matthews Hotel Markets is not on page 1 for any of the 30. Parent matthews.com a
 - **Key entities**: BOV, IOM, appraisal vs BOV, MAI, lender appraisal, USPAP, Income Approach, sales comp, going-concern value, Walden Retreats BOV web product
 
 ## 11. hotel broker Austin
-- **Top 3 organic**: loopnet.com (Hotel Brokers of Austin), newgenadv.com, austinindian.com
-- **AIO**: no
-- **Matthews position**: not present
-- **Intent**: T + G
-- **Target page**: `/markets/austin-tx` + `/offices/austin`
-- **Word count**: 1,600-2,000 (markets) + 800-1,200 (office)
-- **Key entities**: 515 Congress Ave Suite 2410, Austin HQ, downtown Austin, ABIA, Hill Country, RevPAR, Matthews REIS Austin, Hunter Advisors comparison, NewGen Advisory, Hotel Brokers of Austin
+- **Top 3**: loopnet (Hotel Brokers of Austin), newgenadv.com, austinindian.com | **AIO**: no | **Matthews**: not present | **Intent**: T+G
+- **Target**: `/markets/austin-tx` + `/offices/austin` | **Words**: 1,600-2,000 + 800-1,200
+- **Entities**: 515 Congress Ave Ste 2410, Austin HQ, ABIA, Hill Country, RevPAR, NewGen Advisory, Hotel Brokers of Austin
 
 ## 12. hotel broker Dallas
-- **Top 3 organic**: loopnet.com (Hotel Brokers of America), tabanirealty.com, mghotelteam.com
-- **AIO**: no
-- **Matthews position**: not present
-- **Intent**: T + G
-- **Target page**: new `/markets/dallas-tx`
-- **Word count**: 1,600-2,000
-- **Key entities**: DFW, Plano, Frisco, Las Colinas, 193 hotels in pipeline, Hotel Brokers of America, Tabani Realty, Marcus & Millichap, Matthews Dallas presence
+- **Top 3**: loopnet (HBA), tabanirealty.com, mghotelteam.com | **AIO**: no | **Matthews**: not present | **Intent**: T+G
+- **Target**: `/markets/dallas-tx` | **Words**: 1,600-2,000
+- **Entities**: DFW, Plano, Frisco, Las Colinas, 193 pipeline projects, Hotel Brokers of America, Tabani Realty, Matthews Dallas
 
 ## 13. select-service hotel for sale
-- **Top 3 organic**: crystalip.com, timmhotelbroker.com, hospitalitylisting.com
-- **AIO**: likely
-- **Matthews position**: not present
-- **Intent**: T
-- **Target page**: new `/segments/select-service`
-- **Word count**: 1,800-2,400
-- **Key entities**: limited-service, $62B four-year sales, $17M average deal, 26% GOP margin, $290k/key build cost, Hampton Inn, Holiday Inn Express, Hilton Garden Inn, Courtyard, Hyatt Place, RevPAR $78
+- **Top 3**: crystalip.com, timmhotelbroker.com, hospitalitylisting.com | **AIO**: likely | **Matthews**: not present | **Intent**: T
+- **Target**: `/segments/select-service` | **Words**: 1,800-2,400
+- **Entities**: limited-service, $62B 4-yr sales, $17M avg deal, 26% GOP, $290k/key, Hampton Inn, HIE, HGI, Courtyard, Hyatt Place, RevPAR $78
 
 ## 14. Marriott hotel for sale
 - **Top 3 organic**: marriott.gcs-web.com (IR), crexi.com, marriott.gcs-web.com
@@ -146,13 +132,9 @@ Matthews Hotel Markets is not on page 1 for any of the 30. Parent matthews.com a
 - **Key entities**: Dallas pipeline 193 projects 23,720 rooms, Phoenix, Miami, Nashville, Margaritaville Galveston, RREAF Holdings, population growth, friendly tax, Sun Belt corridor Dallas-Phoenix, 1.4% supply growth, 80,034 rooms, Matthews Sun Belt office footprint
 
 ## 17. hotel disposition advisor
-- **Top 3 organic**: dshhoteladvisors.com, hotelave.com, suncoastsvn.com
-- **AIO**: likely
-- **Matthews position**: not present (wide open per plan)
-- **Intent**: T
-- **Target page**: new `/services/disposition-advisory`
-- **Word count**: 1,600-2,000
-- **Key entities**: disposition, BOV, IOM, call for offers, 24-week timeline, Plasencia Group, hotelAVE, DSH, Apex Lodging Advisors, mid-market dispositions, distressed vs traditional, REO
+- **Top 3**: dshhoteladvisors.com, hotelave.com, suncoastsvn.com | **AIO**: likely | **Matthews**: not present (wide open) | **Intent**: T
+- **Target**: `/services/disposition-advisory` | **Words**: 1,600-2,000
+- **Entities**: BOV, IOM, call for offers, 24-week timeline, Plasencia Group, hotelAVE, DSH, Apex, mid-market, distressed vs traditional, REO
 
 ## 18. boutique hotel for sale Texas
 - **Top 3 organic**: bizbuysell.com, crexi.com, realmo.com
@@ -182,49 +164,29 @@ Matthews Hotel Markets is not on page 1 for any of the 30. Parent matthews.com a
 - **Key entities**: Hunter Advisors, JLL Hotels, CBRE Hotels, Marcus & Millichap, HVS Brokerage, Berkadia, Northmarq, HREC, Paramount Lodging Advisors, Matthews Hotel Markets (self-cite per Princeton GEO Cite Sources +115%)
 
 ## 21. hotel for sale Nashville TN
-- **Top 3 organic**: crexi.com, loopnet.com, showcase.com
-- **AIO**: no
-- **Matthews position**: not present
-- **Intent**: T + G
-- **Target page**: new `/markets/nashville-tn`
-- **Word count**: 1,400-1,800
-- **Key entities**: BNA airport, Music City, Broadway, downtown Nashville, Germantown, Music Row, Nissan Stadium, RevPAR Nashville, Matthews REIS HQ Nashville (parent)
+- **Top 3**: crexi.com, loopnet.com, showcase.com | **AIO**: no | **Matthews**: not present | **Intent**: T+G
+- **Target**: `/markets/nashville-tn` | **Words**: 1,400-1,800
+- **Entities**: BNA, Music City, Broadway, Germantown, Music Row, Nissan Stadium, RevPAR Nashville, Matthews REIS HQ provenance
 
 ## 22. hotel for sale Atlanta GA
-- **Top 3 organic**: loopnet.com, bizbuysell.com, cityfeet.com
-- **AIO**: no
-- **Matthews position**: not present
-- **Intent**: T + G
-- **Target page**: new `/markets/atlanta-ga`
-- **Word count**: 1,400-1,800
-- **Key entities**: Hartsfield-Jackson, Buckhead, Midtown, Downtown, Perimeter, GA Aquarium, Mercedes-Benz Stadium, Hunter Hotel Investment Conference (Atlanta), CNN, Hartsfield connecting hub
+- **Top 3**: loopnet.com, bizbuysell.com, cityfeet.com | **AIO**: no | **Matthews**: not present | **Intent**: T+G
+- **Target**: `/markets/atlanta-ga` | **Words**: 1,400-1,800
+- **Entities**: Hartsfield-Jackson, Buckhead, Midtown, Perimeter, Mercedes-Benz Stadium, Hunter Hotel Investment Conference, GA Aquarium
 
 ## 23. hotel for sale Phoenix AZ
-- **Top 3 organic**: loopnet.com, realmo.com, showcase.com
-- **AIO**: no
-- **Matthews position**: not present
-- **Intent**: T + G
-- **Target page**: new `/markets/phoenix-az`
-- **Word count**: 1,400-1,800
-- **Key entities**: PHX Sky Harbor, Scottsdale, Tempe, ASU, Spring Training, Super Bowl, WM Phoenix Open, Westgate, RevPAR Scottsdale luxury
+- **Top 3**: loopnet.com, realmo.com, showcase.com | **AIO**: no | **Matthews**: not present | **Intent**: T+G
+- **Target**: `/markets/phoenix-az` | **Words**: 1,400-1,800
+- **Entities**: PHX Sky Harbor, Scottsdale, Tempe, ASU, Spring Training, Super Bowl LVII, WM Phoenix Open, Westgate
 
 ## 24. hotel for sale Miami FL
-- **Top 3 organic**: loopnet.com, crexi.com, cityfeet.com
-- **AIO**: no
-- **Matthews position**: not present
-- **Intent**: T + G
-- **Target page**: new `/markets/miami-fl`
-- **Word count**: 1,400-1,800
-- **Key entities**: South Beach, Brickell, Wynwood, Coconut Grove, Art Basel, Miami Heat, Formula 1, port of Miami cruise, Mediterranean cap rate compression, $125M South Beach oceanfront comp
+- **Top 3**: loopnet.com, crexi.com, cityfeet.com | **AIO**: no | **Matthews**: not present | **Intent**: T+G
+- **Target**: `/markets/miami-fl` | **Words**: 1,400-1,800
+- **Entities**: South Beach, Brickell, Wynwood, Coconut Grove, Art Basel, F1, port-of-Miami cruise, $125M oceanfront comp
 
 ## 25. hotel for sale Denver CO
-- **Top 3 organic**: loopnet.com, cityfeet.com, sanbornandcompany.com
-- **AIO**: no
-- **Matthews position**: not present
-- **Intent**: T + G
-- **Target page**: new `/markets/denver-co` + `/offices/denver`
-- **Word count**: 1,400-1,800 + 800-1,200 office page
-- **Key entities**: DEN airport, downtown Denver, RiNo, Cherry Creek, Tech Center, Vail/Aspen feeder, ski-season seasonality, Matthews Denver office, Sanborn & Company comp
+- **Top 3**: loopnet.com, cityfeet.com, sanbornandcompany.com | **AIO**: no | **Matthews**: not present | **Intent**: T+G
+- **Target**: `/markets/denver-co` + `/offices/denver` | **Words**: 1,400-1,800 + 800-1,200
+- **Entities**: DEN, RiNo, Cherry Creek, Tech Center, Vail/Aspen feeder, ski seasonality, Matthews Denver office
 
 ## 26. JLL Hotels vs Hunter Hotel Advisors vs Marcus Millichap
 - **Top 3 organic**: hotelbusiness.com, owler.com, hhhotelgroup.com
