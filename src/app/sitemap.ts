@@ -103,6 +103,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
     changeFrequency: "weekly",
     priority: 0.9,
+    images: [`${SITE_URL}/markets/${m.slug}/opengraph-image`],
   }));
 
   const brandRoutes: MetadataRoute.Sitemap = brands.map((b) => ({
@@ -110,6 +111,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
     changeFrequency: "weekly",
     priority: 0.85,
+    images: [`${SITE_URL}/hotels-for-sale/${b.slug}/opengraph-image`],
   }));
 
   const serviceRoutes: MetadataRoute.Sitemap = services.map((s) => ({
@@ -117,6 +119,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
     changeFrequency: "monthly",
     priority: 0.75,
+    images: [`${SITE_URL}/services/${s.slug}/opengraph-image`],
   }));
 
   const officeRoutes: MetadataRoute.Sitemap = offices.map((o) => ({
@@ -124,6 +127,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
     changeFrequency: "monthly",
     priority: 0.7,
+    images: [`${SITE_URL}/offices/${o.slug}/opengraph-image`],
   }));
 
   return [

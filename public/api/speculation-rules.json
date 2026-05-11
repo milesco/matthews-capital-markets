@@ -1,0 +1,48 @@
+{
+  "prerender": [
+    {
+      "where": {
+        "and": [
+          { "href_matches": "/listings/*" },
+          { "not": { "selector_matches": ".no-prerender" } }
+        ]
+      },
+      "eagerness": "moderate"
+    },
+    {
+      "where": {
+        "and": [
+          { "href_matches": "/insights/*" },
+          { "not": { "selector_matches": ".no-prerender" } }
+        ]
+      },
+      "eagerness": "moderate"
+    },
+    {
+      "where": {
+        "and": [
+          { "href_matches": "/closed/*" },
+          { "not": { "selector_matches": ".no-prerender" } }
+        ]
+      },
+      "eagerness": "moderate"
+    },
+    {
+      "where": {
+        "and": [
+          { "href_matches": "/markets/*" },
+          { "not": { "selector_matches": ".no-prerender" } }
+        ]
+      },
+      "eagerness": "moderate"
+    }
+  ],
+  "prefetch": [
+    {
+      "where": {
+        "href_matches": "/*"
+      },
+      "eagerness": "moderate"
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "headers": [
+    {
+      "source": "/(.*)\\.(jpg|jpeg|png|webp|avif|gif|svg|ico)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/_next/static/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/_next/image(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/listings",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, s-maxage=300, stale-while-revalidate=86400" },
+        { "key": "Speculation-Rules", "value": "\"/api/speculation-rules.json\"" }
+      ]
+    },
+    {
+      "source": "/insights",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, s-maxage=600, stale-while-revalidate=86400" },
+        { "key": "Speculation-Rules", "value": "\"/api/speculation-rules.json\"" }
+      ]
+    },
+    {
+      "source": "/closed",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, s-maxage=3600, stale-while-revalidate=86400" },
+        { "key": "Speculation-Rules", "value": "\"/api/speculation-rules.json\"" }
+      ]
+    },
+    {
+      "source": "/markets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, s-maxage=3600, stale-while-revalidate=86400" }
+      ]
+    },
+    {
+      "source": "/hotels-for-sale/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, s-maxage=3600, stale-while-revalidate=86400" }
+      ]
+    },
+    {
+      "source": "/insights/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, s-maxage=86400, stale-while-revalidate=604800" }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, s-maxage=3600, stale-while-revalidate=86400" }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, s-maxage=86400, stale-while-revalidate=604800" }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/sell",
+      "destination": "/services/investment-sales",
+      "permanent": true
+    },
+    {
+      "source": "/sell-my-hotel",
+      "destination": "/services/investment-sales",
+      "permanent": true
+    },
+    {
+      "source": "/buy",
+      "destination": "/services/acquisition-advisory",
+      "permanent": true
+    },
+    {
+      "source": "/financing",
+      "destination": "/services/capital-markets",
+      "permanent": true
+    },
+    {
+      "source": "/austin",
+      "destination": "/offices/austin",
+      "permanent": true
+    },
+    {
+      "source": "/denver",
+      "destination": "/offices/denver",
+      "permanent": true
+    },
+    {
+      "source": "/markets",
+      "destination": "/markets/austin-tx",
+      "permanent": false
+    },
+    {
+      "source": "/brands",
+      "destination": "/hotels-for-sale/hampton-inn",
+      "permanent": false
+    },
+    {
+      "source": "/services",
+      "destination": "/services/investment-sales",
+      "permanent": false
+    },
+    {
+      "source": "/team/sarah-chen",
+      "destination": "/team",
+      "permanent": true
+    },
+    {
+      "source": "/team/marcus-reyes",
+      "destination": "/team",
+      "permanent": true
+    },
+    {
+      "source": "/team/elena-park",
+      "destination": "/team",
+      "permanent": true
+    }
+  ]
+}
