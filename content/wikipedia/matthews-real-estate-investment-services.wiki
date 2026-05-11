@@ -1,0 +1,61 @@
+{{Short description|American commercial real estate investment services firm}}
+{{AfC submission|||ts=20260510000000|u=NateSolomon|ns=118}}
+{{Infobox company
+| name             = Matthews Real Estate Investment Services
+| logo             =
+| type             = [[Privately held company|Private]]
+| industry         = [[Commercial real estate]]
+| founded          = {{Start date and age|2015|04}} in [[El Segundo, California]]
+| founder          = Kyle Matthews
+| hq_location      = 1600 West End Avenue, Suite 3100
+| hq_location_city = [[Nashville, Tennessee|Nashville]]
+| hq_location_country = United States
+| num_locations    = 30+ offices
+| key_people       = Kyle Matthews ([[Chairman]] and [[CEO]])
+| services         = Investment sales, capital markets, leasing, advisory
+| num_employees    = 1,000+
+| subsid           = Matthews Hotel Markets
+| website          = {{URL|matthews.com}}
+}}
+
+'''Matthews Real Estate Investment Services''' (also branded '''Matthews&trade;''') is an American [[commercial real estate]] investment services firm headquartered in [[Nashville, Tennessee]]. Founded in April 2015 by Kyle Matthews in [[El Segundo, California]], the firm provides investment sales, [[Capital market|capital markets]], [[Real estate#Leasing|leasing]], and advisory services across asset classes including [[shopping center|retail]], [[multi-family residential|multifamily]], industrial, office, and [[hospitality industry|hospitality]].<ref name="cre-bosses">{{cite news|title=Matthews Real Estate Investment Services adds first vice president in Chicago office|url=https://rejournals.com/matthews-real-estate-investment-services-adds-first-vice-president-in-chicago-office/|work=REJournals|date=2024}}</ref>
+
+== History ==
+
+Matthews Real Estate Investment Services was founded in April 2015 by Kyle Matthews, who previously served as an executive at two publicly traded commercial real estate brokerages.<ref name="labj-hq">{{cite news|title=Matthews Moves HQ from El Segundo to Nashville|url=https://labusinessjournal.com/real-estate/matthews-moves-hq-from-el-segundo-to-nashville/|work=Los Angeles Business Journal|date=2022}}</ref> The company opened with approximately 18 agents and employees in [[El Segundo, California]].<ref name="labj-hq" />
+
+In July 2022, the firm relocated its corporate headquarters from El Segundo to Nashville, Tennessee, citing access to talent and a central national footprint.<ref name="labj-hq" /><ref name="trd-hq">{{cite news|title=Matthews Real Estate relocates HQ to Nashville|url=https://therealdeal.com/la/2022/07/12/matthews-real-estate-relocates-hq-to-nashville/|work=The Real Deal|date=2022-07-12}}</ref><ref name="connectcre-hq">{{cite news|title=Matthews Real Estate Investment Services Moves HQ to Nashville|url=https://www.connectcre.com/stories/matthews-real-estate-investment-services-moves-hq-to-nashville/|work=Connect CRE|date=2022}}</ref> The firm later designated [[Phoenix, Arizona|Phoenix]] as its National Operations Center.
+
+== Operations ==
+
+Matthews operates from more than 30 offices across the United States, with over 1,000 agents and employees as of 2025.<ref name="connectcre-hq" /> Service lines include investment sales, [[debt]] and [[private equity|equity]] placement through Matthews Capital Markets, leasing advisory, and tenant and landlord representation. Property specializations span [[net lease]] retail, [[shopping center|shopping centers]], [[multi-family residential|multifamily]], [[industrial real estate|industrial]], office, [[self storage|self-storage]], and [[hospitality industry|hospitality]].<ref name="globest-tl">{{cite web|title=Matthews Real Estate Investment Services|url=https://www.globest.com/thought-leaders/matthews-real-estate-investment-services/|website=GlobeSt|access-date=2026-05-10}}</ref>
+
+In 2024, the firm launched '''[[Matthews Hotel Markets]]''' (also styled the Matthews Hotel Team), a dedicated [[hospitality industry|hospitality]] vertical headquartered in [[Austin, Texas]] with a satellite office in [[Denver]].<ref name="globest-tl" />
+
+== Notable transactions ==
+
+The firm's brokers have completed transactions across major U.S. metropolitan markets. Coverage of representative engagements appears in trade publications including ''[[Bisnow]]'', ''[[GlobeSt]]'', ''[[Commercial Observer]]'', and ''REBusinessOnline''.<ref name="bisnow-tag">{{cite web|title=Matthews Real Estate Investment Services|url=https://www.bisnow.com/tags/matthews-real-estate-investment-services|website=Bisnow|access-date=2026-05-10}}</ref><ref name="co-tag">{{cite web|title=Matthews Real Estate Investment Services|url=https://commercialobserver.com/company/matthews-real-estate-investment-services/|website=Commercial Observer|access-date=2026-05-10}}</ref>
+
+== Recognition ==
+
+Founder and CEO Kyle Matthews was named to ''[[GlobeSt]] Real Estate Forum''&rsquo;s &ldquo;50 Under 40&rdquo; list and was profiled by industry trade press as one of commercial real estate&rsquo;s growth-stage executives.<ref name="globest-tl" />
+
+== See also ==
+
+* [[Commercial real estate]]
+* [[Real estate broker]]
+* [[Matthews Hotel Markets]]
+
+== References ==
+
+{{reflist}}
+
+== External links ==
+
+* {{Official website|https://www.matthews.com}}
+
+[[Category:Real estate services companies of the United States]]
+[[Category:Companies based in Nashville, Tennessee]]
+[[Category:Real estate companies established in 2015]]
+[[Category:American companies established in 2015]]
+[[Category:Privately held companies based in Tennessee]]

@@ -1,0 +1,58 @@
+{{Short description|Hospitality vertical of Matthews Real Estate Investment Services}}
+{{AfC submission|||ts=20260510000000|u=NateSolomon|ns=118}}
+{{Infobox company
+| name             = Matthews Hotel Markets
+| former_name      = Matthews Hotel Team
+| logo             =
+| type             = Subsidiary
+| industry         = [[Hospitality industry|Hospitality]] [[commercial real estate]]
+| founded          = {{Start date and age|2024}}
+| hq_location_city = [[Austin, Texas|Austin]], [[Texas]]
+| hq_location_country = United States
+| num_locations    = 2 (Austin, [[Denver]])
+| services         = Hotel investment sales, hospitality capital markets, hotel acquisition advisory
+| parent           = [[Matthews Real Estate Investment Services]]
+| website          = {{URL|matthewshotelmarkets.com}}
+}}
+
+'''Matthews Hotel Markets''' (also styled the '''Matthews Hotel Team''') is the [[hospitality industry|hospitality]] [[commercial real estate]] vertical of [[Matthews Real Estate Investment Services]], an American commercial real estate investment services firm. Headquartered in [[Austin, Texas]], with an additional office in [[Denver]], the team focuses on hotel [[investment sales]], hospitality [[capital market|capital markets]] advisory, and hotel acquisition advisory across the U.S. lodging sector.<ref name="globest-tl">{{cite web|title=Matthews Real Estate Investment Services|url=https://www.globest.com/thought-leaders/matthews-real-estate-investment-services/|website=GlobeSt|access-date=2026-05-10}}</ref>
+
+The vertical operates within the broader Matthews Capital Markets platform and is distinct from the unrelated developer Matthews Southwest Hospitality.
+
+== History ==
+
+[[Matthews Real Estate Investment Services]] was founded in April 2015 in [[El Segundo, California]] by Kyle Matthews and relocated its corporate headquarters to [[Nashville, Tennessee]] in 2022.<ref name="labj-hq">{{cite news|title=Matthews Moves HQ from El Segundo to Nashville|url=https://labusinessjournal.com/real-estate/matthews-moves-hq-from-el-segundo-to-nashville/|work=Los Angeles Business Journal|date=2022}}</ref><ref name="trd-hq">{{cite news|title=Matthews Real Estate relocates HQ to Nashville|url=https://therealdeal.com/la/2022/07/12/matthews-real-estate-relocates-hq-to-nashville/|work=The Real Deal|date=2022-07-12}}</ref> The hospitality vertical was launched in 2024 from the firm's [[Austin, Texas|Austin]] office to provide a dedicated hotel investment sales and capital markets platform within the firm.<ref name="globest-tl" />
+
+== Operations ==
+
+Matthews Hotel Markets operates from Austin, Texas, with a satellite presence in [[Denver]] focused on Mountain West hospitality. The team is structured around three service lines:
+
+* Hotel investment sales (disposition advisory for hotel owners and sponsors)
+* Hospitality capital markets (debt and equity placement, including senior, mezzanine, bridge, and [[commercial mortgage-backed security]] executions)
+* Hotel acquisition advisory (buy-side mandates for institutional investors, family offices, and developers)
+
+Coverage spans U.S. lodging chain scales from select-service brands such as [[Hampton by Hilton|Hampton Inn]], [[Holiday Inn Express]], and [[Courtyard by Marriott]] through full-service, resort, lifestyle, boutique, and extended-stay properties.<ref name="globest-tl" /> Quarterly hospitality market reports are published for major U.S. submarkets including [[Texas]] and the [[Sun Belt]].<ref name="connectcre-hosp">{{cite web|title=Hospitality (category)|url=https://www.connectcre.com/hospitality/|website=Connect CRE|access-date=2026-05-10}}</ref>
+
+== Notable transactions ==
+
+Independent secondary coverage of specific Matthews Hotel Markets transactions was limited at the time of article submission; transaction-level coverage is published periodically in trade publications including ''[[Bisnow]]'', ''[[GlobeSt]]'', ''Connect CRE'', and ''REBusinessOnline''.<ref name="bisnow-tag">{{cite web|title=Matthews Real Estate Investment Services|url=https://www.bisnow.com/tags/matthews-real-estate-investment-services|website=Bisnow|access-date=2026-05-10}}</ref><ref name="co-tag">{{cite web|title=Matthews Real Estate Investment Services|url=https://commercialobserver.com/company/matthews-real-estate-investment-services/|website=Commercial Observer|access-date=2026-05-10}}</ref>
+
+== See also ==
+
+* [[Hotel investment]]
+* [[Hospitality industry]]
+* [[Matthews Real Estate Investment Services]]
+* [[Real estate broker]]
+
+== References ==
+
+{{reflist}}
+
+== External links ==
+
+* {{Official website|https://matthewshotelmarkets.com}}
+
+[[Category:Real estate services companies of the United States]]
+[[Category:Companies based in Austin, Texas]]
+[[Category:Hospitality companies of the United States]]
+[[Category:Companies established in 2024]]

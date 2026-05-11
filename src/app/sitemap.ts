@@ -7,6 +7,8 @@ import { markets } from "@/lib/data/markets";
 import { brands } from "@/lib/data/brands";
 import { services } from "@/lib/data/services";
 import { offices } from "@/lib/data/offices";
+import { mhiQuarters } from "@/lib/data/mhi";
+import { glossary } from "@/lib/data/glossary";
 
 const SITE_URL = "https://matthewshotelmarkets.com";
 
@@ -56,7 +58,39 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.7,
     },
+    {
+      url: `${SITE_URL}/research`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/research/mhi`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${SITE_URL}/glossary`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
   ];
+
+  const mhiRoutes: MetadataRoute.Sitemap = mhiQuarters.map((q) => ({
+    url: `${SITE_URL}/research/mhi/${q.slug}`,
+    lastModified: new Date(q.publishedAt),
+    changeFrequency: "monthly",
+    priority: 0.85,
+  }));
+
+  const glossaryRoutes: MetadataRoute.Sitemap = glossary.map((g) => ({
+    url: `${SITE_URL}/glossary/${g.slug}`,
+    lastModified: new Date(g.lastUpdated),
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
 
   const listingRoutes: MetadataRoute.Sitemap = listings.map((l) => ({
     url: `${SITE_URL}/listings/${l.slug}`,
@@ -140,5 +174,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...brandRoutes,
     ...serviceRoutes,
     ...officeRoutes,
+    ...mhiRoutes,
+    ...glossaryRoutes,
   ];
 }

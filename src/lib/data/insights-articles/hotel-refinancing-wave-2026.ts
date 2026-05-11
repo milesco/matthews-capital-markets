@@ -33,7 +33,7 @@ export const draft: Insight = {
     "## How to choose the right path",
     "The decision framework runs through four questions. First, what is the sponsor's forward RevPAR view for this specific asset? Aggressive (>4 percent annual growth through cycle) supports refinance plus equity check or recap. Moderate (2 to 4 percent) supports sale. Negative supports A/B note restructure. Second, what is equity availability without violating other portfolio constraints? Fund end-of-life and concentration limits matter. Third, what is the brand standard / PIP timing? Properties facing meaningful PIP within 24 months trade at materially wider cap rates and require additional equity even on refinance. The American Hotel & Lodging Association's 2026 State of the Industry Report (AHLA, January 2026) flagged construction cost inflation as a continuing pressure on PIP economics. Fourth, what is the strategic role of the asset in the portfolio? Trophy holds with strategic significance get a different answer than non-strategic mid-portfolio assets. Owners interested in a confidential look at where their asset prices today, alongside a parallel refinance evaluation, should reach out before the maturity calendar dictates the answer for them. We frequently run BOVs and refinance scenario models in parallel for clients facing 2026 and 2027 maturities; the cost of running both paths is small and the decision-making clarity is large.",
     "## What we are watching through year-end 2026",
-    "Three indicators will shape how this wave resolves. First, the Federal Reserve's path. The May 7, 2026 FOMC statement (Federal Reserve press release) held the federal funds target at 4.25 to 4.50 percent and signaled a data-dependent posture. A two-cut cycle in H2 2026 would compress take-out coupons by 50 basis points and materially improve refinance proceeds. A hold scenario keeps the wave concentrated. Second, hotel CMBS spreads. Spreads have tightened roughly 75 basis points off the 2024 wide and are sitting in a stable band. Continued tightening would lift LTV ceilings; widening would compress them. Third, the supply-pipeline pause. Hotel construction starts are running materially below trend per STR's Q1 2026 pipeline report, which supports forward RevPAR and therefore supports stabilized cap rate compression. The combination of a Fed easing cycle plus continued supply discipline plus tight spreads would convert the refinancing wave from a distress story into a normalized refinancing cycle. Any one of those breaking would re-open the distress conversation.",
+    "Three indicators will shape how this wave resolves. First, the Federal Reserve's path. The April 29, 2026 FOMC statement (Federal Reserve press release) held the federal funds target at 3.50 to 3.75 percent and signaled a data-dependent posture. A two-cut cycle in H2 2026 would compress take-out coupons by 50 basis points and materially improve refinance proceeds. A hold scenario keeps the wave concentrated. Second, hotel CMBS spreads. Spreads have tightened roughly 75 basis points off the 2024 wide and are sitting in a stable band. Continued tightening would lift LTV ceilings; widening would compress them. Third, the supply-pipeline pause. Hotel construction starts are running materially below trend per STR's Q1 2026 pipeline report, which supports forward RevPAR and therefore supports stabilized cap rate compression. The combination of a Fed easing cycle plus continued supply discipline plus tight spreads would convert the refinancing wave from a distress story into a normalized refinancing cycle. Any one of those breaking would re-open the distress conversation.",
   ].join("\n\n"),
   downloadHref: "#",
   tags: [
@@ -99,8 +99,8 @@ export const draft: Insight = {
       publisher: "Federal Reserve",
     },
     {
-      label: "FOMC Statement, May 7 2026",
-      url: "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      label: "FOMC Statement, April 29 2026",
+      url: "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260429a.htm",
       publisher: "Federal Reserve",
     },
     {
@@ -146,8 +146,8 @@ export const draft: Insight = {
       source: "Mortgage News Daily",
     },
     {
-      value: "4.25–4.50%",
-      label: "Federal funds target range, May 7 2026 FOMC",
+      value: "3.50–3.75%",
+      label: "Federal funds target range, April 29 2026 FOMC",
       source: "Federal Reserve",
     },
     {

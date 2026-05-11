@@ -157,33 +157,89 @@ export default async function TeamMemberPage({
   if (!member) notFound();
 
   const url = `${SITE_URL}/team/${member.slug}`;
+
+  // E-E-A-T-rich Person schema. Author authority for /insights/* citations
+  // depends on this — Google's quality raters and the major LLMs check
+  // sameAs (LinkedIn), alumniOf, memberOf, knowsAbout, and verified
+  // credentials. Bio is full-length (not truncated) so the description
+  // surface matches what Wikipedia / KG ingestion expects.
+  const knowsAbout = Array.from(
+    new Set<string>([
+      ...member.specialties,
+      "Hotel Investment Sales",
+      "Hospitality Capital Markets",
+      "Hotel Acquisition Advisory",
+      "Hotel Underwriting",
+      "Hotel Valuation",
+    ]),
+  );
+
+  const personNode: Record<string, unknown> = {
+    "@type": "Person",
+    "@id": `${url}#person`,
+    name: member.name,
+    givenName: member.name.split(/\s+/)[0],
+    familyName: member.name.split(/\s+/).slice(-1)[0],
+    jobTitle: member.title,
+    image: member.photo
+      ? `${SITE_URL}${member.photo}`
+      : `${SITE_URL}/images/matthews-logo.jpg`,
+    description: member.bio,
+    telephone: member.phone,
+    email: member.email,
+    url,
+    worksFor: { "@id": `${SITE_URL}/#org` },
+    affiliation: { "@id": `${SITE_URL}/#org` },
+    parentOrganization: {
+      "@type": "Organization",
+      name: "Matthews Real Estate Investment Services",
+      url: "https://www.matthews.com",
+    },
+    knowsAbout,
+    hasOccupation: {
+      "@type": "Occupation",
+      name: "Real Estate Broker",
+      occupationalCategory: "41-9022.00", // BLS SOC: Real Estate Sales Agents
+      occupationLocation: {
+        "@type": "Place",
+        name: `Matthews Hotel Markets, ${member.office}`,
+      },
+    },
+    workLocation: {
+      "@type": "Place",
+      name: `Matthews Hotel Markets, ${member.office}`,
+    },
+  };
+  if (member.linkedin) {
+    personNode.sameAs = [member.linkedin];
+  }
+  if (member.education && member.education.length > 0) {
+    // alumniOf — parse "Degree, Institution" patterns into EducationalOrganization
+    personNode.alumniOf = member.education.map((e) => {
+      const parts = e.split(",").map((s) => s.trim());
+      const institution = parts[parts.length - 1];
+      return { "@type": "EducationalOrganization", name: institution };
+    });
+  }
+  if (member.affiliations && member.affiliations.length > 0) {
+    // memberOf — every association membership becomes a node
+    personNode.memberOf = member.affiliations.map((a) => ({
+      "@type": "Organization",
+      name: a,
+    }));
+  }
+  if (member.designations && member.designations.length > 0) {
+    personNode.award = member.designations;
+    personNode.honorificSuffix = member.designations.join(", ");
+  }
+  if (member.languages && member.languages.length > 0) {
+    personNode.knowsLanguage = member.languages;
+  }
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Person",
-        "@id": `${url}#person`,
-        name: member.name,
-        jobTitle: member.title,
-        image: member.photo
-          ? `${SITE_URL}${member.photo}`
-          : `${SITE_URL}/images/matthews-logo.jpg`,
-        description: member.bio.slice(0, 280),
-        telephone: member.phone,
-        email: member.email,
-        url,
-        worksFor: { "@id": `${SITE_URL}/#org` },
-        knowsAbout: member.specialties,
-        hasOccupation: {
-          "@type": "Occupation",
-          name: "Real Estate Broker",
-        },
-        workLocation: {
-          "@type": "Place",
-          name: `Matthews Hotel Markets, ${member.office}`,
-        },
-        ...(member.linkedin ? { sameAs: [member.linkedin] } : {}),
-      },
+      personNode,
       {
         "@type": "BreadcrumbList",
         itemListElement: [
