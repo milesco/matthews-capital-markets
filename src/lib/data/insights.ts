@@ -32,7 +32,9 @@ export type Insight = {
   relatedInsights?: string[];
 };
 
-export const insights: Insight[] = [
+import { wave5Insights } from "./insights-articles";
+
+const baseInsights: Insight[] = [
   {
     slug: "q1-2026-outlook",
     kind: "outlook",
@@ -97,29 +99,8 @@ export const insights: Insight[] = [
     downloadHref: "#",
     tags: ["Resort", "Lifestyle", "Investment Thesis"],
   },
-  {
-    slug: "texas-hotel-cap-rates-q2-2026",
-    kind: "outlook",
-    title: "Texas Hotel Cap Rates, Q2 2026",
-    subtitle:
-      "Where cap rates sit across Austin, Houston, Dallas-Fort Worth, and San Antonio in the second quarter of 2026.",
-    date: "May 2026",
-    authorSlugs: ["luke-thompson", "nate-solomon"],
-    cover: "from-[#0a1226] via-[#1a3a6b] to-[#0066cc]",
-    excerpt:
-      "Texas hotel cap rates compressed roughly 25 to 50 basis points off the 2024 peak through the first half of 2026, with the tightest pricing concentrated in stabilized PIP-current select-service properties in Austin, Dallas-Fort Worth, Houston, and San Antonio. Sun Belt secondary markets continue to outperform primary metros on RevPAR recovery while pricing more aggressively on cap rate.",
-    body: [
-      "Texas hotel cap rates compressed roughly 25 to 50 basis points off the 2024 peak through the first half of 2026. The compression is concentrated in stabilized, PIP-current select-service properties in the Texas Triangle: Austin, Dallas-Fort Worth, Houston, and San Antonio. Resort and lifestyle assets in the Hill Country and along the Texas coast traded slightly tighter than the urban averages. The bid-ask gap, which dominated 2023 and 2024 transaction conversation, narrowed materially in Q1 2026 and stayed narrow through Q2.",
-      "Austin sits at the tightest end of the Texas band. Stabilized PIP-current select-service trades in the 7.50 to 8.25 percent cap range. Full-service downtown and Domain-area assets price in the 7.00 to 8.00 percent range. Hill Country resort assets, where the supply pipeline is structurally constrained, trade in the 6.50 to 7.75 percent range. Austin's combination of state-government and university-driven weekday demand, ACL and SXSW seasonal compression, and the F1 USGP weekend supports the bid even as new construction works through delivery.",
-      "Dallas-Fort Worth is wider, reflecting the metro's scale and sub-market diversity. Stabilized select-service in the DFW Metroplex prices in a 7.75 to 8.50 percent cap range. Convention-adjacent full-service assets near downtown Dallas and Fort Worth price tighter, in the 7.00 to 7.75 percent range, on the back of strong recurring group demand. Plano, Frisco, and Las Colinas sub-markets have been the most actively traded; the airport hospitality cluster has seen increased PE bid in 2026.",
-      "Houston cap rates carry an energy-cycle premium. Stabilized select-service prices in the 7.75 to 8.75 percent range, the widest of the four Texas metros. Texas Medical Center proximity is the single largest cap rate compression factor for any Houston hotel; medical-adjacent select-service trades 50 basis points tighter than the metro average. The Galleria, Energy Corridor, and Woodlands sub-markets each carry distinct underwriting profiles and distinct buyer pools.",
-      "San Antonio is the most leisure-anchored of the four. Riverwalk full-service trades at the tightest cap rate in the state outside of Austin Hill Country resort, at 6.75 to 7.50 percent on stabilized cash flow. Suburban San Antonio select-service prices in the 7.75 to 8.50 percent range. Joint Base San Antonio and the South Texas Medical Center provide demand-side diversification that is structurally underpriced by the institutional bid.",
-      "What's driving the compression. Three things. First, the construction-loan freeze that lasted from late 2022 into early 2025 is now fully thawed for sponsors with track records, but the supply pipeline remains constrained because the freeze interrupted ground-breakings. New deliveries through 2027 will run materially below trend in every Texas metro. Second, hotel CMBS spreads tightened through Q4 2025 and have held tight through 2026 to-date, lowering the all-in cost of debt for stabilized acquisitions. Third, family-office and developer-sponsor capital that was waiting on cap rate expansion has accepted the new mid-band pricing and is deploying.",
-      "What we expect for H2 2026. Continued tightening at the stabilized end. We expect 25 additional basis points of compression in Texas Triangle stabilized select-service through year-end 2026 if the rate environment holds. Distress opportunity will remain limited in Texas; the markets where institutional capital has discounted the asset class are not the markets where Texas hotel owners hold paper. Submitted to print May 2026; refreshed quarterly.",
-    ].join("\n\n"),
-    downloadHref: "#",
-    tags: ["Cap Rates", "Texas", "Sun Belt", "Quarterly Outlook"],
-  },
+  // texas-hotel-cap-rates-q2-2026 superseded by GEO-optimized Wave 5 article
+  // imported from src/lib/data/insights-articles/.
   {
     slug: "select-service-vs-full-service-capital-markets-2026",
     kind: "white-paper",
@@ -200,6 +181,10 @@ export const insights: Insight[] = [
     tags: ["Sun Belt", "Investor Sentiment", "2027 Outlook", "Survey Preview"],
   },
 ];
+
+// Insights surface in display order: Wave 5 GEO-optimized long-form articles
+// (TLDR + FAQ + sources + keyStats) come first, then the existing curated list.
+export const insights: Insight[] = [...wave5Insights, ...baseInsights];
 
 export function getInsight(slug: string): Insight | undefined {
   return insights.find((i) => i.slug === slug);

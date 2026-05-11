@@ -1,4 +1,4 @@
-import type { Insight } from "@/lib/data/insights";
+import type { Insight } from "../insights";
 
 export const draft: Insight = {
   slug: "texas-hotel-cap-rates-q2-2026",

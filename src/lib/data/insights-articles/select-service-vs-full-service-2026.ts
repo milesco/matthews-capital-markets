@@ -1,4 +1,4 @@
-import type { Insight } from "@/lib/data/insights";
+import type { Insight } from "../insights";
 
 export const draft: Insight = {
   slug: "select-service-vs-full-service-2026",

@@ -1,0 +1,186 @@
+import type { Insight } from "@/lib/data/insights";
+
+export const draft: Insight = {
+  slug: "hotel-adr-revpar-recovery-2026",
+  kind: "outlook",
+  title: "Hotel ADR + RevPAR Recovery: Market-by-Market 2026 Forecast",
+  subtitle:
+    "STR's first 2026 forecast puts U.S. RevPAR growth at 0.6 percent and ADR at 1.0 percent. Underneath that flat headline sits the widest market-by-market bifurcation of the cycle.",
+  date: "May 2026",
+  lastUpdated: "2026-05-10",
+  authorSlugs: ["nate-solomon"],
+  cover: "from-[#0a1226] via-[#1a3a6b] to-[#0066cc]",
+  excerpt:
+    "STR/CoStar's first 2026 forecast projects full-year U.S. RevPAR growth of 0.6 percent and ADR growth of 1.0 percent against occupancy of 62.1 percent — a flat headline that masks the widest market-by-market bifurcation of the cycle. Luxury and upper-upscale will outperform; select-service and economy will print flat to negative RevPAR. Resort and supply-constrained leisure markets like Charleston and Miami will outpace primary metros. The 14-market read below tells underwriters which forecasts to trust and which to discount.",
+  body: [
+    "STR/CoStar's first 2026 forecast projects full-year U.S. RevPAR growth of 0.6 percent and ADR growth of 1.0 percent against occupancy of 62.1 percent — a flat headline that masks the widest market-by-market bifurcation of the cycle (Source: CoStar/Tourism Economics, February 2026). The 2025 print was a 0.3 percent RevPAR decline, the first non-recessionary RevPAR decline ever recorded in the American hotel industry (Source: CoStar). The 2026 World Cup is forecast to add a 0.4 percent full-year RevPAR lift on its own. Strip the World Cup out and the underlying organic forecast is roughly 0.2 percent. Underneath those flat numbers sit dispersions wide enough to drive most underwriting decisions.",
+    "The bifurcation thesis. The 2026 forecast splits four ways. Luxury and upper-upscale continue to post the strongest RevPAR gains; select-service and economy are flat to slightly negative on RevPAR (Source: CoStar; HVS U.S. Market Pulse, March 2026). Resort and supply-constrained leisure markets outperform primary urban convention markets. Group-dependent CBDs in tertiary metros remain the weakest segment, while leisure-anchored coastal markets keep pricing power. Construction-pipeline pressure separates winners from losers within the same chain scale: markets where post-COVID supply outpaced demand (Austin, Nashville, Scottsdale per AirROI/CoStar) are absorbing supply at the expense of pricing, while supply-constrained markets (Charleston, Miami, San Antonio Riverwalk) hold rate.",
+    "What the construction pipeline tells us about 2026 supply. Lodging Econometrics forecasts 1.4 percent U.S. hotel supply growth for 2026, with 682 hotels and 77,323 rooms expected to open by year-end (Source: Lodging Econometrics, Q1 2026). The total pipeline at Q1 2026 close stood at 6,020 projects and 705,825 rooms, down roughly 5 percent year-over-year by project count — the construction-loan freeze of 2022 to early 2025 left a durable supply-side gap that begins to compound through 2027 (Source: Lodging Econometrics via Construction Dive). Luxury construction reached a record 102 projects with 25,527 rooms in Q1 2026, up 23 percent in rooms year-over-year. The supply story is concentrated at the top of the chain scale and absent at the bottom.",
+    "Demand-side context. AHLA's 2026 State of the Industry projects hotel guest spending of nearly $805 billion, up 1.7 percent over 2025, with the workforce growing by more than 30,000 jobs (Source: AHLA, January 2026). GOPPAR remains at roughly 90 percent of 2019 levels — the lingering operating-margin gap that explains why owner-side reported sentiment runs more cautious than the headline RevPAR forecast (Source: AHLA citing operator survey). International inbound travel remains below pre-pandemic levels and is the single largest demand-side wild card for gateway markets in 2026.",
+    "Texas Triangle. Austin, Dallas, Houston, San Antonio.",
+    "Austin. The metro absorbed material new supply through 2024-2025 from the construction pipeline that started before the 2022 rate reset. AirROI/CoStar data shows Austin's STR-segment supply density at the top of the national rankings, putting downward pressure on per-unit returns (Source: AirROI, 2026). On the hotel side, ADR has held in the $180 to $220 stabilized full-service range and $130 to $160 in select-service through Q1 2026, with ACL, SXSW, and the F1 USGP weekend driving event-week compression. Our base case is RevPAR growth in the +1.0 to +2.5 percent band for full-service downtown and flat to slightly negative for suburban select-service as supply absorbs.",
+    "Dallas-Fort Worth. The largest Texas hotel market by transaction volume continues to add corporate-relocation demand from Plano, Frisco, and Las Colinas. Convention-adjacent full-service near downtown Dallas and Fort Worth has seen the strongest group pace recovery in the metro. Stabilized select-service ADR of $130 to $180 with Q1 2026 occupancy near the metro long-term average. Base case: +1.5 to +3.0 percent RevPAR through 2026 driven by group recovery and the airport-cluster bid.",
+    "Houston. Energy-cycle volatility has compressed in the most recent cycle as crude prices stabilized through 2025. Texas Medical Center continues to drive year-round medical/patient-family demand that smooths the cycle. Stabilized select-service ADR runs $110 to $170. Galleria, Energy Corridor, and Woodlands sub-markets have distinct buyer pools and distinct demand profiles. Base case: +0.5 to +2.0 percent RevPAR; medical-adjacent assets outperform the metro average.",
+    "San Antonio. The most leisure-anchored Texas metro. Riverwalk full-service ADR holds $180 to $240 stabilized; Fiesta (April) drives event-week compression. Joint Base San Antonio provides demand-side diversification that institutional underwriters chronically discount. Base case: +1.0 to +2.5 percent RevPAR; Riverwalk full-service outperforms suburban select-service.",
+    "Sun Belt secondary leisure. Nashville, Atlanta, Charleston, Savannah, Charlotte.",
+    "Nashville. New supply through 2024-2025 has been heavy and is the defining 2026 variable. AirROI tracks Nashville STR ADR at $375 and RevPAR at $168 across 2,298 entire-home listings, a signal of meaningful short-term-rental competition. Hotel RevPAR is expected to grow approximately 3.0 percent in 2026 in some sub-segments per industry estimate, but the underlying number is supply-pressured (industry estimate, verify with Q2 2026 release). Music tourism, bachelorette weekends, and Music City Center group business hold the demand floor. Sub-market matters: Music Row, Gulch, downtown core absorb supply better than Brentwood/Cool Springs suburban.",
+    "Atlanta. The largest Southeast hotel market and the most transaction-active Sun Belt metro. Hartsfield-Jackson airport-hotel cluster has the deepest buyer pool. Convention demand at the Georgia World Congress Center underpins downtown. Stabilized full-service ADR: Buckhead $200 to $250, downtown convention $170 to $220, airport select-service $110 to $140. Base case: +1.0 to +2.5 percent RevPAR with airport cluster and Buckhead leading.",
+    "Charleston. One of the few Southeast markets where new construction is genuinely difficult, supporting the bid. Historic-district full-service ADR runs $300 to $450 peak and $200 to $280 stabilized. Boeing 787 Dreamliner facility, Mercedes-Benz Vans, Port of Charleston, and wedding-destination leisure all anchor demand. Base case: +2.5 to +4.0 percent RevPAR — the strongest forecast in the Southeast on supply-constrained pricing power.",
+    "Savannah. A similar profile to Charleston with the additional kicker of Hyundai's $7.6 billion Bryan County Metaplant ramping production through 2026. Historic-district lifestyle/boutique ADR holds $230 to $320 stabilized. Port of Savannah and SCAD enrollment provide diversification. Base case: +2.0 to +3.5 percent RevPAR.",
+    "Charlotte. Financial-services-anchored weekday demand from Bank of America, Truist, and Wells Fargo (East Coast HQ) holds the metro floor. Uptown full-service ADR $180 to $230, select-service citywide $120 to $160. Charlotte Douglas airport cluster trades to a different buyer pool. Base case: +1.0 to +2.5 percent RevPAR.",
+    "Florida. Miami, Tampa, Orlando.",
+    "Miami. One of the few major markets where new supply is not disrupting fundamentals; demand across international, leisure, and corporate is deep enough to keep both occupancy and pricing on firm footing per CoStar (Source: CoStar/Tourism Economics commentary). Miami Beach lifestyle/luxury ADR $400 to $1,200+ peak, $300 to $500 stabilized; Brickell full-service $250 to $350. Latin America business gateway and Art Basel anchor international demand. Base case: +2.0 to +3.5 percent RevPAR; the highest-RevPAR market in the U.S. continues to hold pricing.",
+    "Tampa Bay. January 2026 occupancy fell 14.9 percent year-over-year to 68.2 percent, the largest decline among major markets in that month per CoStar — driven by weather-related demand disruption rather than structural softness (Source: CoStar via Hotel Dive, February 2026). Westshore corporate, Clearwater Beach leisure, and convention demand all contribute. Base case: +0.5 to +2.0 percent RevPAR; recovery from the January reset is the single largest variable.",
+    "Orlando. The largest leisure hotel market in the U.S. by transaction volume. Per industry estimate, Orlando RevPAR is forecast to reach approximately $147.83 with occupancy at 72.0 percent and ADR at $205.40 (industry estimate, verify with Q2 2026 release). Universal Epic Universe (opened 2025) materially shifted demand patterns in 2026, with International Drive and Universal-adjacent properties capturing share from Disney-adjacent inventory. Base case: +2.5 to +4.0 percent RevPAR — among the strongest large-market forecasts in the country.",
+    "Mountain West. Phoenix, Denver.",
+    "Phoenix and Scottsdale. Scottsdale March 2026 RevPAR hit $339, up from $279 a year earlier, with occupancy climbing more than 10 percentage points year-over-year (Source: industry data via Bonvoyage AZ; verify with STR primary). Spring training (Cactus League), the WM Phoenix Open, and Barrett-Jackson auction drive Q1 compression. Intel Ocotillo expansion and the TSMC Phoenix campus add structural corporate demand to Tempe and Chandler select-service. Base case: +3.0 to +5.0 percent RevPAR for Scottsdale resort; +1.5 to +3.0 percent for Phoenix urban select-service.",
+    "Denver. HVS expects Denver to stabilize through 2026 with occupancy improving modestly through Q1 and ADR growth resuming by April or May as the busy season begins and discounting recedes (Source: HVS, Denver Hotel Market Outlook). Convention demand at the Colorado Convention Center, year-round outdoor leisure, and energy/aerospace corporate hold the demand base. Mountain resort markets (Aspen, Vail, Steamboat) command $400+ ADR during peak ski season. Base case: +1.5 to +3.0 percent RevPAR for the Denver metro; resort sub-markets outperform.",
+    "Cap-rate translation. CBRE H2 2025 Cap Rate Survey signals 5 to 15 bps of cap-rate compression for most property types in 2026, with luxury/upper-upscale peaking around 8.1 to 8.2 percent before easing slightly through 2028 (Source: CBRE H2 2025 Cap Rate Survey). HVS's working number for stabilized hotel cap rates remains 8.0 to 8.5 percent for normal stabilized assets, with luxury, economy, and extended-stay trending below that band and renovation-required limited-service trending above (Source: HVS U.S. Market Pulse, February 2026). Apply these to the market RevPAR forecasts: the markets with the strongest RevPAR growth (Charleston, Orlando, Scottsdale resort, Miami) will compress fastest on cap rate; the markets with flat or supply-pressured RevPAR (suburban Austin, suburban Nashville) will stay wider.",
+    "JLL's 2026 Global Hotel Investment Outlook forecasts robust transaction-volume growth, with the Americas leading 2025's 27 percent year-over-year increase and large-scale transactions ($250M+) expected to increase significantly in 2026 (Source: JLL, January 2026). Luxury resorts and trophy assets are emerging as top investment targets. The capital is there; the underwriting question is which RevPAR forecast to trust.",
+    "What we are advising clients in May 2026. For owners considering a 2026 disposition: the strongest pricing is in supply-constrained leisure (Charleston, Savannah, Miami, Scottsdale resort) and in stabilized PIP-current select-service in growing Sun Belt secondary metros where the construction pipeline is constrained. For buyers underwriting acquisitions: discount the consensus forecast in markets with heavy 2024-2025 deliveries (Austin, Nashville suburban, Scottsdale select-service) and underwrite to a 70 to 80 percent of stabilized RevPAR for the first 12 months. For institutional capital allocators: the 2026 RevPAR dispersion is wide enough that market selection matters more than chain-scale selection.",
+    "Refreshed quarterly when STR publishes. Submitted to print May 10, 2026.",
+  ].join("\n\n"),
+  downloadHref: "#",
+  tags: ["ADR", "RevPAR", "Forecast", "Sun Belt", "Texas", "Mountain West"],
+  tldr: [
+    "STR/CoStar projects 2026 U.S. RevPAR growth of 0.6%, ADR growth of 1.0%, occupancy of 62.1% — flat headline, wide market dispersion.",
+    "2025 printed -0.3% RevPAR — the first non-recessionary RevPAR decline in U.S. hotel industry history.",
+    "2026 World Cup adds a forecast 0.4% RevPAR lift; strip it out and organic growth is roughly 0.2%.",
+    "Lodging Econometrics: 1.4% supply growth in 2026, with the construction pipeline down ~5% YoY by project count.",
+    "Bifurcation: luxury/upper-upscale outperform; select-service and economy print flat-to-negative RevPAR.",
+    "Strongest market forecasts: Charleston, Orlando, Scottsdale resort, Miami (+2.5 to +5.0% RevPAR). Weakest: suburban Austin and Nashville (supply-pressured).",
+  ],
+  faq: [
+    {
+      q: "What is the U.S. hotel RevPAR forecast for 2026?",
+      a: "STR/CoStar/Tourism Economics' first 2026 forecast projects 0.6% RevPAR growth, with ADR up 1.0% and occupancy declining to 62.1%. The 2026 World Cup is forecast to add a 0.4% RevPAR lift on its own, meaning organic growth is roughly 0.2% (Source: CoStar/Tourism Economics, February 2026).",
+    },
+    {
+      q: "Which 2026 hotel markets have the strongest RevPAR forecasts?",
+      a: "Supply-constrained leisure markets lead: Charleston, Orlando, Scottsdale resort, and Miami project +2.5% to +5.0% RevPAR growth. Construction-pipeline pressure separates winners from losers within the same chain scale — markets where post-COVID supply outpaced demand are absorbing supply at the expense of pricing.",
+    },
+    {
+      q: "What is the 2026 hotel construction pipeline forecast?",
+      a: "Lodging Econometrics forecasts 1.4% U.S. supply growth for 2026, with 682 hotels and 77,323 rooms expected to open. The total Q1 2026 pipeline of 6,020 projects and 705,825 rooms is down roughly 5% year-over-year by project count. Luxury construction set a Q1 record of 102 projects, up 23% in rooms YoY (Source: Lodging Econometrics, Q1 2026).",
+    },
+    {
+      q: "Why is select-service underperforming in 2026?",
+      a: "Two reasons. First, post-COVID supply was concentrated in select-service in growth metros (Austin, Nashville, Scottsdale), and that supply is absorbing now. Second, the upper-tier guest is trading down less than the lower-tier guest is being squeezed out by economic pressure, so demand is rotating up the chain scale. STR projects select-service and economy RevPAR flat to slightly negative for full-year 2026.",
+    },
+    {
+      q: "How does the 2026 World Cup affect hotel forecasts?",
+      a: "STR/CoStar forecasts a 0.4% full-year U.S. RevPAR lift from the World Cup, concentrated in June-July 2026 in the 11 U.S. host cities (including Atlanta, Dallas, Houston, Miami). Host markets see the largest impact; non-host markets see a smaller indirect lift through international travel volume.",
+    },
+    {
+      q: "Where is hotel ADR holding pricing power in 2026?",
+      a: "Supply-constrained leisure: Charleston historic district ($300-450 peak), Miami Beach lifestyle/luxury ($400-1,200+ peak), Scottsdale resort ($339 March 2026 RevPAR), Nashville downtown ($220-280 stabilized), Riverwalk San Antonio ($180-240 stabilized). The common thread is that new construction in the historic core or beachfront/resort footprint is structurally difficult.",
+    },
+    {
+      q: "What does JLL forecast for 2026 hotel transaction volume?",
+      a: "JLL's 2026 Global Hotel Investment Outlook forecasts a robust increase in global hotel investment volumes for 2026 on the back of 2025's 22% year-over-year increase from the 2023 trough. The Americas led 2025 with 27% growth. Large-scale transactions ($250M+) are expected to increase significantly in 2026, with luxury resorts and trophy assets emerging as top investment targets (Source: JLL, January 2026).",
+    },
+  ],
+  sources: [
+    {
+      label: "CoStar/Tourism Economics: First 2026 U.S. Hotel Forecast",
+      url: "https://www.costar.com/products/benchmark/resources/press-releases/costar-tourism-economics-maintain-growth-projections",
+      publisher: "CoStar/Tourism Economics",
+    },
+    {
+      label: "STR Press Releases",
+      url: "https://str.com",
+      publisher: "STR",
+    },
+    {
+      label: "AHLA 2026 State of the Industry Report",
+      url: "https://www.ahla.com/resource/2026-state-industry",
+      publisher: "American Hotel & Lodging Association",
+    },
+    {
+      label: "JLL 2026 Global Hotel Investment Outlook",
+      url: "https://www.jll.com/en-us/newsroom/2026-global-hotel-investment-outlook-report",
+      publisher: "JLL Hotels & Hospitality",
+    },
+    {
+      label: "CBRE H2 2025 U.S. Cap Rate Survey",
+      url: "https://www.cbre.com/insights/reports/us-cap-rate-survey-h2-2025",
+      publisher: "CBRE Research",
+    },
+    {
+      label: "HVS U.S. Market Pulse, March 2026",
+      url: "https://www.hvs.com/article/10422-hvs-us-market-pulse-march-2026",
+      publisher: "HVS",
+    },
+    {
+      label: "Lodging Econometrics Q1 2026 Construction Pipeline Report",
+      url: "https://www.hospitalitynet.org/news/4132077/strong-conversion-and-new-development-project-totals-in-the-us-hotel-construction-pipeline-at-q1-2026-close",
+      publisher: "Lodging Econometrics",
+    },
+    {
+      label: "Hotel Dive: U.S. Hotel RevPAR, ADR Set for Growth in 2026",
+      url: "https://www.hoteldive.com/news/hotel-industry-performance-2026-costar-tourism-economics/810703/",
+      publisher: "Hotel Dive",
+    },
+  ],
+  keyStats: [
+    {
+      value: "0.6%",
+      label: "2026 U.S. RevPAR forecast (full-year)",
+      source: "CoStar/Tourism Economics, February 2026",
+    },
+    {
+      value: "1.0%",
+      label: "2026 U.S. ADR forecast (full-year)",
+      source: "CoStar/Tourism Economics, February 2026",
+    },
+    {
+      value: "62.1%",
+      label: "2026 U.S. occupancy forecast",
+      source: "CoStar/Tourism Economics, February 2026",
+    },
+    {
+      value: "-0.3%",
+      label: "2025 U.S. RevPAR (first non-recessionary decline ever recorded)",
+      source: "CoStar",
+    },
+    {
+      value: "0.4%",
+      label: "2026 World Cup RevPAR lift contribution (full-year U.S.)",
+      source: "STR/Tourism Economics",
+    },
+    {
+      value: "1.4%",
+      label: "2026 U.S. hotel supply growth forecast (77,323 new rooms)",
+      source: "Lodging Econometrics, Q1 2026",
+    },
+    {
+      value: "$805B",
+      label: "2026 projected U.S. hotel guest spending (+1.7% YoY)",
+      source: "AHLA 2026 State of the Industry",
+    },
+    {
+      value: "$339",
+      label: "Scottsdale March 2026 RevPAR (up from $279 a year earlier)",
+      source: "Industry data via Bonvoyage AZ",
+    },
+  ],
+  relatedMarkets: [
+    "austin-tx",
+    "dallas-tx",
+    "houston-tx",
+    "san-antonio-tx",
+    "nashville-tn",
+    "atlanta-ga",
+    "charleston-sc",
+    "miami-fl",
+    "orlando-fl",
+    "phoenix-az",
+    "denver-co",
+  ],
+  relatedBrands: ["hampton-inn", "hilton-garden-inn", "marriott", "hyatt-place"],
+  relatedInsights: [
+    "q1-2026-outlook",
+    "adr-recovery-texas-secondary",
+    "select-service-vs-full-service-capital-markets-2026",
+  ],
+};
