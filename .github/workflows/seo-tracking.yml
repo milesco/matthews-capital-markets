@@ -1,0 +1,91 @@
+name: SEO + LLM Citation Tracking
+
+on:
+  schedule:
+    # Weekly rank check: Mondays 9am UTC (4am ET)
+    - cron: "0 9 * * 1"
+    # Monthly LLM citation check: 1st of month, 10am UTC
+    - cron: "0 10 1 * *"
+  workflow_dispatch:
+    inputs:
+      job:
+        description: "Job to run"
+        required: true
+        default: "rank"
+        type: choice
+        options:
+          - rank
+          - llm
+          - schema
+          - links
+
+jobs:
+  rank:
+    if: github.event.schedule == '0 9 * * 1' || github.event.inputs.job == 'rank'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - run: npm ci
+      - name: Run rank check
+        env:
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+        run: npx tsx scripts/rank-check.ts
+      - name: Commit rank history
+        run: |
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions"
+          git add reports/rank-history.jsonl reports/rank-latest.md
+          git diff --cached --quiet || git commit -m "track: weekly rank check"
+          git push
+
+  llm:
+    if: github.event.schedule == '0 10 1 * *' || github.event.inputs.job == 'llm'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - run: npm ci
+      - name: Run LLM citation check
+        env:
+          PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: npx tsx scripts/llm-citation-check.ts
+      - name: Commit citation history
+        run: |
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions"
+          git add reports/llm-citation-history.jsonl reports/llm-citation-latest.md
+          git diff --cached --quiet || git commit -m "track: monthly LLM citation check"
+          git push
+
+  schema:
+    if: github.event.inputs.job == 'schema'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - run: npm ci
+      - run: npx tsx scripts/schema-validate.ts
+
+  links:
+    if: github.event.inputs.job == 'links'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - run: npm ci
+      - run: npx tsx scripts/internal-links-audit.ts
