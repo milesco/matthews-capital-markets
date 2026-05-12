@@ -36,9 +36,9 @@ const benefits: Benefit[] = [
   },
   {
     icon: Award,
-    titleLead: "$84.3 billion closed.",
+    titleLead: "$88.37B closed.",
     titleFollow: "Across every class.",
-    body: "Matthews has executed 33,500+ transactions across every CRE asset class. Hospitality clients tap a platform proven at every scale.",
+    body: "Matthews has executed across every CRE asset class. Hospitality clients tap a platform proven at every scale.",
   },
 ];
 
