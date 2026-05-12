@@ -4,9 +4,9 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Counter } from "@/components/ui/Counter";
 
 const supportingStats: { value: string; label: string }[] = [
-  { value: "59,000+", label: "Rooms sold" },
-  { value: "30+", label: "Markets" },
-  { value: "1M+", label: "Investor relationships" },
+  { value: "8,600+", label: "Rooms" },
+  { value: "30", label: "Cities" },
+  { value: "12", label: "States" },
 ];
 
 export function HomeStats() {
@@ -16,11 +16,11 @@ export function HomeStats() {
         {/* One reveal wraps the entire block, Apple product-page restraint */}
         <Reveal>
           <div>
-            <Eyebrow>Matthews Hospitality · 2024</Eyebrow>
+            <Eyebrow>Matthews Hospitality · 2019–2021</Eyebrow>
 
             <TwoToneHeadline
               size="section"
-              lead="$3.5B closed across 72 transactions."
+              lead="$890M+ closed across 37 transactions."
               follow="Texas, the Sun Belt, and beyond."
             />
 
@@ -39,7 +39,7 @@ export function HomeStats() {
             </div>
 
             <p className="mt-16 text-[11px] font-medium uppercase tracking-[0.22em] text-[color:var(--text-tertiary)]">
-              As of Q4 2024
+              As of Q4 2021
             </p>
           </div>
         </Reveal>

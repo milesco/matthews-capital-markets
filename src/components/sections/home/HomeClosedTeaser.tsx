@@ -17,8 +17,8 @@ export function HomeClosedTeaser() {
               <Eyebrow>Track record</Eyebrow>
               <TwoToneHeadline
                 size="section"
-                lead="670+ closed."
-                follow="Decades of trusted execution."
+                lead="$890M+ closed."
+                follow="Trusted execution across 37 hospitality transactions."
               />
               <p className="mt-6 max-w-[48ch] text-[17px] leading-[1.47] tracking-[-0.022em] text-[#424245]">
                 The Matthews hospitality team has executed across the full
@@ -28,9 +28,9 @@ export function HomeClosedTeaser() {
                 buyers expect from a platform proven at every scale.
               </p>
               <p className="mt-5 text-[12px] uppercase tracking-[0.18em] text-[color:var(--text-tertiary)]">
-                Recent ·{" "}
+                Featured ·{" "}
                 <span className="text-[color:var(--text-secondary)] normal-case tracking-[-0.014em]">
-                  The Westin Austin Downtown · $98.5M · Sale
+                  Hampton Inn Portfolio Atlanta · $49.9M · Sale
                 </span>
               </p>
               <div className="mt-8">
@@ -48,8 +48,8 @@ export function HomeClosedTeaser() {
             >
               <div className="relative aspect-[5/4] w-full overflow-hidden bg-[#1d1d1f]">
                 <Image
-                  src="/listings/the-driskill-trophy-lease-option.jpg"
-                  alt="The Driskill, historic trophy hotel facade"
+                  src="/closed/hampton-inn-portfolio-atlanta.jpg"
+                  alt="Hampton Inn Portfolio Atlanta"
                   fill
                   quality={88}
                   sizes="(min-width: 1024px) 600px, 100vw"
@@ -59,7 +59,7 @@ export function HomeClosedTeaser() {
               <div className="p-7">
                 <StatusBadge status="closed" size="sm" />
                 <h3 className="mt-4 text-[24px] font-semibold tracking-[0.009em] leading-[1.1667] text-[#1d1d1f]">
-                  The Driskill Trophy Lease Option
+                  Hampton Inn Portfolio Atlanta
                 </h3>
                 <p className="mt-1 text-[13px] tracking-[-0.014em] text-[#86868b]">
                   Representative transaction
@@ -70,27 +70,27 @@ export function HomeClosedTeaser() {
                     <dt className="text-[12px] uppercase tracking-[0.18em] text-[#86868b]">
                       City
                     </dt>
-                    <dd className="mt-1 text-[#1d1d1f]">Austin, Texas</dd>
+                    <dd className="mt-1 text-[#1d1d1f]">Atlanta, Georgia</dd>
                   </div>
                   <div>
                     <dt className="text-[12px] uppercase tracking-[0.18em] text-[#86868b]">
                       Year
                     </dt>
-                    <dd className="mt-1 text-[#1d1d1f] tabular-nums">2024</dd>
+                    <dd className="mt-1 text-[#1d1d1f] tabular-nums">2021</dd>
                   </div>
                   <div>
                     <dt className="text-[12px] uppercase tracking-[0.18em] text-[#86868b]">
                       Segment
                     </dt>
                     <dd className="mt-1 text-[#1d1d1f]">
-                      Luxury · Independent
+                      Select Service · Hilton
                     </dd>
                   </div>
                   <div>
                     <dt className="text-[12px] uppercase tracking-[0.18em] text-[#86868b]">
                       Deal size
                     </dt>
-                    <dd className="mt-1 text-[#1d1d1f] tabular-nums">$45M</dd>
+                    <dd className="mt-1 text-[#1d1d1f] tabular-nums">$49.9M</dd>
                   </div>
                 </dl>
               </div>
