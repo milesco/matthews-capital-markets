@@ -602,6 +602,7 @@ export const closed: ClosedDeal[] = [
     transactionTypeLabel: "Permanent Financing",
     sponsorProfile: "Developer",
     brokerSlugs: ["luke-thompson", "miles-cortez"],
+    photo: "/closed/home2-suites-hanford.jpg",
     toneClass: "from-[#1a3a6b] to-[#0066cc]",
   },
   {
