@@ -86,6 +86,7 @@ export const closed: ClosedDeal[] = [
     transactionTypeLabel: "CMBS Debt Placement",
     sponsorProfile: "Family Office",
     brokerSlugs: ["luke-thompson", "miles-cortez"],
+    photo: "/closed/courtyard-lake-charles.jpg",
     toneClass: "from-[#0e1a34] to-[#1a3a6b]",
   },
   {
