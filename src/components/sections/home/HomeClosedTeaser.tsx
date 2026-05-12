@@ -18,7 +18,7 @@ export function HomeClosedTeaser() {
               <TwoToneHeadline
                 size="section"
                 lead="$890M+ closed."
-                follow="Trusted execution across 37 hospitality transactions."
+                follow="Decades of trusted execution."
               />
               <p className="mt-6 max-w-[48ch] text-[17px] leading-[1.47] tracking-[-0.022em] text-[#424245]">
                 The Matthews hospitality team has executed across the full

@@ -20,7 +20,7 @@ export function HomeStats() {
 
             <TwoToneHeadline
               size="section"
-              lead="$890M+ closed across 37 transactions."
+              lead="$890M+ closed in hospitality."
               follow="Texas, the Sun Belt, and beyond."
             />
 
