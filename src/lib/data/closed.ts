@@ -619,6 +619,7 @@ export const closed: ClosedDeal[] = [
     transactionTypeLabel: "Permanent Financing",
     sponsorProfile: "Developer",
     brokerSlugs: ["luke-thompson", "miles-cortez"],
+    photo: "/closed/home2-suites-tulsa-hills.jpg",
     toneClass: "from-[#0e1a34] to-[#1a3a6b]",
   },
   {
