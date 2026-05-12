@@ -3,7 +3,11 @@
 import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { closed as allClosed, type ClosedDeal } from "@/lib/data/closed";
+import {
+  closed as allClosed,
+  parseDealSize,
+  type ClosedDeal,
+} from "@/lib/data/closed";
 import type { ClosedFilterValues } from "./ClosedFilters";
 
 export interface ClosedGridProps {
@@ -53,10 +57,19 @@ function dealMonogram(deal: ClosedDeal): string {
 }
 
 export function ClosedGrid({ filters }: ClosedGridProps) {
-  const filtered = React.useMemo(
-    () => applyFilters(allClosed, filters),
-    [filters],
-  );
+  const filtered = React.useMemo(() => {
+    const list = applyFilters(allClosed, filters);
+    return [...list].sort((a, b) => {
+      const va = parseDealSize(a.dealSize);
+      const vb = parseDealSize(b.dealSize);
+      const aIsNum = Number.isFinite(va);
+      const bIsNum = Number.isFinite(vb);
+      if (aIsNum && bIsNum) return vb - va;
+      if (aIsNum) return -1;
+      if (bIsNum) return 1;
+      return 0;
+    });
+  }, [filters]);
 
   if (filtered.length === 0) {
     return (
