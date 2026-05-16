@@ -92,7 +92,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const listingRoutes: MetadataRoute.Sitemap = listings.map((l) => ({
+  const listingRoutes: MetadataRoute.Sitemap = listings
+    .filter((l) => l.hasDetail !== false)
+    .map((l) => ({
     url: `${SITE_URL}/listings/${l.slug}`,
     lastModified: now,
     changeFrequency: "weekly",

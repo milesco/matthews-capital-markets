@@ -18,8 +18,10 @@ const SITE_URL = "https://matthewshotelmarkets.com";
 
 type Params = { slug: string };
 
+export const dynamicParams = false;
+
 export function generateStaticParams(): Params[] {
-  return listings.map((l) => ({ slug: l.slug }));
+  return listings.filter((l) => l.hasDetail !== false).map((l) => ({ slug: l.slug }));
 }
 
 export async function generateMetadata(

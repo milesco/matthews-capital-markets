@@ -36,6 +36,13 @@ export type Listing = {
   callForOffersDate?: string;
   encumbrance: string;
   brokerSlugs: string[];
+  /**
+   * Whether this listing has a full editorial detail page at /listings/[slug].
+   * Defaults to true. Lite listings (set to false) appear on the index grid
+   * but rely on `omUrl` for the click target — no internal detail page is
+   * generated and the entry is skipped from the sitemap.
+   */
+  hasDetail?: boolean;
   /** Optional. When unset, the card and detail hero render the toneClass
    *  gradient as a placeholder until photography lands. */
   photo?: string;
@@ -127,6 +134,55 @@ export const listings: Listing[] = [
       "Amenities: fitness, pool, event space, hot breakfast, meeting rooms, pet friendly, digital key.",
     ],
   },
+  /* --------------------------------------------------------------------------
+   * Extended hospitality bench. Scraped from
+   * matthews.com/listings?propertyType=Hospitality. hasDetail: false → cards
+   * appear on /listings index but link out to the matthews.com property page
+   * via omUrl; no internal detail page is generated.
+   * ------------------------------------------------------------------------ */
+  ...([
+    { slug: "comfort-suites-daytona-beach", name: "Comfort Suites Daytona Beach", address: "2900 W International Speedway Blvd", city: "Daytona Beach", state: "FL", region: "Southeast" as const, segment: "Select Service" as const, brand: "Comfort Suites", keys: 64, askingPrice: "$8,250,000", photo: "https://cms.matthews.com/wp-content/uploads/2026/04/Comfort-Suites-Daytona-Beach-2900-International-Speedway-I-95-Daytona-Beach-FL-pic-1.jpg", omUrl: "https://www.matthews.com/properties/hospitality-comfort-suites-daytona-beach-daytona-beach-fl", tone: TONE.navy },
+    { slug: "super-8-wyndham-kinder", name: "Super 8 by Wyndham", address: "12312 Highway 165", city: "Kinder", state: "LA", region: "Southeast" as const, segment: "Select Service" as const, brand: "Super 8", keys: 56, askingPrice: "$2,350,000", photo: "https://cms.matthews.com/wp-content/uploads/2026/04/Super-8-By-Wyndham-12312-Highway-165-Kinder-LA-pic-3.jpg", omUrl: "https://www.matthews.com/properties/hospitality-super-8-by-wyndham-kinder-la", tone: TONE.midnight },
+    { slug: "microtel-wyndham-sidney", name: "Microtel Inn & Suites by Wyndham", address: "1500 S Central Ave", city: "Sidney", state: "MT", region: "West" as const, segment: "Select Service" as const, brand: "Microtel", keys: 76, askingPrice: "$1,750,000", photo: "https://cms.matthews.com/wp-content/uploads/2026/04/Microtel-Inn-Suites-By-Wyndham-1500-S-Central-Ave-Sidney-MT-pic-1.jpg", omUrl: "https://www.matthews.com/properties/hospitality-microtel-inn-suites-by-wyndham-sidney-mt", tone: TONE.blue },
+    { slug: "quality-inn-blytheville", name: "Quality Inn Blytheville", address: "1520 E Main St", city: "Blytheville", state: "AR", region: "Southeast" as const, segment: "Select Service" as const, brand: "Quality Inn", keys: 105, askingPrice: "$2,150,000", photo: "https://cms.matthews.com/wp-content/uploads/2026/04/001_WebPhoto-1.png", omUrl: "https://www.matthews.com/properties/hospitality-quality-inn-blytheville-ar", tone: TONE.graphite },
+    { slug: "americas-best-value-inn-caldwell", name: "Americas Best Value Inn Caldwell", address: "1108 W Highway 21", city: "Caldwell", state: "TX", region: "Texas" as const, segment: "Select Service" as const, brand: "Americas Best Value Inn", keys: 52, askingPrice: "$1,410,000", photo: "https://cms.matthews.com/wp-content/uploads/2026/04/Americas-Best-Value-Inn-Caldwell-1108-W-Highway-21-Caldwell-TX-pic-1-1.jpg", omUrl: "https://www.matthews.com/properties/hospitality-americas-best-value-inn-caldwell-tx", tone: TONE.navy },
+    { slug: "hampton-by-hilton-akron", name: "Hampton by Hilton Akron", address: "80 Springside Dr", city: "Akron", state: "OH", region: "Midwest" as const, segment: "Select Service" as const, brand: "Hampton by Hilton", keys: 63, askingPrice: "$6,500,000", photo: "https://cms.matthews.com/wp-content/uploads/2026/04/001_Webfolder-26-scaled.jpg", omUrl: "https://www.matthews.com/properties/hospitality-hampton-by-hilton-akron-oh", tone: TONE.midnight },
+    { slug: "springhill-suites-pittsburgh-washington", name: "SpringHill Suites Pittsburgh Washington", address: "16 Trinity Point Dr", city: "Washington", state: "PA", region: "Northeast" as const, segment: "Select Service" as const, brand: "SpringHill Suites", keys: 86, askingPrice: "$5,500,000", photo: "https://cms.matthews.com/wp-content/uploads/2026/04/Springhill-Suites-Pittsburgh-Washington-16-Trinity-Point-Dr-Washington-PA-pic-1.jpg", omUrl: "https://www.matthews.com/properties/hospitality-springhill-suites-pittsburgh-washington-washington-pa", tone: TONE.blue },
+    { slug: "la-quinta-wyndham-lumberton", name: "La Quinta Inn & Suites by Wyndham Lumberton", address: "104 North LHS Drive", city: "Lumberton", state: "TX", region: "Texas" as const, segment: "Select Service" as const, brand: "La Quinta by Wyndham", keys: 0, askingPrice: "$5,180,000", photo: "https://cms.matthews.com/wp-content/uploads/2026/03/La-Quinta-Inn-Suites-By-Wyndham-Lumberton-104-North-LHS-Drive-Lumberton-TX-pic-2-scaled.jpg", omUrl: "https://www.matthews.com/properties/hospitality-la-quinta-inn-suites-by-wyndham-lumberton-tx", tone: TONE.graphite },
+    { slug: "fox-river-resort-sheridan", name: "Fox River Resort at Sheridan", address: "2558 N 3653 Road", city: "Sheridan", state: "IL", region: "Midwest" as const, segment: "Resort" as const, brand: "Independent", keys: 332, askingPrice: "$2,000,000", photo: "https://cms.matthews.com/wp-content/uploads/2026/03/Fox-River-Resort-At-Sheridan-2558-N.-3653-Road-Sheridan-IL-pic-5-scaled.jpg", omUrl: "https://www.matthews.com/properties/hospitality-fox-river-resort-at-sheridan-sheridan-il", tone: TONE.navy },
+    { slug: "hotel-pad-site-morrisville", name: "Hotel Pad Site Morrisville", address: "902 Church Street", city: "Morrisville", state: "NC", region: "Southeast" as const, segment: "Select Service" as const, brand: "Pad Site", keys: 138, askingPrice: "$4,000,000", photo: "https://cms.matthews.com/wp-content/uploads/2026/03/001-Web-Photo.png", omUrl: "https://www.matthews.com/properties/hospitality-hotel-pad-site-morrisville-nc", tone: TONE.midnight },
+    { slug: "quality-inn-johnson-city", name: "Quality Inn Johnson City", address: "119 Pinnacle Dr", city: "Johnson City", state: "TN", region: "Southeast" as const, segment: "Select Service" as const, brand: "Quality Inn", keys: 60, askingPrice: "$3,700,000", photo: "https://cms.matthews.com/wp-content/uploads/2026/03/Quality-Inn-119-Pinnacle-Dr-Johnson-City-TN-pic-1.jpg", omUrl: "https://www.matthews.com/properties/hospitality-quality-inn-johnson-city-tn", tone: TONE.blue },
+    { slug: "days-inn-wyndham-del-rio", name: "Days Inn by Wyndham Del Rio", address: "2005 Veterans Blvd", city: "Del Rio", state: "TX", region: "Texas" as const, segment: "Select Service" as const, brand: "Days Inn", keys: 101, askingPrice: "$4,200,000", photo: "https://cms.matthews.com/wp-content/uploads/2026/03/Days-Inn-website-1.avif", omUrl: "https://www.matthews.com/properties/hospitality-days-inn-by-wyndham-del-rio-tx", tone: TONE.graphite },
+    { slug: "fairfield-inn-suites-monaca", name: "Fairfield Inn & Suites Monaca", address: "1438 Brodhead Road", city: "Monaca", state: "PA", region: "Northeast" as const, segment: "Select Service" as const, brand: "Fairfield by Marriott", keys: 82, askingPrice: "$7,900,000", photo: "https://cms.matthews.com/wp-content/uploads/2026/02/Fairfield-Inn-Suites-1438-Brodhead-Road-Monaca-PA-pic-1.jpg", omUrl: "https://www.matthews.com/properties/hospitality-fairfield-inn-suites-monaca-pa", tone: TONE.navy },
+    { slug: "sinclair-gas-hotel-bluff", name: "Sinclair Gas Station + Hotel", address: "161 US-191", city: "Bluff", state: "UT", region: "West" as const, segment: "Boutique" as const, brand: "Sinclair", keys: 26, askingPrice: "$2,400,000", photo: "https://cms.matthews.com/wp-content/uploads/2026/02/Sinclair-Gas-Station-26-Room-Hotel-161-US-191-Bluff-UT-pic-1.jpg", omUrl: "https://www.matthews.com/properties/hospitality-sinclair-gas-station-26-room-hotel-bluff-ut", tone: TONE.midnight },
+    { slug: "econo-lodge-suburban-studios-daytona", name: "Econo Lodge & Suburban Studios", address: "2904 W International Speedway Blvd", city: "Daytona Beach", state: "FL", region: "Southeast" as const, segment: "Select Service" as const, brand: "Econo Lodge", keys: 163, askingPrice: "$8,000,000", photo: "https://cms.matthews.com/wp-content/uploads/2026/02/Econo-Lodge-Suburban-Studios-2904-W-International-Speedway-Blvd-Daytona-Beach-FL-pic-1-scaled.jpg", omUrl: "https://www.matthews.com/properties/hospitality-econo-lodge-suburban-studios-daytona-beach-fl", tone: TONE.blue },
+    { slug: "place-in-the-sun-palm-springs", name: "A Place in the Sun Garden Hotel", address: "754 E San Lorenzo", city: "Palm Springs", state: "CA", region: "West" as const, segment: "Boutique" as const, brand: "Independent", keys: 17, askingPrice: "$5,750,000", photo: "https://cms.matthews.com/wp-content/uploads/2026/02/001-cover--scaled.jpg", omUrl: "https://www.matthews.com/properties/hospitality-a-place-in-the-sun-garden-hotel-palm-springs-ca", tone: TONE.graphite },
+    { slug: "red-roof-inn-somerset", name: "Red Roof Inn Somerset", address: "220 Waterworks Rd", city: "Somerset", state: "PA", region: "Northeast" as const, segment: "Select Service" as const, brand: "Red Roof Inn", keys: 94, askingPrice: "$2,400,000", photo: "https://cms.matthews.com/wp-content/uploads/2026/02/002_WebPhoto-10.jpg", omUrl: "https://www.matthews.com/properties/stnl-red-roof-inn-somerset-pa", tone: TONE.navy },
+    { slug: "apple-mountain-resort-clarkesville", name: "Former Apple Mountain Resort (For Auction)", address: "200 Apple Seed Ct", city: "Clarkesville", state: "GA", region: "Southeast" as const, segment: "Resort" as const, brand: "Independent", keys: 96, askingPrice: "Upon Request", photo: "https://cms.matthews.com/wp-content/uploads/2026/01/001_WebPhoto-8-1-scaled.jpg", omUrl: "https://www.matthews.com/properties/hospitality-former-apple-mountain-resort-clarkesville-ga", tone: TONE.midnight },
+    { slug: "best-western-plus-fresno", name: "Best Western Plus Fresno Inn", address: "480 E Shaw Ave", city: "Fresno", state: "CA", region: "West" as const, segment: "Select Service" as const, brand: "Best Western Plus", keys: 55, askingPrice: "$7,665,000", photo: "https://cms.matthews.com/wp-content/uploads/2026/01/001_WebPhoto-7-1-scaled.jpg", omUrl: "https://www.matthews.com/properties/hospitality-best-western-plus-fresno-inn-fresno-ca", tone: TONE.blue },
+  ].map((l): Listing => ({
+    slug: l.slug,
+    name: l.name,
+    address: l.address,
+    city: l.city,
+    state: l.state,
+    region: l.region,
+    segment: l.segment,
+    brand: l.brand,
+    status: "available",
+    keys: l.keys,
+    yearBuilt: 0,
+    askingPrice: l.askingPrice,
+    encumbrance: "See OM",
+    brokerSlugs: [],
+    hasDetail: false,
+    photo: l.photo,
+    photoCount: 1,
+    omUrl: l.omUrl,
+    toneClass: l.tone,
+    summary: `${l.keys > 0 ? `${l.keys}-key ` : ""}${l.brand} in ${l.city}, ${l.state}. Full offering details on matthews.com.`,
+    bullets: [],
+  }))),
 ];
 
 
