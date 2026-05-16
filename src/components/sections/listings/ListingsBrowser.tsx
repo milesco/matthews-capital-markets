@@ -14,6 +14,18 @@ const SEGMENT_ORDER: Segment[] = [
   "Extended Stay",
 ];
 
+/** Curated listings that always render at the top of the grid, in this order. */
+const PINNED_SLUGS = [
+  "walden-retreats-hill-country",
+  "hampton-inn-shelbyville",
+];
+
+/** Parse "$6,400,000" → 6400000. "Upon Request" / unparseable → -Infinity (sorts last). */
+function priceValue(askingPrice: string): number {
+  const digits = askingPrice.replace(/[^0-9]/g, "");
+  return digits ? Number(digits) : -Infinity;
+}
+
 export function ListingsBrowser() {
   const [activeSegment, setActiveSegment] = React.useState<string>("");
 
@@ -22,13 +34,21 @@ export function ListingsBrowser() {
     return SEGMENT_ORDER.filter((s) => present.has(s));
   }, []);
 
-  const filtered = React.useMemo(
-    () =>
-      activeSegment
-        ? listings.filter((l) => l.segment === activeSegment)
-        : listings,
-    [activeSegment],
-  );
+  const filtered = React.useMemo(() => {
+    const base = activeSegment
+      ? listings.filter((l) => l.segment === activeSegment)
+      : listings;
+
+    const pinned = PINNED_SLUGS.map((slug) =>
+      base.find((l) => l.slug === slug),
+    ).filter((l): l is (typeof base)[number] => Boolean(l));
+
+    const rest = base
+      .filter((l) => !PINNED_SLUGS.includes(l.slug))
+      .sort((a, b) => priceValue(b.askingPrice) - priceValue(a.askingPrice));
+
+    return [...pinned, ...rest];
+  }, [activeSegment]);
 
   return (
     <>
