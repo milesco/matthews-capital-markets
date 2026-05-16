@@ -50,11 +50,6 @@ export function ExtendedTeam() {
           </div>
         </Reveal>
 
-        <p className="max-w-[640px] text-[15px] leading-[1.6] tracking-[-0.014em] text-[#424245] mb-12">
-          The broader Matthews hospitality bench. Specialists across select-service,
-          full-service, resort, and capital markets coast to coast.
-        </p>
-
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-12">
           {agents.map((a, i) => (
             <Reveal key={a.email} delay={i * 0.03}>
