@@ -10,8 +10,10 @@ import TeamTopDeals from "@/components/sections/team-detail/TeamTopDeals";
 import TeamCredentials from "@/components/sections/team-detail/TeamCredentials";
 import { team, type TeamMember } from "@/lib/data/team";
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
-  return team.map((m) => ({ slug: m.slug }));
+  return team.filter((m) => m.hasBio !== false).map((m) => ({ slug: m.slug }));
 }
 
 const SITE_URL = "https://matthewshotelmarkets.com";

@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { FilterBar, type FilterDef } from "@/components/ui/FilterBar";
-import type { Office, Specialty } from "@/lib/data/team";
+import { team, type Office, type Specialty } from "@/lib/data/team";
 
 export interface TeamFilterValues {
   office: "" | Office;
@@ -17,25 +17,17 @@ export interface TeamFiltersProps {
   totalCount: number;
 }
 
-const OFFICE_OPTIONS: { value: Office; label: string }[] = [
-  { value: "Austin", label: "Austin" },
-  { value: "Dallas", label: "Dallas" },
-  { value: "Houston", label: "Houston" },
-  { value: "San Antonio", label: "San Antonio" },
-  { value: "Denver", label: "Denver" },
-  { value: "Chicago", label: "Chicago" },
-];
+const OFFICE_OPTIONS: { value: Office; label: string }[] = Array.from(
+  new Set(team.map((m) => m.office)),
+)
+  .sort()
+  .map((o) => ({ value: o, label: o }));
 
-const SPECIALTY_OPTIONS: { value: Specialty; label: string }[] = [
-  { value: "Select Service", label: "Select Service" },
-  { value: "Full Service", label: "Full Service" },
-  { value: "Resort", label: "Resort" },
-  { value: "Lifestyle", label: "Lifestyle" },
-  { value: "Boutique", label: "Boutique" },
-  { value: "Capital Markets", label: "Capital Markets" },
-  { value: "Distressed", label: "Distressed" },
-  { value: "Portfolios", label: "Portfolios" },
-];
+const SPECIALTY_OPTIONS: { value: Specialty; label: string }[] = Array.from(
+  new Set(team.flatMap((m) => m.specialties)),
+)
+  .sort()
+  .map((s) => ({ value: s, label: s }));
 
 const FILTER_DEFS: FilterDef[] = [
   { key: "office", label: "Office", options: OFFICE_OPTIONS },

@@ -104,15 +104,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ],
   }));
 
-  const teamRoutes: MetadataRoute.Sitemap = team.map((m) => ({
-    url: `${SITE_URL}/team/${m.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: 0.7,
-    images: m.photo
-      ? [`${SITE_URL}${m.photo}`]
-      : [`${SITE_URL}/team/${m.slug}/opengraph-image`],
-  }));
+  const teamRoutes: MetadataRoute.Sitemap = team
+    .filter((m) => m.hasBio !== false)
+    .map((m) => ({
+      url: `${SITE_URL}/team/${m.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+      images: m.photo
+        ? [`${SITE_URL}${m.photo}`]
+        : [`${SITE_URL}/team/${m.slug}/opengraph-image`],
+    }));
 
   const insightRoutes: MetadataRoute.Sitemap = insights.map((i) => ({
     url: `${SITE_URL}/insights/${i.slug}`,

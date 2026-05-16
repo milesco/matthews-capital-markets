@@ -3,7 +3,6 @@ import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
 import TeamHero from "@/components/sections/team/TeamHero";
 import TeamBrowser from "@/components/sections/team/TeamBrowser";
-import ExtendedTeam from "@/components/sections/team/ExtendedTeam";
 
 const SITE_URL = "https://matthewshotelmarkets.com";
 
@@ -34,7 +33,6 @@ export default function TeamPage() {
       <main className="pt-16">
         <TeamHero />
         <TeamBrowser />
-        <ExtendedTeam />
       </main>
       <SiteFooter />
     </>

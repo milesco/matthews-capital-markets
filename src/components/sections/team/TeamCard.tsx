@@ -28,39 +28,49 @@ export interface TeamCardProps {
  */
 export function TeamCard({ member }: TeamCardProps) {
   const href = `/team/${member.slug}`;
+  const hasBio = member.hasBio !== false;
+
+  const photoEl = (
+    <div className="relative aspect-square w-full overflow-hidden bg-[#f5f5f7]">
+      <MonogramCover
+        initials={initials(member.name)}
+        tone={member.cover.tone}
+        size="hero"
+        photoSrc={member.photo}
+        photoAlt={`${member.name}, ${member.title}`}
+      />
+    </div>
+  );
 
   return (
     <article className="group">
-      <Link
-        href={href}
-        aria-label={`View bio for ${member.name}`}
-        className="block focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1a3a6b]"
-      >
-        {/* Square portrait. Color photos to match the rest of the site
-            (no grayscale filter). */}
-        <div className="relative aspect-square w-full overflow-hidden bg-[#f5f5f7]">
-          <MonogramCover
-            initials={initials(member.name)}
-            tone={member.cover.tone}
-            size="hero"
-            photoSrc={member.photo}
-            photoAlt={`${member.name}, ${member.title}`}
-          />
-        </div>
-      </Link>
+      {hasBio ? (
+        <Link
+          href={href}
+          aria-label={`View bio for ${member.name}`}
+          className="block focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1a3a6b]"
+        >
+          {photoEl}
+        </Link>
+      ) : (
+        photoEl
+      )}
 
       <div className="mt-5">
-        {/* Name in tracked uppercase + chevron, Waterloo treatment */}
         <h3 className="text-[14px] font-semibold uppercase tracking-[0.18em] text-[#1d1d1f]">
-          <Link
-            href={href}
-            className="inline-flex items-baseline gap-1 hover:text-[#1a3a6b] transition-colors duration-200"
-          >
-            {member.name}
-            <span aria-hidden="true" className="text-[#86868b]">
-              ›
-            </span>
-          </Link>
+          {hasBio ? (
+            <Link
+              href={href}
+              className="inline-flex items-baseline gap-1 hover:text-[#1a3a6b] transition-colors duration-200"
+            >
+              {member.name}
+              <span aria-hidden="true" className="text-[#86868b]">
+                ›
+              </span>
+            </Link>
+          ) : (
+            <span>{member.name}</span>
+          )}
         </h3>
 
         <p className="mt-2 text-[12px] uppercase tracking-[0.18em] text-[#6e6e73]">
@@ -82,13 +92,18 @@ export function TeamCard({ member }: TeamCardProps) {
                   |
                 </span>
                 <dd className="inline text-[14px] leading-[1.5] tracking-[-0.014em] text-[#424245]">
-                  {row.value}{" "}
-                  <Link
-                    href={href}
-                    className="text-[#1a3a6b] underline underline-offset-[3px] decoration-[#1a3a6b]/40 hover:decoration-[#1a3a6b] transition-colors duration-200"
-                  >
-                    more
-                  </Link>
+                  {row.value}
+                  {hasBio ? (
+                    <>
+                      {" "}
+                      <Link
+                        href={href}
+                        className="text-[#1a3a6b] underline underline-offset-[3px] decoration-[#1a3a6b]/40 hover:decoration-[#1a3a6b] transition-colors duration-200"
+                      >
+                        more
+                      </Link>
+                    </>
+                  ) : null}
                 </dd>
               </div>
             ))}
