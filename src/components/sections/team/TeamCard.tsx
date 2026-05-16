@@ -81,6 +81,27 @@ export function TeamCard({ member }: TeamCardProps) {
           {member.office}
         </p>
 
+        {!hasBio && (member.email || member.phone) ? (
+          <div className="mt-3 flex flex-col gap-1 text-[13px] tracking-[-0.014em]">
+            {member.email ? (
+              <a
+                href={`mailto:${member.email}`}
+                className="text-[#1a3a6b] hover:underline underline-offset-[3px] decoration-[#1a3a6b]/40 break-all"
+              >
+                {member.email}
+              </a>
+            ) : null}
+            {member.phone ? (
+              <a
+                href={`tel:${member.phone.replace(/[^0-9+]/g, "")}`}
+                className="text-[#424245] hover:text-[#1d1d1f]"
+              >
+                {member.phone}
+              </a>
+            ) : null}
+          </div>
+        ) : null}
+
         {member.factRows && member.factRows.length > 0 ? (
           <dl className="mt-6 space-y-4">
             {member.factRows.map((row) => (
