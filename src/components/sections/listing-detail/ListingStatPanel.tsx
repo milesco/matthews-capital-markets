@@ -8,18 +8,15 @@ export interface ListingStatPanelProps {
 type Stat = { label: string; value: string };
 
 export function ListingStatPanel({ listing }: ListingStatPanelProps) {
-  const stats: Stat[] = [
-    { label: "Keys", value: listing.keys.toLocaleString() },
+  const rawStats: (Stat | null)[] = [
+    { label: "Keys", value: listing.keys > 0 ? listing.keys.toLocaleString() : null },
     { label: "Brand", value: listing.brand },
     { label: "Chain Scale", value: listing.segment },
-    { label: "Year Built", value: listing.yearBuilt > 0 ? String(listing.yearBuilt) : "," },
-    {
-      label: "Year Renovated",
-      value: listing.yearRenovated ? String(listing.yearRenovated) : ",",
-    },
-    { label: "ADR", value: listing.adr ?? "," },
-    { label: "RevPAR", value: listing.revpar ?? "," },
-    { label: "Occupancy", value: listing.occupancy ?? "," },
+    { label: "Year Built", value: listing.yearBuilt > 0 ? String(listing.yearBuilt) : null },
+    { label: "Year Renovated", value: listing.yearRenovated ? String(listing.yearRenovated) : null },
+    { label: "ADR", value: listing.adr ?? null },
+    { label: "RevPAR", value: listing.revpar ?? null },
+    { label: "Occupancy", value: listing.occupancy ?? null },
     { label: "Asking Price", value: listing.askingPrice },
     { label: "Encumbrance", value: listing.encumbrance },
     {
@@ -29,11 +26,10 @@ export function ListingStatPanel({ listing }: ListingStatPanelProps) {
           ? "Independent"
           : `${listing.brand} (franchise)`,
     },
-    {
-      label: "Call for Offers",
-      value: listing.callForOffersDate ?? "Open ended",
-    },
-  ];
+    { label: "Call for Offers", value: listing.callForOffersDate ?? "Open ended" },
+  ].map((s) => (s.value ? { label: s.label, value: s.value } : null));
+
+  const stats: Stat[] = rawStats.filter((s): s is Stat => s !== null);
 
   return (
     <section
