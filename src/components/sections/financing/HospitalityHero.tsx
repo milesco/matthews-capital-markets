@@ -97,7 +97,7 @@ export function HospitalityHero() {
       </section>
 
       {/* Action cards */}
-      <section className="bg-[#f4f4f4] px-[70px] py-20">
+      <section className="bg-[#0e1626] px-[70px] py-20">
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
           {ACTION_CARDS.map((card) => (
             <Link
