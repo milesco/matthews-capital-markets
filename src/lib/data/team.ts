@@ -155,7 +155,7 @@ In 2019, Luke spearheaded a joint venture to develop a 276-key, dual-branded Hil
     email: "miles.cortez@matthews.com",
     linkedin: "https://www.linkedin.com/in/miles-cortez-iii-3ab26212/",
     cover: { tone: "graphite" },
-    photo: "/headshots/miles-cortez.avif",
+    photo: "/images/miles-cortez.avif",
     photoTone: LEGACY_PHOTO_TONE.graphite,
     bio: `Miles is a seasoned real estate investment banker and investment professional for Matthews™ Capital Markets, with an established track record of leading complex finance transactions across private equity, venture capital, and public markets, principally in the hospitality sector. A creative financial strategist, Miles leverages his buy-side experience to engineer tailored financial solutions for institutional clients. His expertise spans opportunity identification, capital sourcing, and transaction execution, and he brings professionalism and clarity to every stage of the investment lifecycle. Miles approaches every transaction through a buy-side lens, informed by his own experience as a principal.
 
@@ -227,49 +227,6 @@ Earlier in his career, Miles co-founded Aventine Capital Partners, where he play
     ],
     topDeals: [],
   },
-  /* --------------------------------------------------------------------------
-   * Extended hospitality bench, lite entries.
-   * Scraped from matthews.com/about-us/our-agents?specialties=hospitality.
-   * hasBio: false ⇒ rendered as photo + name + title cards only, no bio page.
-   * ------------------------------------------------------------------------ */
-  ...([
-    { slug: "mitchell-glasson", name: "Mitchell Glasson", title: "First Vice President", office: "Orange County, CA", phone: "(949) 432-4502", email: "mitchell.glasson@matthews.com", photo: "https://cms.matthews.com/wp-content/uploads/2016/05/Mitchell-Glasson-Web-Use.jpg" },
-    { slug: "francisco-nacorda", name: "Francisco Nacorda", title: "Senior Vice President", office: "Fort Lauderdale, FL", phone: "", email: "francisco.nacorda@matthews.com", photo: "https://cms.matthews.com/wp-content/uploads/2026/02/Francisco-Nacorda-Web-Use.jpg" },
-    { slug: "dustin-robinett", name: "Dustin Robinett", title: "Vice President", office: "Kansas City, MO", phone: "(303) 268-8243", email: "dustin.robinett@matthews.com", photo: "https://cms.matthews.com/wp-content/uploads/2025/07/Dustin-Robinett-Web-Use-1.jpg" },
-    { slug: "mabelle-perez", name: "Mabelle Perez", title: "Vice President", office: "Fort Lauderdale, FL", phone: "(786) 206-9739", email: "mabelle.perez@matthews.com", photo: "https://cms.matthews.com/wp-content/uploads/2025/07/Mabelle-Perez-Web-Use.jpg" },
-    { slug: "david-loving", name: "David Loving", title: "Associate Market Leader", office: "Tampa, FL", phone: "(813) 358-3599", email: "david.loving@matthews.com", photo: "https://cms.matthews.com/wp-content/uploads/2025/07/David-Loving-Web-Use-1.jpg" },
-    { slug: "andrew-senatore", name: "Andrew Senatore", title: "Senior Associate", office: "Phoenix, AZ", phone: "(602) 946-4901", email: "andrew.senatore@matthews.com", photo: "https://cms.matthews.com/wp-content/uploads/2025/07/Andrew-Senatore-Web-Use.jpg" },
-    { slug: "hunter-davis", name: "Hunter Davis", title: "Senior Associate", office: "Phoenix, AZ", phone: "(602) 946-4371", email: "hunter.davis@matthews.com", photo: "https://cms.matthews.com/wp-content/uploads/2025/07/Hunter-Davis-Web-Use-1-1.jpg" },
-    { slug: "alfonso-garcia", name: "Alfonso Garcia", title: "Associate", office: "Dallas, TX", phone: "(214) 432-4719", email: "alfonso.garcia@matthews.com", photo: "https://cms.matthews.com/wp-content/uploads/2025/07/Alfonso-Garcia-Web-Use.jpg" },
-    { slug: "ash-singh", name: "Ash Singh", title: "Associate", office: "Encino, CA", phone: "(818) 330-4508", email: "ash.singh@matthews.com", photo: "https://cms.matthews.com/wp-content/uploads/2026/04/Ash-Singh-Web-Use.jpg" },
-    { slug: "chris-beavers", name: "Chris Beavers", title: "Associate", office: "Nashville, TN", phone: "(629) 262-0382", email: "chris.beavers@matthews.com", photo: "https://cms.matthews.com/wp-content/uploads/2025/07/Chris-Beavers-Web-Use.png" },
-    { slug: "dominic-henderson", name: "Dominic Henderson", title: "Associate", office: "Orange County, CA", phone: "(310) 561-8254", email: "dominic.henderson@matthews.com", photo: "https://cms.matthews.com/wp-content/uploads/2025/07/Dominic-Henderson-Web-Use.jpg" },
-    { slug: "elias-zakas", name: "Elias Zakas", title: "Associate", office: "Phoenix, AZ", phone: "(602) 715-2609", email: "elias.zakas@matthews.com", photo: "https://cms.matthews.com/wp-content/uploads/2025/07/Elias-Zakas-Web-Use.jpg" },
-    { slug: "jake-senatore", name: "Jake Senatore", title: "Associate", office: "Phoenix, AZ", phone: "(602) 922-3471", email: "jake.senatore@matthews.com", photo: "https://cms.matthews.com/wp-content/uploads/2025/07/Jake-Senatore-Web-Use.jpg" },
-    { slug: "julio-leyva", name: "Julio Leyva", title: "Associate", office: "Fort Lauderdale, FL", phone: "(754) 288-1327", email: "julio.leyva@matthews.com", photo: "https://cms.matthews.com/wp-content/uploads/2026/03/Julio-Leyva-Web-Use.jpg" },
-    { slug: "luke-whittaker", name: "Luke Whittaker", title: "Associate", office: "Orange County, CA", phone: "(317) 493-0055", email: "luke.whittaker@matthews.com", photo: "https://cms.matthews.com/wp-content/uploads/2025/07/Luke-Whittaker-Web-Use-2.jpg" },
-    { slug: "ritik-patel", name: "Ritik Patel", title: "Associate", office: "Cleveland, OH", phone: "(216) 367-7832", email: "ritik.patel@matthews.com", photo: "https://cms.matthews.com/wp-content/uploads/2025/09/Ritik-Patel-Web-Use.jpg" },
-    { slug: "ryan-kawai-sanchez", name: "Ryan Kawai Sanchez", title: "Associate", office: "Orange County, CA", phone: "(949) 287-5854", email: "ryan.sanchez@matthews.com", photo: "https://cms.matthews.com/wp-content/uploads/2025/07/Ryan-Sanchez-Use-1.jpg" },
-    { slug: "youssef-alkalabani", name: "Youssef Alkalabani", title: "Associate", office: "Nashville, TN", phone: "(615) 234-5749", email: "youssef.alkalabani@matthews.com", photo: "https://cms.matthews.com/wp-content/uploads/2025/09/Youssef-Alkalabani-Web-Use.jpg" },
-    { slug: "jordan-beletz", name: "Jordan Beletz", title: "Sales Analyst", office: "Phoenix, AZ", phone: "(520) 308-6079", email: "jordan.beletz@matthews.com", photo: "https://cms.matthews.com/wp-content/uploads/2026/01/Jordan-Beletz-Web-Use.jpg" },
-  ].map((a, i): TeamMember => {
-    const tones: CoverTone[] = ["ink", "navy", "graphite", "paper"];
-    const tone = tones[i % tones.length];
-    return {
-      ...a,
-      hasBio: false,
-      specialties: [],
-      cover: { tone },
-      photoTone: LEGACY_PHOTO_TONE[tone],
-      bio: "",
-      yearsExperience: 0,
-      careerVolume: "$0",
-      last12Volume: "$0",
-      designations: [],
-      education: [],
-      topDeals: [],
-    };
-  })),
 ];
 
 export function getBroker(slug: string): TeamMember | undefined {

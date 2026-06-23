@@ -3,7 +3,7 @@ import Link from "next/link";
 import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
 
-export default function ServicePage() {
+export default function RateSheetPage() {
   return (
     <>
       <SiteHeader />

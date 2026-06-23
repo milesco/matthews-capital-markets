@@ -21,8 +21,7 @@ export function HomeHero() {
       ref={sectionRef}
       className="dark-section relative overflow-hidden bg-[color:var(--surface-inverse)] text-[color:var(--text-on-dark)]"
     >
-      {/* Hero photograph backdrop. Slow parallax zoom as the section scrolls
-          past, capped at 1.05 to stay subtle. */}
+      {/* Hero photograph backdrop with slow parallax zoom */}
       <motion.div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
@@ -39,11 +38,7 @@ export function HomeHero() {
         />
       </motion.div>
 
-      {/* Layered washes for headline legibility.
-          - Desktop: heavy on the left, the photo breathes on the right.
-          - Mobile: a much heavier left-to-right wash so the body paragraph
-            and the dl pair sit on a near-solid dark surface, not on the
-            water reflection where they were near-illegible. */}
+      {/* Gradient washes for legibility */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 hidden md:block"
@@ -128,7 +123,7 @@ export function HomeHero() {
         </div>
       </div>
 
-      {/* Scroll cue, thin vertical line, desktop only — too tight on mobile. */}
+      {/* Scroll cue — desktop only */}
       <motion.div
         aria-hidden="true"
         className="pointer-events-none absolute bottom-10 left-1/2 hidden -translate-x-1/2 md:block"

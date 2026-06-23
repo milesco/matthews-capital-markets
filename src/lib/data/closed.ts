@@ -70,6 +70,7 @@ export const closed: ClosedDeal[] = [
     sponsorProfile: "PE",
     brokerSlugs: ["luke-thompson", "miles-cortez"],
     toneClass: "from-[#1a3a6b] to-[#0066cc]",
+    photo: "/images/26-Hotel Motel 6.png",
   },
   {
     slug: "courtyard-lake-charles-debt",
@@ -105,6 +106,7 @@ export const closed: ClosedDeal[] = [
     sponsorProfile: "Developer",
     brokerSlugs: ["luke-thompson", "miles-cortez"],
     toneClass: "from-[#0a1226] to-[#1a3a6b]",
+    photo: "/images/MArriott Del Mar.png",
   },
   {
     slug: "full-service-marriott-fort-collins-debt",
@@ -122,6 +124,7 @@ export const closed: ClosedDeal[] = [
     sponsorProfile: "PE",
     brokerSlugs: ["luke-thompson", "miles-cortez"],
     toneClass: "from-[#1d1d1f] to-[#2c2c2e]",
+    photo: "/images/FT Collins Marriott.avif",
   },
   {
     slug: "4-pack-marriott-intercon-portfolio-debt",
@@ -138,6 +141,7 @@ export const closed: ClosedDeal[] = [
     sponsorProfile: "PE",
     brokerSlugs: ["luke-thompson", "miles-cortez"],
     toneClass: "from-[#0066cc] to-[#1a56db]",
+    photo: "/images/Intercon NOLA.png",
   },
 
   // === Capital Markets Track Record (extended) ===
@@ -434,6 +438,7 @@ export const closed: ClosedDeal[] = [
     sponsorProfile: "Developer",
     brokerSlugs: ["luke-thompson", "miles-cortez"],
     toneClass: "from-[#1a3a6b] to-[#0066cc]",
+    photo: "/images/Home2East5th.avif",
   },
   {
     slug: "tampa-boutique-multifamily-pref-equity",
@@ -485,6 +490,7 @@ export const closed: ClosedDeal[] = [
     sponsorProfile: "Developer",
     brokerSlugs: ["luke-thompson", "miles-cortez"],
     toneClass: "from-[#1d1d1f] to-[#2c2c2e]",
+    photo: "/images/Home2East5th.avif",
   },
   {
     slug: "hampton-inn-beaumont-permanent",

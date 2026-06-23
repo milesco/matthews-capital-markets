@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Fraunces } from "next/font/google";
+import { Inter, Fraunces, Archivo } from "next/font/google";
 import "./globals.css";
 
 export const viewport: Viewport = {
@@ -25,6 +25,13 @@ const fraunces = Fraunces({
   subsets: ["latin"],
   axes: ["opsz"],
   style: ["normal", "italic"],
+  display: "swap",
+});
+
+const archivo = Archivo({
+  variable: "--font-archivo",
+  subsets: ["latin"],
+  weight: ["700", "800", "900"],
   display: "swap",
 });
 
@@ -187,7 +194,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${fraunces.variable} antialiased`}
+      className={`${inter.variable} ${fraunces.variable} ${archivo.variable} antialiased`}
     >
       <head>
         <script
