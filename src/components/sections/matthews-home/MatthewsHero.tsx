@@ -61,9 +61,10 @@ export function MatthewsHero() {
             style={{
               fontFamily: "'Archivo Black', 'Arial Black', sans-serif",
               fontWeight: 900,
-              fontSize: "clamp(2.75rem, 11vw, 8rem)",
+              fontSize: "clamp(2rem, 8.5vw, 5.5rem)",
               letterSpacing: "-0.04em",
-              wordBreak: "break-word",
+              wordBreak: "normal",
+              overflowWrap: "normal",
             }}
           >
             CRE<br />
