@@ -13,7 +13,7 @@ const ACTION_CARDS = [
   {
     label: "Hotel Rate Sheet",
     href: "https://june-2026-rate-sheet.vercel.app/",
-    img: "/images/hero-landscape.jpg",
+    img: "/images/FT Collins Marriott.avif",
   },
   {
     label: "Hospitality Capital Markets Team",
@@ -23,7 +23,7 @@ const ACTION_CARDS = [
   {
     label: "Closed Hotel Transactions",
     href: "/closed",
-    img: "/images/hero-landscape.jpg",
+    img: "/images/MArriott Del Mar.png",
   },
   {
     label: "Hospitality Market Insights",
@@ -83,7 +83,7 @@ export function HospitalityHero() {
               style={{ width: "48%", height: "440px" }}
             >
               <Image
-                src="/images/hero-landscape.jpg"
+                src="/images/Intercon NOLA.png"
                 alt="Hotel exterior"
                 width={900}
                 height={440}
