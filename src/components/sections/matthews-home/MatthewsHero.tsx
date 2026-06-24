@@ -49,7 +49,7 @@ export function MatthewsHero() {
       />
 
       {/* Content */}
-      <div className="relative w-full px-[70px] py-32 pt-40 grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-16 items-center">
+      <div className="relative w-full px-6 sm:px-10 lg:px-[70px] py-32 pt-40 grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-16 items-center">
         {/* Left: headline + search */}
         <div>
           <p className="text-[12px] font-semibold uppercase tracking-[0.28em] text-white/60 mb-6">
@@ -61,8 +61,9 @@ export function MatthewsHero() {
             style={{
               fontFamily: "'Archivo Black', 'Arial Black', sans-serif",
               fontWeight: 900,
-              fontSize: "clamp(4rem, 9vw, 8rem)",
-              letterSpacing: "-2px",
+              fontSize: "clamp(2.75rem, 11vw, 8rem)",
+              letterSpacing: "-0.04em",
+              wordBreak: "break-word",
             }}
           >
             CRE<br />

@@ -1,25 +1,21 @@
-import Image from "next/image";
-import Link from "next/link";
 import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
+import MatthewsHero from "@/components/sections/matthews-home/MatthewsHero";
+import MatthewsStats from "@/components/sections/matthews-home/MatthewsStats";
+import MatthewsServices from "@/components/sections/matthews-home/MatthewsServices";
+import MatthewsMarketIntel from "@/components/sections/matthews-home/MatthewsMarketIntel";
+import MatthewsPodcast from "@/components/sections/matthews-home/MatthewsPodcast";
 
 export default function Home() {
   return (
     <>
       <SiteHeader />
-      <main className="min-h-screen bg-[#0e1626] flex flex-col items-center justify-center text-center px-6">
-        <Link href="/" aria-label="Matthews, home">
-          <Image
-            src="/images/matthews-logo.jpg"
-            alt="Matthews"
-            width={80}
-            height={80}
-            className="rounded-[12px] mx-auto"
-          />
-        </Link>
-        <p className="mt-6 text-white/50 text-[13px] font-semibold uppercase tracking-[0.22em]">
-          Existing Website Page
-        </p>
+      <main>
+        <MatthewsHero />
+        <MatthewsStats />
+        <MatthewsServices />
+        <MatthewsMarketIntel />
+        <MatthewsPodcast />
       </main>
       <SiteFooter />
     </>
