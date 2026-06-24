@@ -103,8 +103,6 @@ export function HospitalityHero() {
             <Link
               key={card.label}
               href={card.href}
-              target={card.href.startsWith("http") ? "_blank" : undefined}
-              rel={card.href.startsWith("http") ? "noopener noreferrer" : undefined}
               className="group relative rounded-[16px] overflow-hidden flex items-end"
               style={{ height: "280px", background: "#0e1626" }}
             >
