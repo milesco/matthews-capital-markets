@@ -1,7 +1,7 @@
 export function MatthewsStats() {
   return (
     <div
-      className="px-[70px] py-5 flex flex-wrap items-center gap-6"
+      className="px-6 sm:px-10 lg:px-[70px] py-5 flex flex-wrap items-center gap-x-6 gap-y-2"
       style={{ background: "#0e1626", borderTop: "1px solid rgba(255,255,255,0.08)" }}
     >
       <p className="text-white/50 text-[12px] font-semibold uppercase tracking-[0.22em]">

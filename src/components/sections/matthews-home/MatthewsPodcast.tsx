@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function MatthewsPodcast() {
   return (
-    <section className="bg-[#0e1626] px-[70px] py-20 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+    <section className="bg-[#0e1626] px-6 sm:px-10 lg:px-[70px] py-20 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
       {/* Text */}
       <div>
         <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#5d80b8] mb-6">

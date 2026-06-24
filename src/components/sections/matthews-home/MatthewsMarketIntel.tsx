@@ -32,7 +32,7 @@ export function MatthewsMarketIntel() {
   const [featured, ...rest] = ARTICLES;
 
   return (
-    <section className="bg-white px-[70px] py-20">
+    <section className="bg-white px-6 sm:px-10 lg:px-[70px] py-20">
       <div className="flex items-center justify-between mb-10">
         <h2
           className="text-[2rem] font-bold text-[#0a0f1a]"
