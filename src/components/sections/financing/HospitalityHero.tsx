@@ -12,7 +12,7 @@ const ACTION_CARDS = [
   },
   {
     label: "Hotel Rate Sheet",
-    href: "https://june-2026-rate-sheet.vercel.app/",
+    href: "https://www.matthewsratesheet.info/",
     img: "/images/FT Collins Marriott.avif",
   },
   {
