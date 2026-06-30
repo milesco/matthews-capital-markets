@@ -21,8 +21,8 @@ const LENDERS = [
   },
   {
     name: "Driftwood Capital",
-    logo: "/images/lenders/DC-Logo-White.svg",
-    dark: true,
+    logo: "/images/lenders/driftwood-capital.png",
+    dark: false,
   },
   {
     name: "Symetra",
