@@ -1,5 +1,5 @@
 import { InsightsPlaceholder } from "@/components/sections/insights/InsightsPlaceholder";
 
-export default function ContactPage() {
+export default function PrivacyPolicyPage() {
   return <InsightsPlaceholder />;
 }

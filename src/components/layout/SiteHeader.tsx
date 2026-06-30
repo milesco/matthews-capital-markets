@@ -84,10 +84,10 @@ const NAV_ITEMS: NavItem[] = [
     label: "Contact",
     href: "/contact",
     children: [
-      { href: "/contact", label: "Office Locations" },
-      { href: "/contact", label: "License Information & Online Disclosures" },
-      { href: "/contact", label: "Texas Real Estate Commission Info About Brokerage Services" },
-      { href: "/contact", label: "Privacy Policy" },
+      { href: "/contact/office-locations", label: "Office Locations" },
+      { href: "/contact/license-information", label: "License Information & Online Disclosures" },
+      { href: "/contact/texas-disclosure", label: "Texas Real Estate Commission Info About Brokerage Services" },
+      { href: "/contact/privacy-policy", label: "Privacy Policy" },
     ],
   },
 ];
