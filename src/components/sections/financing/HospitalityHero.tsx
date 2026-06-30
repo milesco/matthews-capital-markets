@@ -37,6 +37,35 @@ const ACTION_CARDS = [
   },
 ];
 
+function ActionCard({ card }: { card: typeof ACTION_CARDS[number] }) {
+  return (
+    <Link
+      href={card.href}
+      target={card.newTab ? "_blank" : undefined}
+      rel={card.newTab ? "noopener noreferrer" : undefined}
+      className="group relative rounded-[16px] overflow-hidden flex items-center justify-center border border-white/10 hover:border-white/30 transition-colors duration-300"
+      style={{ height: "280px", background: "#0e1626", minWidth: 0 }}
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={card.img}
+        alt={card.label}
+        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0"
+      />
+      <div
+        className="absolute inset-0 transition-opacity duration-500 group-hover:opacity-0"
+        style={{ background: "linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,0.82) 100%)" }}
+      />
+      <span
+        className="relative text-white font-bold text-[22px] text-center leading-tight px-4"
+        style={{ fontFamily: "'Archivo Black', 'Arial Black', sans-serif" }}
+      >
+        {card.label}
+      </span>
+    </Link>
+  );
+}
+
 export function HospitalityHero() {
   return (
     <>
@@ -103,38 +132,17 @@ export function HospitalityHero() {
 
       {/* Action cards */}
       <section className="bg-[#0e1626] px-[70px] py-20">
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
-          {ACTION_CARDS.map((card) => (
-            <Link
-              key={card.label}
-              href={card.href}
-              target={card.newTab ? "_blank" : undefined}
-              rel={card.newTab ? "noopener noreferrer" : undefined}
-              className="group relative rounded-[16px] overflow-hidden flex items-center justify-center border border-white/10 hover:border-white/30 transition-colors duration-300"
-              style={{ height: "280px", background: "#0e1626" }}
-            >
-              {/* Photo — fades out on hover */}
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={card.img}
-                alt={card.label}
-                className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0"
-              />
-              {/* Gradient — also fades out on hover */}
-              <div
-                className="absolute inset-0 transition-opacity duration-500 group-hover:opacity-0"
-                style={{
-                  background:
-                    "linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,0.82) 100%)",
-                }}
-              />
-              <span
-                className="relative text-white font-bold text-[22px] text-center leading-tight px-4"
-                style={{ fontFamily: "'Archivo Black', 'Arial Black', sans-serif" }}
-              >
-                {card.label}
-              </span>
-            </Link>
+        {/* Row 1 — 3 cards */}
+        <div className="grid grid-cols-3 gap-5 mb-5">
+          {ACTION_CARDS.slice(0, 3).map((card) => (
+            <ActionCard key={card.label} card={card} />
+          ))}
+        </div>
+        {/* Row 2 — 2 cards centered using same 3-col grid with spacer */}
+        <div className="grid grid-cols-3 gap-5">
+          <div />
+          {ACTION_CARDS.slice(3).map((card) => (
+            <ActionCard key={card.label} card={card} />
           ))}
         </div>
       </section>
