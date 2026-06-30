@@ -17,7 +17,6 @@ export function InsightsPlaceholder() {
             className="rounded-[12px] mx-auto"
           />
         </Link>
-        <div className="mt-3 mx-auto h-[3px] w-10 rounded-full" style={{ background: "#3b82f6" }} />
         <p className="mt-8 text-white/50 text-[11px] font-semibold uppercase tracking-[0.3em]">
           Existing Website Page
         </p>
