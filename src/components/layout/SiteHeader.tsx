@@ -52,8 +52,8 @@ const NAV_ITEMS: NavItem[] = [
       { href: "/services/debt-structured-finance", label: "Debt & Structured Finance" },
       { href: "/services/capital-markets", label: "Equity" },
       { href: "/hotels-for-sale", label: "Leasing" },
-      { href: "/services", label: "Auction Services" },
-      { href: "/services", label: "1031 Exchange Program" },
+      { href: "/services/auction-services", label: "Auction Services" },
+      { href: "/services/1031-exchange", label: "1031 Exchange Program" },
     ],
   },
   {
