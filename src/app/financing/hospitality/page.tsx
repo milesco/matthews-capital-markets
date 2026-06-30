@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import SiteHeader from "@/components/layout/SiteHeader";
 import HospitalityHero from "@/components/sections/financing/HospitalityHero";
+import HospitalityLendersSection from "@/components/sections/financing/HospitalityLendersSection";
 
 export const metadata: Metadata = {
   title: "Hospitality Financing | Matthews Capital Markets",
@@ -14,6 +15,7 @@ export default function HospitalityFinancingPage() {
       <SiteHeader />
       <main>
         <HospitalityHero />
+        <HospitalityLendersSection />
       </main>
     </>
   );
