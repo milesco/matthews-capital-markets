@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import SiteHeader from "@/components/layout/SiteHeader";
 import CapitalMarketsHero from "@/components/sections/capital-markets/CapitalMarketsHero";
+import LendersSection from "@/components/sections/capital-markets/LendersSection";
 
 export const metadata: Metadata = {
   title: "Capital Markets | Matthews",
@@ -14,6 +15,7 @@ export default function CapitalMarketsPage() {
       <SiteHeader />
       <main>
         <CapitalMarketsHero />
+        <LendersSection />
       </main>
     </>
   );
