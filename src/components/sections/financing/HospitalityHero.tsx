@@ -9,26 +9,31 @@ const ACTION_CARDS = [
     label: "Get Hotel Financing",
     href: "/contact",
     img: "https://cms.matthews.com/wp-content/uploads/2026/05/Hospitality.jpg",
+    newTab: false,
   },
   {
     label: "Hotel Rate Sheet",
     href: "https://june-2026-rate-sheet.vercel.app/",
     img: "/images/hero-landscape.jpg",
+    newTab: false,
   },
   {
     label: "Hospitality Capital Markets Team",
     href: "/team",
     img: "https://cms.matthews.com/wp-content/uploads/2026/05/Hospitality.jpg",
+    newTab: false,
   },
   {
     label: "Closed Hotel Transactions",
     href: "/closed",
     img: "/images/hero-landscape.jpg",
+    newTab: false,
   },
   {
     label: "Hospitality Market Insights",
     href: "https://matthews-hotel-team.vercel.app/insights",
     img: "https://cms.matthews.com/wp-content/uploads/2026/05/Hospitality.jpg",
+    newTab: false,
   },
 ];
 
@@ -103,8 +108,8 @@ export function HospitalityHero() {
             <Link
               key={card.label}
               href={card.href}
-              target={card.href.startsWith("http") ? "_blank" : undefined}
-              rel={card.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              target={card.newTab ? "_blank" : undefined}
+              rel={card.newTab ? "noopener noreferrer" : undefined}
               className="group relative rounded-[16px] overflow-hidden flex items-center justify-center border border-white/10 hover:border-white/30 transition-colors duration-300"
               style={{ height: "280px", background: "#0e1626" }}
             >
