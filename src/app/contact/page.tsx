@@ -1,25 +1,27 @@
-import Image from "next/image";
-import Link from "next/link";
+import type { Metadata } from "next";
 import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
+import { ContactHero } from "@/components/sections/contact/ContactHero";
+import { ContactInfo } from "@/components/sections/contact/ContactInfo";
+import { ContactForm } from "@/components/sections/contact/ContactForm";
+
+export const metadata: Metadata = {
+  title: "Contact | Matthews Capital Markets",
+  description: "Get in touch with the Matthews Capital Markets team.",
+};
 
 export default function ContactPage() {
   return (
     <>
       <SiteHeader />
-      <main className="min-h-screen bg-[#0e1626] flex flex-col items-center justify-center text-center px-6">
-        <Link href="/" aria-label="Matthews, home">
-          <Image
-            src="/images/matthews-logo.jpg"
-            alt="Matthews"
-            width={80}
-            height={80}
-            className="rounded-[12px] mx-auto"
-          />
-        </Link>
-        <p className="mt-6 text-white/50 text-[13px] font-semibold uppercase tracking-[0.22em]">
-          Existing Website Page
-        </p>
+      <main>
+        <ContactHero />
+        <section className="py-16 lg:py-20">
+          <div className="mx-auto max-w-[1024px] px-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <ContactInfo />
+            <ContactForm />
+          </div>
+        </section>
       </main>
       <SiteFooter />
     </>
