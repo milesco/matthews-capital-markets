@@ -7,7 +7,7 @@ import Link from "next/link";
 const ACTION_CARDS = [
   {
     label: "Get Hotel Financing",
-    href: "/contact",
+    href: "/contact/hospitality",
     img: "https://cms.matthews.com/wp-content/uploads/2026/05/Hospitality.jpg",
     newTab: false,
   },
