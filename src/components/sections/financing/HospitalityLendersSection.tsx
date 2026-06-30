@@ -46,6 +46,27 @@ const LENDERS = [
   },
 ];
 
+function LenderCard({ lender }: { lender: typeof LENDERS[number] }) {
+  return (
+    <div
+      className="flex items-center justify-center rounded-[14px] border px-8"
+      style={{
+        height: "187px",
+        width: "220px",
+        background: lender.dark ? "#0e1626" : "#ffffff",
+        borderColor: lender.dark ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.08)",
+      }}
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={lender.logo}
+        alt={lender.name}
+        className="max-h-[80px] max-w-[160px] w-auto object-contain"
+      />
+    </div>
+  );
+}
+
 export function HospitalityLendersSection() {
   return (
     <section className="bg-white px-[70px] py-20">
@@ -61,25 +82,16 @@ export function HospitalityLendersSection() {
         Lenders We Work With
       </h2>
 
-      <div className="flex flex-wrap justify-center gap-5">
-        {LENDERS.map((lender) => (
-          <div
-            key={lender.name}
-            className="flex items-center justify-center rounded-[14px] border px-8"
-            style={{
-              height: "187px",
-              minWidth: "220px",
-              background: lender.dark ? "#0e1626" : "#ffffff",
-              borderColor: lender.dark ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.08)",
-            }}
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={lender.logo}
-              alt={lender.name}
-              className="max-h-[80px] max-w-[160px] w-auto object-contain"
-            />
-          </div>
+      {/* Row 1 — 5 cards */}
+      <div className="grid grid-cols-5 gap-5 mb-5">
+        {LENDERS.slice(0, 5).map((lender) => (
+          <LenderCard key={lender.name} lender={lender} />
+        ))}
+      </div>
+      {/* Row 2 — 4 cards, centered */}
+      <div className="flex justify-center gap-5">
+        {LENDERS.slice(5).map((lender) => (
+          <LenderCard key={lender.name} lender={lender} />
         ))}
       </div>
     </section>
