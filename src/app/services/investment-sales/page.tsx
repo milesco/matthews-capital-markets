@@ -46,6 +46,33 @@ const ASSET_CLASSES = [
   },
 ];
 
+function AssetCard({ ac }: { ac: typeof ASSET_CLASSES[number] }) {
+  return (
+    <Link
+      href={ac.href}
+      className="group relative rounded-[16px] overflow-hidden flex items-center justify-center border border-white/10 hover:border-white/30 transition-colors duration-300"
+      style={{ height: "280px", background: "#0e1626", display: "flex" }}
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={ac.img}
+        alt={ac.label}
+        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0"
+      />
+      <div
+        className="absolute inset-0 transition-opacity duration-500 group-hover:opacity-0"
+        style={{ background: "linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,0.82) 100%)" }}
+      />
+      <span
+        className="relative text-white font-bold text-[22px] text-center leading-tight px-4"
+        style={{ fontFamily: "'Archivo Black', 'Arial Black', sans-serif" }}
+      >
+        {ac.label}
+      </span>
+    </Link>
+  );
+}
+
 export default function InvestmentSalesPage() {
   return (
     <>
@@ -114,36 +141,18 @@ export default function InvestmentSalesPage() {
 
         {/* Asset class cards */}
         <section className="bg-[#0e1626] px-[70px] py-20">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-            {ASSET_CLASSES.map((ac) => (
-              <Link
-                key={ac.label}
-                href={ac.href}
-                className="group relative rounded-[16px] overflow-hidden flex items-center justify-center border border-white/10 hover:border-white/30 transition-colors duration-300"
-                style={{ height: "280px", background: "#0e1626" }}
-              >
-                {/* Photo — fades out on hover */}
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={ac.img}
-                  alt={ac.label}
-                  className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0"
-                />
-                {/* Gradient — fades out on hover */}
-                <div
-                  className="absolute inset-0 transition-opacity duration-500 group-hover:opacity-0"
-                  style={{
-                    background:
-                      "linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,0.82) 100%)",
-                  }}
-                />
-                <span
-                  className="relative text-white font-bold text-[22px] text-center leading-tight px-4"
-                  style={{ fontFamily: "'Archivo Black', 'Arial Black', sans-serif" }}
-                >
-                  {ac.label}
-                </span>
-              </Link>
+          {/* Row 1 — 4 cards */}
+          <div className="grid grid-cols-4 gap-5 mb-5">
+            {ASSET_CLASSES.slice(0, 4).map((ac) => (
+              <AssetCard key={ac.label} ac={ac} />
+            ))}
+          </div>
+          {/* Row 2 — 3 cards, each same width as top-row card, centered */}
+          <div className="flex justify-center gap-5">
+            {ASSET_CLASSES.slice(4).map((ac) => (
+              <div key={ac.label} style={{ width: "calc((100% - 3 * 20px) / 4)" }}>
+                <AssetCard ac={ac} />
+              </div>
             ))}
           </div>
         </section>

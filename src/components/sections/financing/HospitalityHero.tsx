@@ -132,20 +132,19 @@ export function HospitalityHero() {
 
       {/* Action cards */}
       <section className="bg-[#0e1626] px-[70px] py-20">
-        {/* Single 6-col grid: row 1 = 3×2cols, row 2 = 1 spacer + 2×2cols + 1 spacer */}
-        <div className="grid grid-cols-6 gap-5">
+        {/* Row 1 — 3 equal cards */}
+        <div className="grid grid-cols-3 gap-5 mb-5">
           {ACTION_CARDS.slice(0, 3).map((card) => (
-            <div key={card.label} className="col-span-2">
-              <ActionCard card={card} />
-            </div>
+            <ActionCard key={card.label} card={card} />
           ))}
-          <div className="col-span-1" />
+        </div>
+        {/* Row 2 — 2 cards, each same width as a top-row card, centered */}
+        <div className="flex justify-center gap-5">
           {ACTION_CARDS.slice(3).map((card) => (
-            <div key={card.label} className="col-span-2">
+            <div key={card.label} style={{ width: "calc((100% - 2 * 20px) / 3)" }}>
               <ActionCard card={card} />
             </div>
           ))}
-          <div className="col-span-1" />
         </div>
       </section>
     </>
