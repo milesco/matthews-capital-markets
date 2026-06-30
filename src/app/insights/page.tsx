@@ -1,5 +1,5 @@
-import { PlaceholderPage } from "@/components/sections/financing/PlaceholderPage";
+import { InsightsPlaceholder } from "@/components/sections/insights/InsightsPlaceholder";
 
 export default function InsightsPage() {
-  return <PlaceholderPage assetClass="Insights" />;
+  return <InsightsPlaceholder />;
 }

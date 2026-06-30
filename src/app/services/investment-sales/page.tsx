@@ -119,25 +119,28 @@ export default function InvestmentSalesPage() {
               <Link
                 key={ac.label}
                 href={ac.href}
-                className="group relative rounded-[14px] overflow-hidden flex items-end"
-                style={{ height: "220px", background: "#0e1626" }}
+                className="group relative rounded-[16px] overflow-hidden flex items-center justify-center border border-white/10 hover:border-white/30 transition-colors duration-300"
+                style={{ height: "280px", background: "#0e1626" }}
               >
-                {/* Photo background */}
+                {/* Photo — fades out on hover */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={ac.img}
                   alt={ac.label}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0"
                 />
-                {/* Gradient overlay */}
+                {/* Gradient — fades out on hover */}
                 <div
-                  className="absolute inset-0"
+                  className="absolute inset-0 transition-opacity duration-500 group-hover:opacity-0"
                   style={{
                     background:
                       "linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,0.82) 100%)",
                   }}
                 />
-                <span className="relative px-5 pb-5 text-white font-bold text-[15px] leading-tight">
+                <span
+                  className="relative text-white font-bold text-[22px] text-center leading-tight px-4"
+                  style={{ fontFamily: "'Archivo Black', 'Arial Black', sans-serif" }}
+                >
                   {ac.label}
                 </span>
               </Link>
