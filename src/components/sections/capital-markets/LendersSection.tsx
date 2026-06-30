@@ -77,14 +77,14 @@ export function LendersSection() {
               {cat.lenders.map((lender) => (
                 <div
                   key={lender.name}
-                  className="flex items-center justify-center rounded-[12px] border border-black/[0.08] bg-white px-8"
-                  style={{ height: "100px", minWidth: "180px" }}
+                  className="flex items-center justify-center rounded-[14px] border border-black/[0.08] bg-white px-10"
+                  style={{ height: "187px", minWidth: "220px" }}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={lender.logo}
                     alt={lender.name}
-                    className="max-h-[56px] max-w-[140px] w-auto object-contain"
+                    className="max-h-[80px] max-w-[160px] w-auto object-contain"
                   />
                 </div>
               ))}
