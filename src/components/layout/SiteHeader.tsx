@@ -58,11 +58,12 @@ const NAV_ITEMS: NavItem[] = [
   },
   {
     label: "Insights",
+    href: "/insights",
     children: [
       { href: "/insights", label: "Insights" },
-      { href: "/insights", label: "Matthews Publication" },
-      { href: "/insights", label: "Matthews Mentality Podcast" },
-      { href: "/insights", label: "The Matthews Market Pulse" },
+      { href: "/insights/matthews-publication", label: "Matthews Publication" },
+      { href: "/insights/matthews-mentality-podcast", label: "Matthews Mentality Podcast" },
+      { href: "/insights/matthews-market-pulse", label: "The Matthews Market Pulse" },
     ],
   },
   {
