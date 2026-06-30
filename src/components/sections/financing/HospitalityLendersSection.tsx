@@ -49,10 +49,9 @@ const LENDERS = [
 function LenderCard({ lender }: { lender: typeof LENDERS[number] }) {
   return (
     <div
-      className="flex items-center justify-center rounded-[14px] border px-8"
+      className="flex items-center justify-center rounded-[14px] border px-8 w-full"
       style={{
         height: "187px",
-        width: "220px",
         background: lender.dark ? "#0e1626" : "#ffffff",
         borderColor: lender.dark ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.08)",
       }}
@@ -82,17 +81,20 @@ export function HospitalityLendersSection() {
         Lenders We Work With
       </h2>
 
-      {/* Row 1 — 5 cards */}
-      <div className="grid grid-cols-5 gap-5 mb-5">
+      {/* Single 10-col grid: row 1 = 5×2cols, row 2 = spacer + 4×2cols + spacer */}
+      <div className="grid grid-cols-10 gap-5">
         {LENDERS.slice(0, 5).map((lender) => (
-          <LenderCard key={lender.name} lender={lender} />
+          <div key={lender.name} className="col-span-2">
+            <LenderCard lender={lender} />
+          </div>
         ))}
-      </div>
-      {/* Row 2 — 4 cards, centered */}
-      <div className="flex justify-center gap-5">
+        <div className="col-span-1" />
         {LENDERS.slice(5).map((lender) => (
-          <LenderCard key={lender.name} lender={lender} />
+          <div key={lender.name} className="col-span-2">
+            <LenderCard lender={lender} />
+          </div>
         ))}
+        <div className="col-span-1" />
       </div>
     </section>
   );
