@@ -27,7 +27,7 @@ const rows: Row[] = [
   },
   {
     icon: MapPin,
-    label: "Austin HQ",
+    label: "Austin",
     value: (
       <span className="block whitespace-pre-line text-[color:var(--text-primary)]">
         {"515 Congress Ave., Suite 2410\nAustin, TX 78701"}
@@ -39,7 +39,7 @@ const rows: Row[] = [
     label: "Denver",
     value: (
       <span className="block whitespace-pre-line text-[color:var(--text-primary)]">
-        Denver, CO
+        {"6400 South Fiddlers Green Cir, Suite 1330\nGreenwood Village, CO 80111"}
       </span>
     ),
   },
