@@ -36,7 +36,7 @@ const LENDERS = [
   },
   {
     name: "Bloomfield Capital",
-    logo: "/images/lenders/Bloomfield.png",
+    logo: "/images/lenders/Bloomfield2.png",
     dark: false,
   },
   {
