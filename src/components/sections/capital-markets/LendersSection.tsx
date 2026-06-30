@@ -54,7 +54,7 @@ export function LendersSection() {
   return (
     <section className="bg-white px-[70px] py-20">
       <h2
-        className="text-black mb-16"
+        className="text-black mb-16 text-center"
         style={{
           fontFamily: "'Archivo Black', 'Arial Black', sans-serif",
           fontWeight: 900,
@@ -69,22 +69,22 @@ export function LendersSection() {
         {LENDER_CATEGORIES.map((cat) => (
           <div key={cat.label}>
             {/* Category label */}
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-black/40 mb-5">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-black/40 mb-5 text-center">
               {cat.label}
             </p>
             {/* Logo grid */}
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap justify-center gap-5">
               {cat.lenders.map((lender) => (
                 <div
                   key={lender.name}
-                  className="flex items-center justify-center rounded-[10px] border border-black/[0.08] bg-white px-6"
-                  style={{ height: "72px", minWidth: "140px" }}
+                  className="flex items-center justify-center rounded-[12px] border border-black/[0.08] bg-white px-8"
+                  style={{ height: "100px", minWidth: "180px" }}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={lender.logo}
                     alt={lender.name}
-                    className="max-h-[40px] max-w-[110px] w-auto object-contain"
+                    className="max-h-[56px] max-w-[140px] w-auto object-contain"
                   />
                 </div>
               ))}
