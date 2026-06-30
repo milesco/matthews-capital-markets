@@ -11,7 +11,7 @@ const LENDERS = [
   },
   {
     name: "Wells Fargo",
-    logo: "/images/lenders/wells-fargo.webp",
+    logo: "/images/lenders/wellsfargo.jpg",
     dark: false,
   },
   {
