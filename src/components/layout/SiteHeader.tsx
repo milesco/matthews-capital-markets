@@ -41,6 +41,7 @@ const NAV_ITEMS: NavItem[] = [
       { href: "/financing/healthcare", label: "Healthcare" },
       { href: "/financing/net-lease-retail", label: "Net Lease Retail" },
       { href: "/financing/hospitality", label: "Hospitality" },
+      { href: "/financing/other-cre-asset-classes", label: "Other CRE Asset Classes" },
     ],
   },
   {
