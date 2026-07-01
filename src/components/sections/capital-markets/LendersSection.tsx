@@ -77,7 +77,7 @@ export function LendersSection() {
               {cat.lenders.map((lender) => (
                 <div
                   key={lender.name}
-                  className="flex items-center justify-center rounded-[14px] border border-black/[0.08] bg-white px-10"
+                  className="flex items-center justify-center rounded-[14px] border border-black/[0.08] bg-white px-10 transition-all duration-300 hover:border-black/[0.35] hover:shadow-[0_4px_20px_rgba(0,0,0,0.10)] hover:scale-[1.03]"
                   style={{ height: "187px", minWidth: "220px" }}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
