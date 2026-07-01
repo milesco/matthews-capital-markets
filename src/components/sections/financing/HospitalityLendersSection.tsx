@@ -49,7 +49,7 @@ const LENDERS = [
 function LenderCard({ lender }: { lender: typeof LENDERS[number] }) {
   return (
     <div
-      className="flex items-center justify-center rounded-[14px] border px-8 w-full"
+      className="flex items-center justify-center rounded-[14px] border px-8 w-full transition-all duration-300 hover:shadow-[0_4px_20px_rgba(0,0,0,0.10)] hover:scale-[1.03]"
       style={{
         height: "187px",
         background: lender.dark ? "#0e1626" : "#ffffff",
