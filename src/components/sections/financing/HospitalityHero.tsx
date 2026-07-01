@@ -13,7 +13,7 @@ const ACTION_CARDS = [
   },
   {
     label: "Hotel Rate Sheet",
-    href: "https://june-2026-rate-sheet.vercel.app/",
+    href: "https://matthews-hotel-rate-sheet.vercel.app/",
     img: "/images/hero-landscape.jpg",
     newTab: false,
   },
